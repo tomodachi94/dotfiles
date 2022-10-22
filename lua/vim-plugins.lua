@@ -3,9 +3,9 @@ require "paq" {
     "tomodachi94/vim-mediawiki-editor"; -- MediaWiki support
     "chikamichi/mediawiki.vim";
     "sirver/UltiSnips"; -- snippets
-    "hrsh7th/nvim-cmp"; -- autocompletion support
+    {"neoclide/coc.nvim", branch="release"}; -- autocompletion support
     "quangnguyen30192/cmp-nvim-ultisnips";
-    "dracula/vim" -- theme
+    {"dracula/vim", as="dracula"} -- theme
 }
 
 -- setup theming since this is the best spot for it

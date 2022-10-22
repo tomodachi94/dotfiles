@@ -1,0 +1,39 @@
+snippet tr "Translate tag start"
+<translate>
+endsnippet
+
+snippet tre "Translate tag end"
+</translate>
+endsnippet
+
+snippet pageend "Add the end boilerplate for a page"
+{{Navbox $1}}
+
+[[Category:$1]]
+
+<languages />
+endsnippet
+
+snippet sec
+§
+endsnippet
+
+snippet aboutl
+{{About{{L}}|$1{{L}}|<translate>$1</translate>}}
+
+endsnippet
+
+snippet imod
+{{Infobox mod
+|name=$1
+|image=Modicon $1.png
+|modloader={{L|$2}}
+|author=$3
+|version=$4
+|mcversion=$5
+|url=$6
+}}
+
+$0
+endsnippet
+

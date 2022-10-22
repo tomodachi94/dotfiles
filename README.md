@@ -7,15 +7,15 @@ My Neovim configuration.
 
 Contains Lua scripts.
 
-### `vim-plugins.lua`
+#### `vim-plugins.lua`
 
 Contains plugins. I use [Paq](https://github.com/savq/paq-nvim), because it's fast and Lua.
 
-### `vim-mediawiki-editor.lua`
+#### `vim-mediawiki-editor.lua`
 
 Contains config for MediaWiki. I use [Alex Quach's `vim-mediawiki-editor`](https://github.com/aquach/vim-mediawiki-editor), with some minor tweaks as they haven't been merged into the plugin yet.
 
-### `vim-ultisnips.lua`
+#### `vim-ultisnips.lua`
 
 Configuration for [UltiSnips](https://github.com/SirVer/ultisnips).
 

@@ -1,8 +1,3 @@
--- hacky hack to source existing vimscript configuration
-local source_vimscript_things =[[for file in split(glob("~/.config/nvim/" .. "vimscript/*.vim"), "\n")
-  execute "source" file
-endfor"]]
-
 vim.cmd("source ~/.config/nvim/vimscript/no-autoload/source-vimscript.vim")
 
 require("vim-plugins")

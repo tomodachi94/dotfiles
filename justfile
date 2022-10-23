@@ -12,7 +12,8 @@ setup-providers:
 	echo "###### Install Python provider ######"
 	$pip_bin install pynvim
 	echo "###### Install Ruby provider ######"
-	sudo gem install neovim
+	echo "If you don't have superuser privileges, press return three times upon being prompted for the password."
+	-sudo gem install neovim
 	echo "###### Install Node.js provider ######"
 	npm install -g neovim
 	echo "###### Install Perl provider ######"

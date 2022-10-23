@@ -3,7 +3,7 @@ local source_vimscript_things =[[for file in split(glob("~/.config/nvim/" .. "vi
   execute "source" file
 endfor"]]
 
-vim.cmd("source ~/.config/nvim/source-vimscript.vim")
+vim.cmd("source ~/.config/nvim/vimscript/no-autoload/source-vimscript.vim")
 
 require("vim-plugins")
 require("vim-mediawiki-editor")

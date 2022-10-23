@@ -6,4 +6,4 @@ vim.g.mediawiki_editor_uri_scheme = "https"
 
 --- sensitive plugin configuration ---
 
-require("vim-mediawiki-editor-creds")
+require("conf-mediawiki-editor-creds")

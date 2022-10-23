@@ -11,6 +11,8 @@ Contains Lua scripts.
 
 Contains plugins. I use [Paq](https://github.com/savq/paq-nvim), because it's fast and Lua.
 
+Also contains theme settings.
+
 #### `vim-mediawiki-editor.lua`
 
 Contains config for MediaWiki. I use [Alex Quach's `vim-mediawiki-editor`](https://github.com/aquach/vim-mediawiki-editor), with some minor tweaks as they haven't been merged into the plugin yet.

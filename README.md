@@ -2,8 +2,13 @@
 
 My Neovim configuration.
 
-## Directories
-### `lua`
+## File structure
+
+### justfile
+
+Contains some automation for setting up a new environment.
+
+### `lua/`
 
 Contains Lua scripts.
 
@@ -25,11 +30,11 @@ Configuration for [UltiSnips](https://github.com/SirVer/ultisnips).
 
 Contains credentials for things that require authentication (eg. `vim-mediawiki-editor`).
 
-### `snips`
+### `snips/`
 
 Contains snippets for use with UltiSnips.
 
-### `vimscript`
+### `vimscript/`
 
 Contains legacy Vimscript code. This will usually be empty.
 

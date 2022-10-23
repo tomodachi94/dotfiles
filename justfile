@@ -1,12 +1,16 @@
 #!/usr/bin/env just --justfile
 
 set shell := ["bash", "-c"]
+set export
+
+python_bin := "/usr/bin/env python3"
+pip_bin := python_bin + " -m pip"
 
 default: setup-providers install-coc
 
 setup-providers:
 	echo "###### Install Python provider ######"
-	pip install pynvim
+	$pip_bin install pynvim
 	echo "###### Install Ruby provider ######"
 	sudo gem install neovim
 	echo "###### Install Node.js provider ######"
@@ -29,4 +33,4 @@ install-coc:
 	# Change extension names to the extensions you need
 	npm install coc-jedi coc-lua coc-ultisnips --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
 	# needed by coc-jedi
-	pip install jedi
+	$pip_bin install jedi

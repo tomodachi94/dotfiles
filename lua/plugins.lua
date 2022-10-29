@@ -1,6 +1,6 @@
 require "paq" {
     "savq/paq-nvim";
-    "tomodachi94/vim-mediawiki-editor"; -- MediaWiki support
+    "aquach/vim-mediawiki-editor"; -- MediaWiki support
     "chikamichi/mediawiki.vim";
     "sirver/UltiSnips"; -- snippets
     "vim-airline/vim-airline";

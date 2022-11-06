@@ -4,6 +4,7 @@ require "paq" {
     "chikamichi/mediawiki.vim";
     "sirver/UltiSnips"; -- snippets
     "vim-airline/vim-airline";
+    "liuchengxu/vim-which-key";
     "nvim-tree/nvim-web-devicons";
     "nvim-lua/plenary.nvim";
     "nvim-telescope/telescope.nvim";

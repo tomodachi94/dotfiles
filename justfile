@@ -6,9 +6,9 @@ set export
 python_bin := "/usr/bin/env python3"
 pip_bin := python_bin + " -m pip"
 
-default: setup-providers install-coc
+default: nvim-setup-providers nvim-install-coc
 
-setup-providers:
+nvim-setup-providers:
 	echo "###### Install Python provider ######"
 	$pip_bin install pynvim
 	echo "###### Install Ruby provider ######"
@@ -19,7 +19,7 @@ setup-providers:
 	echo "###### Install Perl provider ######"
 	cpan -n "Ext::Neovim"
 
-install-coc:
+nvim-install-coc:
 	#!/usr/bin/env bash
 	set -o nounset    # error when referencing undefined variable
 	set -o errexit    # exit when command fails

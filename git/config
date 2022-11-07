@@ -1,0 +1,18 @@
+[credential]
+	helper = store
+[include]
+    path = ~/.git-identities
+[init]
+	defaultBranch = main
+[alias]
+	s = status --short
+	unadd = reset HEAD --
+	visual = !gitk
+	c = commit
+	last = log -1 HEAD
+	ghcl = !git clone https://github.com/
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

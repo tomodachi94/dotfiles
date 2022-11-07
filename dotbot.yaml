@@ -1,0 +1,11 @@
+#!/usr/bin/env dotbot -c
+# For more information, see https://github.com/tomodachi94/dotfiles
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.config/nvim: nvim
+    ~/.gitconfig: git/config

@@ -8,7 +8,11 @@ pip_bin := python_bin + " -m pip"
 
 default: nvim-setup-providers nvim-install-coc
 
-nvim-setup-providers:
+install:
+	$pip_bin install dotbot
+	dotbot -c ./dotbot.yaml
+
+nvim-setup-providers: install
 	echo "###### Install Python provider ######"
 	$pip_bin install pynvim
 	echo "###### Install Ruby provider ######"
@@ -19,7 +23,7 @@ nvim-setup-providers:
 	echo "###### Install Perl provider ######"
 	cpan -n "Ext::Neovim"
 
-nvim-install-coc:
+nvim-install-coc: install
 	#!/usr/bin/env bash
 	set -o nounset    # error when referencing undefined variable
 	set -o errexit    # exit when command fails

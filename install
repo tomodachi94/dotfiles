@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+python3 -m pip install dotbot
+python3 -m dotbot -c dotbot.yaml

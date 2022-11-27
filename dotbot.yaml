@@ -1,11 +1,16 @@
 #!/usr/bin/env dotbot -c
 # For more information, see https://github.com/tomodachi94/dotfiles
+
 - defaults:
     link:
       relink: true
 
 - clean: ['~']
 
+- shell:
+  - cat ruby/gemrc.dhall | dhall-to-yaml-ng > ruby/gemrc.yaml
+
 - link:
     ~/.config/nvim: nvim
     ~/.gitconfig: git/config
+    ~/.gemrc: ruby/gemrc.yaml

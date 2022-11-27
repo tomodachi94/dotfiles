@@ -6,4 +6,4 @@ package-lock.json
 *-creds.lua
 
 
-gemrc.yaml # Generated dynamically by dhall, contains install-specific details
+ruby/gemrc.yaml # Generated dynamically by dhall, contains install-specific details

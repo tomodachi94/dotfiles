@@ -13,5 +13,7 @@
 - link:
     ~/.config/nvim: nvim
     ~/.gitconfig: git/config
+    ~/.git-credentials: git/credentials
+    ~/.git-identities: git/identities
     ~/.gemrc: ruby/gemrc.yaml
     ~/.config/albert/albert.conf: albert/albert.conf

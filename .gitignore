@@ -7,3 +7,7 @@ package-lock.json
 
 
 ruby/gemrc.yaml # Generated dynamically by dhall, contains install-specific details
+
+# sensitive information
+git/identities
+git/credentials

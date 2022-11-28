@@ -34,3 +34,9 @@
       path: emacs/emacs.d
     ~/.spacemacs:
       path: emacs/dotspacemacs
+
+- create:
+    ~/.config:
+    ~/.config/micro:
+    ~/.config/alfred:
+

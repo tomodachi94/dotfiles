@@ -1,3 +1,6 @@
 [submodule "micro/plugins/editorconfig"]
 	path = micro/plugins/editorconfig
 	url = https://github.com/10sr/editorconfig-micro
+[submodule "emacs/emacs.d"]
+	path = emacs/emacs.d
+	url = https://github.com/syl20bnr/spacemacs

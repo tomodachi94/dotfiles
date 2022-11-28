@@ -21,3 +21,5 @@
     ~/.config/micro/settings.json: micro/settings.json
     ~/.config/micro/bindings.json: micro/bindings.json
     ~/.config/micro/plugins: micro/plugins
+    ~/.emacs.d: emacs/emacs.d
+    ~/.spacemacs: emacs/dotspacemacs

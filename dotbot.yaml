@@ -14,3 +14,4 @@
     ~/.config/nvim: nvim
     ~/.gitconfig: git/config
     ~/.gemrc: ruby/gemrc.yaml
+    ~/.config/albert/albert.conf: albert/albert.conf

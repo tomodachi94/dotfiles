@@ -12,14 +12,25 @@
   - cat ruby/gemrc.dhall | dhall-to-yaml-ng > ruby/gemrc.yaml # Compile gemrc to yaml
 
 - link:
-    ~/.config/nvim: nvim
-    ~/.gitconfig: git/config
-    ~/.git-credentials: git/credentials
-    ~/.git-identities: git/identities
-    ~/.gemrc: ruby/gemrc.yaml
-    ~/.config/albert/albert.conf: albert/albert.conf
-    ~/.config/micro/settings.json: micro/settings.json
-    ~/.config/micro/bindings.json: micro/bindings.json
-    ~/.config/micro/plugins: micro/plugins
-    ~/.emacs.d: emacs/emacs.d
-    ~/.spacemacs: emacs/dotspacemacs
+    ~/.config/nvim:
+      path: nvim
+    ~/.gitconfig:
+      path: git/config
+    ~/.git-credentials:
+      path: git/credentials
+    ~/.git-identities:
+      path: git/identities
+    ~/.gemrc:
+      path: ruby/gemrc.yaml
+    ~/.config/albert/albert.conf:
+      path: albert/albert.conf
+    ~/.config/micro/settings.json:
+      path: micro/settings.json
+    ~/.config/micro/bindings.json:
+      path: micro/bindings.json
+    ~/.config/micro/plugins:
+      path: micro/plugins
+    ~/.emacs.d:
+      path: emacs/emacs.d
+    ~/.spacemacs:
+      path: emacs/dotspacemacs

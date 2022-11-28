@@ -8,7 +8,8 @@
 - clean: ['~']
 
 - shell:
-  - cat ruby/gemrc.dhall | dhall-to-yaml-ng > ruby/gemrc.yaml
+  - git submodule update --init --recursive # Ensure submodules are present
+  - cat ruby/gemrc.dhall | dhall-to-yaml-ng > ruby/gemrc.yaml # Compile gemrc to yaml
 
 - link:
     ~/.config/nvim: nvim

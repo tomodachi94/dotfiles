@@ -1,0 +1,12 @@
+{
+    "autosu": true,
+    "eofnewline": false,
+    "fastdirty": true,
+    "ignorecase": false,
+    "indentchar": "    ",
+    "mkparents": true,
+    "pluginchannels": [
+        "https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.json"
+    ],
+    "pluginrepos": []
+}

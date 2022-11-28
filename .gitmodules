@@ -1,0 +1,3 @@
+[submodule "micro/plugins/editorconfig"]
+	path = micro/plugins/editorconfig
+	url = https://github.com/10sr/editorconfig-micro

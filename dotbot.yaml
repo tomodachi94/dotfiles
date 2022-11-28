@@ -3,7 +3,7 @@
 
 - defaults:
     link:
-      relink: true
+      relink: tree
 
 - clean: ['~']
 
@@ -17,3 +17,6 @@
     ~/.git-identities: git/identities
     ~/.gemrc: ruby/gemrc.yaml
     ~/.config/albert/albert.conf: albert/albert.conf
+    ~/.config/micro/settings.json: micro/settings.json
+    ~/.config/micro/bindings.json: micro/bindings.json
+    ~/.config/micro/plugins: micro/plugins

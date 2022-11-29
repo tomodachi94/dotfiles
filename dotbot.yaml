@@ -12,6 +12,11 @@
     command: git submodule update --init --recursive
     description: Ensure submodules are present
   - 
+    command: nvim --headless +PaqSync +qa && echo"
+    description: Update nvim plugins
+    stdout: true
+    stderr: true
+  - 
     command: cat ruby/gemrc.dhall | dhall-to-yaml-ng > ruby/gemrc.yaml
     description: Compile gemrc to yaml
 

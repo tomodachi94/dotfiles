@@ -4,3 +4,6 @@
 [submodule "emacs/emacs.d"]
 	path = emacs/emacs.d
 	url = https://github.com/syl20bnr/spacemacs
+[submodule "zsh/zplug"]
+	path = zsh/zplug
+	url = https://github.com/zplug/zplug

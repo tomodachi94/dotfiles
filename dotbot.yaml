@@ -34,6 +34,14 @@
       path: emacs/emacs.d
     ~/.spacemacs:
       path: emacs/dotspacemacs
+    ~/.zsh:
+      path: zsh/config
+    ~/.zshrc:
+      path: zsh/config/init.zsh
+    ~/.zprofile:
+      path: zsh/config/zprofile.zsh
+    ~/.zplug:
+      path: zsh/zplug
 
 - create:
     ~/.config:

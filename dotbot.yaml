@@ -12,7 +12,7 @@
     command: git submodule update --init --recursive
     description: Ensure submodules are present
   - 
-    command: nvim --headless +PaqSync +qa && echo"
+    command: nvim --headless +PaqSync +qa
     description: Update nvim plugins
     stdout: true
     stderr: true

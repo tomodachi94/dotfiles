@@ -31,6 +31,8 @@
       path: git/identities
     ~/.gemrc:
       path: ruby/gemrc.yaml
+    ~/.rvmrc:
+      path: ruby/rvmrc
     ~/.config/albert/albert.conf:
       path: albert/albert.conf
     ~/.config/micro/settings.json:

@@ -1,5 +1,7 @@
 echo "Setting up PATH..."
 
+PATH="~/bin:~/.local/bin:$PATH"
+
 if (( $+commands[sdk] )) then
 	export SDKMAN_DIR="~/.sdkman"
 	source ~/.sdkman/bin/sdkman-init.sh
@@ -18,4 +20,3 @@ if (( $+commands[cargo] )) then
 	PATH="~/.cargo/bin:$PATH"
 fi
 
-PATH="~/bin:~/.local/bin:$PATH"

@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 echo "Loading zsh config..."
 
 export ZSH_HOME=~/.zsh

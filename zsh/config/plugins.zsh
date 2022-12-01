@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 source ~/.zplug/init.zsh
 
 zplug "plugins/command-not-found", from:oh-my-zsh

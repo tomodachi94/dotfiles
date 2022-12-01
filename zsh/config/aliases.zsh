@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 if [[ $(file /etc/apt) = "/etc/apt: directory" ]] then
 	alias aptin="sudo aptitude install"
 	alias aptrm="sudo aptitude uninstall"

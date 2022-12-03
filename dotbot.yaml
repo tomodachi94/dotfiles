@@ -53,6 +53,8 @@
       path: zsh/config/zprofile.zsh
     ~/.zplug:
       path: zsh/zplug
+    ~/.config/neofetch:
+      path: neofetch
 
 - create:
     ~/.config:

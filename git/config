@@ -1,7 +1,7 @@
 [credential]
 	helper = store
 [include]
-    path = ~/.git-identities
+	path = ~/.git-identities
 [init]
 	defaultBranch = main
 [alias]
@@ -18,3 +18,5 @@
 	smudge = git-lfs smudge -- %f
 [core]
 	editor = nvim
+[color]
+	ui = auto

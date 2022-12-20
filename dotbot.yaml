@@ -33,6 +33,8 @@
       path: ruby/gemrc.yaml
     ~/.rvmrc:
       path: ruby/rvmrc
+    ~/.npmrc:
+      path: node/npmrc
     ~/.config/albert/albert.conf:
       path: albert/albert.conf
     ~/.config/micro/settings.json:

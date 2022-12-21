@@ -5,17 +5,17 @@
     link:
       relink: tree
 
-- clean: ['~']
+- clean: ['~', '~/.config']
+
+- create:
+    ~/.config:
+    ~/.config/micro:
+    ~/.config/alfred:
 
 - shell:
   - 
     command: git submodule update --init --recursive
     description: Ensure submodules are present
-  - 
-    command: nvim --headless +PaqSync +qa
-    description: Update nvim plugins
-    stdout: true
-    stderr: true
   - 
     command: cat ruby/gemrc.dhall | dhall-to-yaml-ng > ruby/gemrc.yaml
     description: Compile gemrc to yaml
@@ -58,8 +58,14 @@
     ~/.config/neofetch:
       path: neofetch
 
-- create:
-    ~/.config:
-    ~/.config/micro:
-    ~/.config/alfred:
-
+- shell:
+  - 
+    command: nvim --headless +PaqSync +qa
+    description: Update nvim plugins
+    stdout: true
+    stderr: true
+  - 
+    command: source ~/.zshrc
+    description: Reload zsh configuration
+    stdout: true
+    stderr: true

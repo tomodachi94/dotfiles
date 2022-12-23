@@ -17,6 +17,10 @@ fi
 
 alias sl=ls # get rid of the train (see sl.6)
 
+# Source: https://github.com/Nekohime/dotfiles/blob/main/.aliases
+# This works with ls.1 or exa.1, so we apply it always
+alias lsdot='ls -ad .?* 2>/dev/null'
+
 # smart editor aliases
 
 if (( $+commands[nvim] )) then

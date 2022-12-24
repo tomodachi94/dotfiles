@@ -21,6 +21,13 @@ alias sl=ls # get rid of the train (see sl.6)
 # This works with ls.1 or exa.1, so we apply it always
 alias lsdot='ls -ad .?* 2>/dev/null'
 
+# Move up and down a little quicker
+alias ..="cd .."
+alias ..."=cd ../.."
+alias ....="cd ../../.."
+alias .....="cd../../../.."
+alias --="cd -"
+
 # smart editor aliases
 
 if (( $+commands[nvim] )) then

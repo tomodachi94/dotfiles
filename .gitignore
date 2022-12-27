@@ -5,9 +5,6 @@ package-lock.json
 *-creds.vim
 *-creds.lua
 
-# Generated dynamically by dhall, contains install-specific details
-ruby/gemrc.yaml
-
 # sensitive information
 git/identities
 git/credentials

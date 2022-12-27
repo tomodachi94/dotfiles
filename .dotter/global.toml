@@ -14,9 +14,6 @@ depends = [
 	"zsh"
 ]
 
-[default.files]
-node = ""
-
 [nvim]
 depends = []
 [nvim.files]

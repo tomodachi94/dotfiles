@@ -6,7 +6,7 @@ function M.config()
 
 	lsp_defaults.capabilities =
 		vim.tbl_deep_extend("force", lsp_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
-	
+
 	local capabilities = require("cmp_nvim_lsp").default_capabilities()
 	require("lspconfig")["sumneko_lua"].setup {
 		capabilities = capabilities,

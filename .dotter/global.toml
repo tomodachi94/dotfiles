@@ -17,7 +17,7 @@ depends = [
 [nvim]
 depends = []
 [nvim.files]
-nvim = { target = "~/.config/nvim", type = "symbolic" }
+nvim = { target = "~/.config/nvim", type = "symbolic", recurse=false }
 
 [git]
 depends = []
@@ -26,10 +26,10 @@ depends = []
 
 [zsh]
 [zsh.files]
-"zsh/config" = { target = "~/.zsh", type = "symbolic" }
+"zsh/config" = { target = "~/.zsh", type = "symbolic", recurse=false }
 "zsh/config/init.zsh" = "~/.zshrc"
 "zsh/config/zprofile.zsh" = "~/.zprofile"
-"zsh/zplug" = { target = "~/.zplug", type = "symbolic" }
+"zsh/zplug" = { target = "~/.zplug", type = "symbolic", recurse=false }
 
 [ruby]
 depends = []
@@ -54,7 +54,7 @@ depends = ["node"]
 
 [micro]
 [micro.files]
-micro = "~/.config/micro"
+micro = { target = "~/.config/micro", type = "symbolic", recurse=false }
 
 [neofetch]
 [neofetch.files]
@@ -62,7 +62,7 @@ neofetch = "~/.config/neofetch"
 
 [emacs]
 [emacs.files]
-"emacs/emacs.d" = { target = "~/.emacs.d", type = "symbolic"}
+"emacs/emacs.d" = { target = "~/.emacs.d", type = "symbolic", recurse=false}
 "emacs/dotspacemacs" = "~/.spacemacs"
 
 [gnome-terminal]

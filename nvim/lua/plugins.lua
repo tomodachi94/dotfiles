@@ -15,38 +15,19 @@ local lazy_plugins = {
 	{"dracula/vim", name="dracula"}; -- theme
 
 	-- syntax --
-	{"vmchale/dhall-vim",
-		lazy = true,
-		ft = "dhall"
-	};
-	{"chikamichi/mediawiki.vim",
-		lazy = true,
-		ft = "mediawiki"
-	};
-	{"NoahTheDuke/vim-just",
-		lazy = true,
-		ft = "just"
-	};
+	{"vmchale/dhall-vim", lazy = true, ft = "dhall"};
+	{"chikamichi/mediawiki.vim", lazy = true, ft = "mediawiki"};
+	{"NoahTheDuke/vim-just", lazy = true, ft = "just"};
 
 	-- new features --
 	"gpanders/editorconfig.nvim"; -- EditorConfig support
 	"sirver/UltiSnips"; -- snippets
 	"vim-airline/vim-airline"; -- fancy status bar
-	{"liuchengxu/vim-which-key",
-		lazy = true,
-		cmd = "WhichKey"
-	};
+	{"liuchengxu/vim-which-key", lazy = true, cmd = "WhichKey"};
 	"nvim-tree/nvim-web-devicons";
-	{"aquach/vim-mediawiki-editor",  -- edit MediaWiki inside of neovim
-		lazy = true,
-		cmd = {"MWRead", "MWWrite", "MWDiff", "MWBrowse"}
-	};
+	{"aquach/vim-mediawiki-editor", lazy = true, cmd = {"MWRead", "MWWrite", "MWDiff", "MWBrowse"}}; -- edit MediaWiki inside of neovim
 	"nvim-lua/plenary.nvim";
-	{"nvim-telescope/telescope.nvim",
-		dependencies = {"nvim-lua/plenary.nvim"},
-		lazy = true,
-		cmd = "Telescope"
-	};
+	{"nvim-telescope/telescope.nvim", dependencies = {"nvim-lua/plenary.nvim"}, lazy = true, cmd = "Telescope"};
 	{"neoclide/coc.nvim", branch="release"}; -- autocompletion support, we should switch to neovim/lspconfig.nvim
 }
 

@@ -8,5 +8,5 @@ touch {{dotter.current_dir}}/nvim/lua/conf/mediawiki-editor-creds.lua # nvim thr
 
 
 {{#if dotter.package.gnome-terminal}}
-# TODO: Finish this
+cat {{dotter.current_dir}}/gnome-terminal/gnome-terminal.dconf | dconf load /org/gnome/terminal
 {{/if}}

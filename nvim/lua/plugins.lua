@@ -12,7 +12,7 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 local lazy_plugins = {
-	{"dracula/vim", name="dracula"}; -- theme
+	{"dracula/vim", name = "dracula", lazy = true, priority = 1000}; -- theme
 
 	-- syntax --
 	{"vmchale/dhall-vim", lazy = true, ft = "dhall"};

@@ -19,7 +19,7 @@ zplug "chisui/zsh-nix-shell", if:"which nix-shell"
 
 # Completions
 # Only load these if the executable is present
-zplug "casey/just", use:"completions/just.zsh", if:"which just"
+# zplug "casey/just", use:"completions/just.zsh", if:"which just"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then

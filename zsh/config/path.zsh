@@ -12,11 +12,6 @@ if (( $+commands[rvm] )) then
 	export PATH="$HOME/.rvm/bin:$PATH"
 fi
 
-if (( $+commands[brew] )) then
-	brew shellenv | eval
-	PATH="$HOME/.nodebrew/current/bin:$PATH"
-fi
-
 if (( $+commands[cargo] )) then
 	PATH="$HOME/.cargo/bin:$PATH"
 fi

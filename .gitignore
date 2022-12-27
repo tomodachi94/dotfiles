@@ -11,3 +11,8 @@ ruby/gemrc.yaml
 # sensitive information
 git/identities
 git/credentials
+
+# Dotter
+.dotter/cache.toml
+.dotter/cache/
+.dotter/local.toml

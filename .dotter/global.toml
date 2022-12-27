@@ -1,0 +1,78 @@
+[helpers]
+
+[default]
+depends = [
+	"albert",
+	"emacs",
+	"gem",
+	"git",
+	"gnome-terminal",
+	"micro",
+	"neofetch",
+	"nvim",
+	"rvm",
+	"zsh"
+]
+
+[default.files]
+node = ""
+
+[nvim]
+depends = []
+[nvim.files]
+nvim = { target = "~/.config/nvim", type = "symbolic" }
+
+[git]
+depends = []
+[git.files]
+"git/config" = "~/.gitconfig"
+
+[zsh]
+[zsh.files]
+"zsh/config" = { target = "~/.zsh", type = "symbolic" }
+"zsh/config/init.zsh" = "~/.zshrc"
+"zsh/config/zprofile.zsh" = "~/.zprofile"
+"zsh/zplug" = { target = "~/.zplug", type = "symbolic" }
+
+[ruby]
+depends = []
+
+[gem]
+depends = ["ruby"]
+[gem.files]
+"ruby/gemrc.yaml" = "~/.gemrc"
+
+[rvm]
+depends = ["ruby"]
+[rvm.files]
+"ruby/rvmrc" = "~/.rvmrc"
+
+[node]
+depends = []
+
+[npm]
+depends = ["node"]
+[npm.files]
+"node/npmrc" = "~/.npmrc"
+
+[micro]
+[micro.files]
+micro = "~/.config/micro"
+
+[neofetch]
+[neofetch.files]
+neofetch = "~/.config/neofetch"
+
+[emacs]
+[emacs.files]
+"emacs/emacs.d" = { target = "~/.emacs.d", type = "symbolic"}
+"emacs/dotspacemacs" = "~/.spacemacs"
+
+[gnome-terminal]
+depends = []
+# We have this so that we can check if the user wants to have a GNOME Terminal configuration
+# See .dotter/pre_deploy.sh for implementation
+
+[albert]
+[albert.files]
+"albert/albert.conf" = "~/.config/albert/albert.conf"

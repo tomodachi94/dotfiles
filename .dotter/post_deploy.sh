@@ -7,5 +7,5 @@ albert restart
 
 {{#if dotter.packages.nvim}}
 echo "---- Sync nvim packages ----"
-nvim --headless +PaqSync +qa
+nvim --headless -c "Lazy! sync" -c 'qa!'
 {{/if}}

@@ -1,2 +1,2 @@
+#!/usr/bin/env sh
 export rvm_max_time_flag=20
-

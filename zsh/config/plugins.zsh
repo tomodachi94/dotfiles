@@ -1,7 +1,9 @@
 #!/usr/bin/env zsh
 source ~/.zplug/init.zsh
 
-zplug "~/.zsh/platform/macos", from:"local", if:'[ $(uname) = "Darwin" ]', use:init.zsh
+if [[ -f ~/.zsh/platform/init.zsh ]]; then
+zplug "~/.zsh/platform/init.zsh", from:"local", use:init.zsh # Platform-specific things go into ./platform
+fi
 
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"

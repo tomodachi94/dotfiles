@@ -15,12 +15,21 @@ local lazy_plugins = {
 	{"dracula/vim", name="dracula"}; -- theme
 
 	-- syntax --
-	"vmchale/dhall-vim";
-	"gpanders/editorconfig.nvim";
-	"chikamichi/mediawiki.vim";
-	"NoahTheDuke/vim-just";
+	{"vmchale/dhall-vim",
+		lazy = true,
+		ft = "dhall"
+	};
+	{"chikamichi/mediawiki.vim",
+		lazy = true,
+		ft = "mediawiki"
+	};
+	{"NoahTheDuke/vim-just",
+		lazy = true,
+		ft = "just"
+	};
 
 	-- new features --
+	"gpanders/editorconfig.nvim"; -- EditorConfig support
 	"sirver/UltiSnips"; -- snippets
 	"vim-airline/vim-airline"; -- fancy status bar
 	{"liuchengxu/vim-which-key",

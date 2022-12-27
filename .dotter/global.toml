@@ -2,16 +2,21 @@
 
 [default]
 depends = [
-	"albert",
 	"emacs",
 	"gem",
 	"git",
-	"gnome-terminal",
 	"micro",
 	"neofetch",
 	"nvim",
 	"rvm",
 	"zsh"
+]
+
+[linux]
+depends = [
+	"default",
+	"gnome-terminal",
+	"albert"
 ]
 
 [nvim]

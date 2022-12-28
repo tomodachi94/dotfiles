@@ -1,4 +1,5 @@
 local M = {"williamboman/mason.nvim", config = true}
+local N = {"williamboman/mason-lspconfig.nvim", config = true}
 
 function M.config()
 	require("mason").setup{
@@ -12,5 +13,4 @@ function M.config()
 	}
 end
 
--- Disabled for now
-return {M}
+return {M, N}

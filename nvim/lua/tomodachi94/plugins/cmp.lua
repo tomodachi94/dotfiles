@@ -1,9 +1,9 @@
-local M = {"hrsh7th/nvim-cmp"}
-local N = {"hrsh7th/cmp-buffer"}
-local O = {"hrsh7th/cmp-path"}
-local P = {"hrsh7th/cmp-nvim-lsp"}
-local Q = {"quangnguyen30192/cmp-nvim-ultisnips"}
-local R = {"onsails/lspkind.nvim"}
+local M = { "hrsh7th/nvim-cmp", lazy = true, dependencies = {"SirVer/UltiSnips"} }
+local N = { "hrsh7th/cmp-buffer", dependencies = "hrsh7th/nvim-cmp" }
+local O = { "hrsh7th/cmp-path", dependencies = "hrsh7th/nvim-cmp" }
+local P = { "hrsh7th/cmp-nvim-lsp", dependencies = "hrsh7th/nvim-cmp", "neovim/nvim-lspconfig" }
+local Q = { "quangnguyen30192/cmp-nvim-ultisnips", dependencies = "hrsh7th/nvim-cmp", "SirVer/UltiSnips" }
+local R = { "onsails/lspkind.nvim", lazy = true }
 
 function M.config()
 	-- Set up nvim-cmp.

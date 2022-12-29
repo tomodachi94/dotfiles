@@ -1,4 +1,4 @@
-local M = {"williamboman/mason.nvim", config = true}
+local M = {"williamboman/mason.nvim"}
 local N = {"williamboman/mason-lspconfig.nvim", config = true}
 
 function M.config()

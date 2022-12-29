@@ -4,6 +4,7 @@
 depends = [
 	"emacs",
 	"gem",
+	"bat",
 	"git",
 	"micro",
 	"neofetch",
@@ -78,3 +79,7 @@ depends = []
 [albert]
 [albert.files]
 "albert/albert.conf" = "~/.config/albert/albert.conf"
+
+[bat]
+[bat.files]
+"bat" = "~/.config/bat"

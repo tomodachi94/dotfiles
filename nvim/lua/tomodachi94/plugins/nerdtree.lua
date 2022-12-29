@@ -1,8 +1,8 @@
 local M = {
 	"preservim/nerdtree",
 	lazy = true,
-	cmd =
-		{"NERDTree",
+	cmd = {
+		"NERDTree",
 		"NERDTreeVCS",
 		"NERDTreeFromBookmark",
 		"NERDTreeToggle",
@@ -12,9 +12,9 @@ local M = {
 		"NERDTreeClose",
 		"NERDTreeFind",
 		"NERDTreeCWD",
-		"NERDTreeRefreshRoot"
+		"NERDTreeRefreshRoot",
 	},
-	config = false
+	config = false,
 }
 
-return {M}
+return { M }

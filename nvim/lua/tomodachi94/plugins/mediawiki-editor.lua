@@ -1,4 +1,4 @@
-local M = {"aquach/vim-mediawiki-editor", lazy = true, cmd = {"MWRead", "MWWrite", "MWDiff", "MWBrowse"}}
+local M = { "aquach/vim-mediawiki-editor", lazy = true, cmd = { "MWRead", "MWWrite", "MWDiff", "MWBrowse" } }
 
 --- MediaWiki plugin configuration ---
 function M.config()
@@ -7,4 +7,4 @@ function M.config()
 	vim.g.mediawiki_editor_uri_scheme = "https"
 end
 
-return {M}
+return { M }

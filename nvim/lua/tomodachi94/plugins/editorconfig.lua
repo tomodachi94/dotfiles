@@ -1,2 +1,1 @@
-return {"gpanders/editorconfig.nvim"} -- EditorConfig support
-
+return { "gpanders/editorconfig.nvim" } -- EditorConfig support

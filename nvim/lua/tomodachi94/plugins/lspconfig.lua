@@ -1,14 +1,11 @@
-local M = {"neovim/nvim-lspconfig"}
+local M = { "neovim/nvim-lspconfig" }
 
 function M.config()
-	local lspconfig = require('lspconfig')
+	local lspconfig = require("lspconfig")
 	local lsp_defaults = lspconfig.util.default_config
 
-	lsp_defaults.capabilities = vim.tbl_deep_extend(
-			'force',
-			lsp_defaults.capabilities,
-			require('cmp_nvim_lsp').default_capabilities()
-	)
+	lsp_defaults.capabilities =
+		vim.tbl_deep_extend("force", lsp_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
 end
 
-return {M}
+return { M }

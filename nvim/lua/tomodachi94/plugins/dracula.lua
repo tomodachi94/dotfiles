@@ -1,3 +1,3 @@
-local M = {"dracula/vim", name = "dracula", lazy = true, priority = 1000}
+local M = { "dracula/vim", name = "dracula", lazy = true, priority = 1000 }
 
-return {M}
+return { M }

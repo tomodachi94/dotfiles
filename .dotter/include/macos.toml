@@ -1,2 +1,2 @@
 [zsh.files]
-"zsh/platform/macos/init.zsh" = "~/.zsh/platform/init.zsh"
+"zsh/config/platform/macos/init.zsh" = "~/.zsh/platform/init.zsh"

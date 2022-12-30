@@ -13,3 +13,6 @@ git/credentials
 .dotter/cache.toml
 .dotter/cache/
 .dotter/local.toml
+
+# Package-related things
+nvim/lazy-lock.json

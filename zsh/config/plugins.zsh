@@ -17,6 +17,9 @@ zplug "jarun/nnn", use:"misc/quitcd/quitcd.bash_zsh", if:"which nnn"
 # Play nice with Nix/NixOS
 zplug "chisui/zsh-nix-shell", if:"which nix-shell"
 
+# Setup ripgrep config if present
+zplug "~/.config/ripgrep", from:"local", use:"ripgrep.plugin.zsh" #, if "which rg"
+
 # Completions
 # Only load these if the executable is present
 # zplug "casey/just", use:"completions/just.zsh", if:"which just"

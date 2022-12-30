@@ -10,6 +10,7 @@ depends = [
 	"neofetch",
 	"nvim",
 	"rvm",
+	"ripgrep",
 	"zsh"
 ]
 
@@ -83,3 +84,7 @@ depends = []
 [bat]
 [bat.files]
 "bat" = "~/.config/bat"
+
+[ripgrep]
+[ripgrep.files]
+"ripgrep" = "~/.config/ripgrep"

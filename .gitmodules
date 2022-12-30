@@ -7,3 +7,6 @@
 [submodule "zsh/zplug"]
 	path = zsh/zplug
 	url = https://github.com/zplug/zplug
+[submodule "kitty/dracula"]
+	path = kitty/dracula
+	url = https://github.com/dracula/kitty

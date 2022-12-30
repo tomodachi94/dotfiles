@@ -18,7 +18,8 @@ depends = [
 depends = [
 	"default",
 	"gnome-terminal",
-	"albert"
+	"albert",
+	"kitty"
 ]
 
 [nvim]
@@ -88,3 +89,7 @@ depends = []
 [ripgrep]
 [ripgrep.files]
 "ripgrep" = "~/.config/ripgrep"
+
+[kitty]
+[kitty.files]
+"kitty" = { target = "~/.config/kitty", type = "symbolic", recurse = false}

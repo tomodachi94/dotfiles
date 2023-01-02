@@ -5,12 +5,13 @@
 [init]
 	defaultBranch = main
 [alias]
-	s = status --short
+	s = status
 	unadd = reset HEAD --
 	visual = !gitk
 	c = commit
 	last = log -1 HEAD
-	ghcl = !git clone https://github.com/
+    cif = commit --fixup
+    ri = rebase -i --autosquash
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true

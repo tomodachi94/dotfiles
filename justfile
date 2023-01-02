@@ -6,12 +6,12 @@ set export
 python_bin := "/usr/bin/env python3"
 pip_bin := python_bin + " -m pip"
 
-default: nvim-setup-providers nvim-install-coc
+default: install
 
 install:
-	$pip_bin install dotbot
-	dotbot -c ./dotbot.yaml
+	nix-shell --run "dotter deploy"
 
+# TODO: Migrate this to Nix
 nvim-setup-providers: install
 	echo "###### Install Python provider ######"
 	$pip_bin install pynvim

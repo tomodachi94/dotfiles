@@ -69,6 +69,23 @@
 
   programs.dircolors.enable = true;
   
+  # Setup default browser (Vivaldi)
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "x-scheme-handler/http" = ["vivaldi.desktop"];
+      "x-scheme-handler/https" = ["vivaldi.desktop"];
+      "x-scheme-handler/chrome" = ["vivaldi.desktop"];
+      "text/html" = ["vivaldi.desktop"];
+      "application/x-extension-htm" = ["vivaldi.desktop"];
+      "application/x-extension-html" = ["vivaldi.desktop"];
+      "application/x-extension-shtml" = ["vivaldi.desktop"];
+      "application/xhtml+xml" = ["vivaldi.desktop"];
+      "application/x-extension-xhtml" = ["vivaldi.desktop"];
+      "application/x-extension-xht" = ["vivaldi.desktop"];
+    };
+  };
+
   # Let's start migrating Zsh here
   programs.zsh = {
     enable = true;
@@ -99,7 +116,6 @@
       auto_sync = false;
       sync_address = false;
       style = "compact";
-  };
-}
-
+    };
+  }
 }

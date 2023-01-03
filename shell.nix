@@ -5,6 +5,11 @@ mkShell {
     stylua
     selene
     just
+
+    # Neovim language servers
+    rust-analyzer
+    nil
+    lua-language-server
   ];
 }
 

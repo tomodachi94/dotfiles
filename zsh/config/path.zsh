@@ -15,7 +15,3 @@ fi
 if (( $+commands[cargo] )) then
 	PATH="$HOME/.cargo/bin:$PATH"
 fi
-
-if (( $+commands[atuin] )) then
-	eval "$(atuin init zsh)"
-fi

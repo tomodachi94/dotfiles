@@ -8,6 +8,11 @@
     VISUAL = "nvim";
   };
   
+  # TODO: Find a better place for this
+  fonts.fonts = with pkgs; [
+    (nerdfonts.override { fonts = [ "IBMPlexMono" ]; })
+  ];
+
   home.packages = [
     # pkgs.home-manager
     pkgs.zsh # Shell
@@ -19,6 +24,8 @@
     pkgs.bat # Better cat
     pkgs.kitty # Terminal
     pkgs.atuin # Better shell history
+
+    pkgs.nerdfonts # Monospaced font with icons
 
     pkgs.vscodium-fhs # GUI IDE
 
@@ -57,6 +64,9 @@
     };
   };
   
+  # Let HM manage fonts
+  fonts.fontconfig.enable = true;
+
   programs.dircolors.enable = true;
   
   # Let's start migrating Zsh here

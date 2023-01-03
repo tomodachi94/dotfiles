@@ -9,6 +9,7 @@ depends = [
 	"git",
 	"micro",
 	"neofetch",
+	"nixpkgs",
 	"nvim",
 	"rvm",
 	"ripgrep",
@@ -97,3 +98,7 @@ depends = []
 [atuin]
 [atuin.files]
 "atuin" = "~/.config/atuin"
+
+[nixpkgs]
+[nixpkgs.files]
+"nixpkgs" = "~/.config/nixpkgs"

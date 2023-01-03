@@ -8,11 +8,6 @@
     VISUAL = "nvim";
   };
   
-  # TODO: Find a better place for this
-  fonts.fonts = with pkgs; [
-    (nerdfonts.override { fonts = [ "IBMPlexMono" ]; })
-  ];
-
   home.packages = [
     # pkgs.home-manager
     pkgs.zsh # Shell
@@ -117,5 +112,5 @@
       sync_address = false;
       style = "compact";
     };
-  }
+  };
 }

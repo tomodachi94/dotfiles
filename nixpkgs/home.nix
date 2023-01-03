@@ -19,7 +19,7 @@
     pkgs.bat # Better cat
     pkgs.kitty # Terminal
 
-    pkgs.vscodium-hfs # GUI IDE
+    pkgs.vscodium-fhs # GUI IDE
 
     # Chat
     pkgs.discord
@@ -54,6 +54,29 @@
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
     };
+  };
+  
+  programs.dircolors.enable = true;
+  
+  # Let's start migrating Zsh here
+  programs.zsh = {
+    enable = true;
+    zplug.enable = true;
+    initExtra = ". ~/.zsh/init.zsh"; # TODO: This has things that haven't been migrated to Nix; we should finish that
+    history = {
+      ignoreSpace = true;
+      ignoreDups = true;
+    };
+    zplug.plugins = [
+      { name = "zsh-users/zsh-autosuggestions"; } # Not sure how wells these work by default
+      { name = "zsh-users/zsh-history-substring-search"; }
+      { name = "zsh-users/zsh-syntax-highlighting"; }
+      { name = "themes/robbyrussel"; tags = [ from:oh-my-zsh as:theme ]; }
+      { name = "jarun/nnn"; tags = [ ''use:"misc/quitcd/quitcd.bash_zsh"'' ]; }
+      { name = "chisui/zsh-nix-shell"; tags = [ ''if:"[[ -d /nix ]]"'' ]; } # Integrate cleanly with Nix
+      { name = "spwhitt/nix-zsh-completions"; } # Nix shell completion
+
+    ];
   };
 
 }

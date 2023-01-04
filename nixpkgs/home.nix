@@ -7,6 +7,8 @@
     EDITOR = "nvim";
     VISUAL = "nvim";
   };
+
+  targets.genericLinux.enable = true;
   
   home.packages = [
     # pkgs.home-manager

@@ -19,6 +19,7 @@
     pkgs.exa # Better ls
     pkgs.ripgrep # Better grep
     pkgs.bat # Better cat
+    # pkgs.nnn # File manager
     pkgs.kitty # Terminal
     pkgs.atuin # Better shell history
 
@@ -102,6 +103,16 @@
       { name = "spwhitt/nix-zsh-completions"; } # Nix shell completion
 
     ];
+  };
+
+  programs.nnn = {
+    enable = true;
+    plugins = {
+      src = "${pkgs.nnn.src}/plugins";
+      mappings = {
+        d = "diffs";
+      };
+    };
   };
 
   programs.atuin = {

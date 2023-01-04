@@ -75,16 +75,16 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "x-scheme-handler/http" = ["vivaldi.desktop"];
-      "x-scheme-handler/https" = ["vivaldi.desktop"];
-      "x-scheme-handler/chrome" = ["vivaldi.desktop"];
-      "text/html" = ["vivaldi.desktop"];
-      "application/x-extension-htm" = ["vivaldi.desktop"];
-      "application/x-extension-html" = ["vivaldi.desktop"];
-      "application/x-extension-shtml" = ["vivaldi.desktop"];
-      "application/xhtml+xml" = ["vivaldi.desktop"];
-      "application/x-extension-xhtml" = ["vivaldi.desktop"];
-      "application/x-extension-xht" = ["vivaldi.desktop"];
+      "x-scheme-handler/http" = ["vivaldi-stable.desktop"];
+      "x-scheme-handler/https" = ["vivaldi-stable.desktop"];
+      "x-scheme-handler/chrome" = ["vivaldi-stable.desktop"];
+      "text/html" = ["vivaldi-stable.desktop"];
+      "application/x-extension-htm" = ["vivaldi-stable.desktop"];
+      "application/x-extension-html" = ["vivaldi-stable.desktop"];
+      "application/x-extension-shtml" = ["vivaldi-stable.desktop"];
+      "application/xhtml+xml" = ["vivaldi-stable.desktop"];
+      "application/x-extension-xhtml" = ["vivaldi-stable.desktop"];
+      "application/x-extension-xht" = ["vivaldi-stable.desktop"];
     };
   };
 

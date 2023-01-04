@@ -13,4 +13,6 @@ if [[ -z ~/.nix-profile/etc/profile.d/hm-session-vars.sh ]] then
 	source ~/.nix-profile/etc/profile.d/hm-session-vars.sh
 fi
 
+export PATH=~/.nix-profile/bin:$PATH
+
 clear

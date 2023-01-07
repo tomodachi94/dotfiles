@@ -20,6 +20,7 @@
     pkgs.ripgrep # Better grep
     pkgs.bat # Better cat
     # pkgs.nnn # File manager
+    pkgs.starship # Shell prompt
     pkgs.kitty # Terminal
     pkgs.atuin # Better shell history
 
@@ -108,6 +109,11 @@
       { name = "spwhitt/nix-zsh-completions"; } # Nix shell completion
 
     ];
+  };
+
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
   programs.nnn = {

@@ -14,7 +14,10 @@ local M = {
 		"NERDTreeCWD",
 		"NERDTreeRefreshRoot",
 	},
-	config = false,
 }
+
+function M.config()
+	vim.g.NERDTreeMinimalUI = 1
+end
 
 return { M }

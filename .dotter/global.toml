@@ -2,7 +2,6 @@
 
 [default]
 depends = [
-	"atuin",
 	"emacs",
 	"gem",
 	"bat",
@@ -94,10 +93,6 @@ depends = []
 [kitty]
 [kitty.files]
 "kitty" = { target = "~/.config/kitty", type = "symbolic", recurse = false}
-
-[atuin]
-[atuin.files]
-"atuin" = "~/.config/atuin"
 
 [nixpkgs]
 [nixpkgs.files]

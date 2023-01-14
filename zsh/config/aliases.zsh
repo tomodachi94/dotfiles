@@ -35,3 +35,6 @@ if (( $+commands[nvim] )) then
 	alias vim="nvim"
 fi
 
+if (( $+commands[craftos] )) then
+	alias craftos-project="craftos --computers-dir ./.craftos-project/"
+fi

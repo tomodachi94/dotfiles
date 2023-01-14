@@ -2,8 +2,6 @@ local M = {
 	"tpope/vim-fugitive",
 	lazy = true,
 	cmd = {
-		"Git",
-		"G",
 		"Gedit",
 		"Gdiffsplit",
 		"Gread",
@@ -13,7 +11,9 @@ local M = {
 		"GMove",
 		"GRename",
 		"GDelete",
-		"GBrowse"
+		"GBrowse",
+		"G",
+		"Git"
 	},
 	config = false,
 }

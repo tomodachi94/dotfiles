@@ -10,6 +10,11 @@ function M.config()
 	local capabilities = require("cmp_nvim_lsp").default_capabilities()
 	require("lspconfig")["sumneko_lua"].setup {
 		capabilities = capabilities,
+		settings = {
+			workspace = {
+				userThirdParty = {"~/.local/share/lua-language-server/libraries"},
+			}
+		}
 	}
 	require("lspconfig")["rust_analyzer"].setup {
 		capabilities = capabilities,

@@ -1,2 +1,2 @@
 includes = []
-packages = ["default"]
+packages = ["default", "linux"]

@@ -15,4 +15,4 @@ require("lazy").setup("tomodachi94.plugins") -- Setup plugins and their configur
 
 -- Setup theme
 vim.cmd("syntax enable")
-vim.cmd.colorscheme("dracula")
+vim.cmd.colorscheme("catppuccin")

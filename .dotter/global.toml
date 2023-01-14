@@ -10,6 +10,7 @@ depends = [
 	"neofetch",
 	"nixpkgs",
 	"nvim",
+	"craftos-pc",
 	"rvm",
 	"ripgrep",
 	"zsh"
@@ -59,6 +60,10 @@ depends = []
 depends = ["node"]
 [npm.files]
 "node/npmrc" = "~/.npmrc"
+
+[craftos-pc]
+[craftos-pc.files]
+"craftos-pc/global.json" = "~/.local/share/craftos-pc/config/global.json"
 
 [micro]
 [micro.files]

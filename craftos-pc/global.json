@@ -1,0 +1,72 @@
+{
+    "abortTimeout" : 17000,
+    "checkUpdates" : true,
+    "cliControlKeyMode" : 0,
+    "clockSpeed" : 20,
+    "computerSpaceLimit" : 1000000,
+    "configReadOnly" : false,
+    "customCharScale" : 0,
+    "customFontPath" : "",
+    "customFontScale" : 0,
+    "defaultHeight" : 19,
+    "defaultWidth" : 51,
+    "default_computer_settings" : "",
+    "disable_lua51_features" : false,
+    "dropFilePath" : false,
+    "extendMargins" : false,
+    "http_blacklist" : [
+
+    ],
+    "http_enable" : true,
+    "http_max_download" : 16777216,
+    "http_max_requests" : 16,
+    "http_max_upload" : 4194304,
+    "http_max_websocket_message" : 65536,
+    "http_max_websockets" : 4,
+    "http_proxy_port" : 0,
+    "http_proxy_server" : "",
+    "http_timeout" : 30000,
+    "http_websocket_enabled" : true,
+    "http_whitelist" : [
+        "*"
+    ],
+    "ignoreHotkeys" : false,
+    "initialComputer" : 0,
+    "keepOpenOnShutdown" : false,
+    "lastVersion" : "v2.7.2",
+    "logErrors" : false,
+    "maxNotesPerTick" : 8,
+    "maxOpenPorts" : 128,
+    "maxRecordingTime" : 15,
+    "maximumFilesOpen" : 128,
+    "monitorsUseMouseEvents" : false,
+    "mount_mode" : 1,
+    "mounter_blacklist" : [
+        "\/"
+    ],
+    "mounter_no_ask" : [
+
+    ],
+    "mounter_whitelist" : [
+        "\/Users\/*",
+        "\/home\/*"
+    ],
+    "mouse_move_throttle" : -1,
+    "pluginData" : {
+    },
+    "preferredHardwareDriver" : "",
+    "recordingFPS" : 10,
+    "romReadOnly" : true,
+    "serverMode" : false,
+    "showFPS" : false,
+    "showMountPrompt" : true,
+    "skipUpdate" : "v2.7.1",
+    "snapToSize" : true,
+    "snooperEnabled" : false,
+    "standardsMode" : false,
+    "useDFPWM" : false,
+    "useHardwareRenderer" : false,
+    "useVsync" : false,
+    "useWebP" : false,
+    "vanilla" : false
+}

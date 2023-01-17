@@ -9,4 +9,6 @@ local M = {
 	build = ":TSUpdate"
 }
 
-return { M }
+local N = { "chikamichi/mediawiki.vim", ft = { "mediawiki" } }
+
+return { M, N }

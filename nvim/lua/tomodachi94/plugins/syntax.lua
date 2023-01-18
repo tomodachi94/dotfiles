@@ -9,6 +9,24 @@ local M = {
 	build = ":TSUpdate"
 }
 
+function M.config()
+	require("nvim-treesitter.configs").setup{
+		ensure_installed = {
+			"lua",
+			"vim",
+			"help",
+			"json",
+			"bash",
+			"rust",
+			"python"
+		},
+
+		highlight = {
+			enable = true,
+		}
+	}
+end
+
 local N = { "chikamichi/mediawiki.vim", ft = { "mediawiki" } }
 
 return { M, N }

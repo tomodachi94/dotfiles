@@ -16,6 +16,7 @@ local M = {
 		"Git"
 	},
 	config = false,
+	dependencies = { "tpope/vim-rhubarb" },
 }
 
 local N = {

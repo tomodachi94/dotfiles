@@ -9,3 +9,11 @@ vim.keymap.set("n", "<Leader>Y", "+y")
 vim.keymap.set("n", "<Leader>P", "+p")
 
 vim.keymap.set("n", "<Leader>fd", vim.cmd.NERDTreeToggle)
+
+-- Be smart.
+vim.cmd("cnoreabbrev W w")
+vim.cmd("cnoreabbrev W w")
+vim.cmd("cnoreabbrev Wq wq")
+vim.cmd("cnoreabbrev WQ wq")
+vim.cmd("cnoreabbrev Q q")
+vim.cmd("cnoreabbrev Q! q!")

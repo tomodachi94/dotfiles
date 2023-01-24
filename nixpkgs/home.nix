@@ -89,6 +89,10 @@
     };
   };
 
+  xresources.properties = {
+    "Xft.dpi" = 115;
+  };
+
   # Let's start migrating Zsh here
   programs.zsh = {
     enable = true;

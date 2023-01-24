@@ -35,6 +35,9 @@
     # Notes
     pkgs.obsidian
     pkgs.jot
+
+	# Development
+	pkgs.direnv
   ];
 
   # This value determines the Home Manager release that your
@@ -143,6 +146,12 @@
       sync_address = false;
       style = "compact";
     };
+  };
+
+  programs.direnv = {
+    enable = true;
+	nix-direnv.enable = true;
+	enableZshIntegration = true;
   };
 
 /* TODO: Fix colors.palette

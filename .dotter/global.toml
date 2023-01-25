@@ -6,6 +6,7 @@ depends = [
 	"gem",
 	"bat",
 	"git",
+	"i3",
 	"micro",
 	"neofetch",
 	"nixpkgs",
@@ -98,6 +99,11 @@ depends = []
 [kitty]
 [kitty.files]
 "kitty" = { target = "~/.config/kitty", type = "symbolic", recurse = false}
+
+[i3]
+[i3.files]
+"i3" = "~/.config/i3"
+"i3status" = "~/.config/i3status"
 
 [nixpkgs]
 [nixpkgs.files]

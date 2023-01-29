@@ -55,6 +55,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec kitty
 
+# start the browser
+bindsym $mod+b exec vivaldi
+
 # kill focused window
 bindsym $mod+Shift+q kill
 

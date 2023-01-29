@@ -30,6 +30,11 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Use brightnessctl for controlling screen brightness
+# The current user must be a member of the 'video' or 'input' user group
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5% # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- # decrease screen brightness
+
 # light-locker automatically locks the screen when the laptop's lid closes
 exec --no-startup-id light-locker --lock-on-lid
 

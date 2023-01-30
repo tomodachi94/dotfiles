@@ -37,6 +37,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- # decre
 
 # light-locker automatically locks the screen when the laptop's lid closes
 exec --no-startup-id light-locker --lock-on-lid
+# Also add a keybind to manually lock the screen
+bindsym $mod+Shift+w exec --no-startup-id "dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

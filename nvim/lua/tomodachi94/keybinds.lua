@@ -17,3 +17,9 @@ vim.cmd("cnoreabbrev Wq wq")
 vim.cmd("cnoreabbrev WQ wq")
 vim.cmd("cnoreabbrev Q q")
 vim.cmd("cnoreabbrev Q! q!")
+
+-- Keep the register clean when using `dd`
+vim.keymap.set("n","dd", function ()
+	if vim.fn.getline(".") == "" then return '"_dd' end
+	return "dd"
+end, {expr = true})

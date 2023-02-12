@@ -8,7 +8,7 @@ function M.config()
 		vim.tbl_deep_extend("force", lsp_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 	local capabilities = require("cmp_nvim_lsp").default_capabilities()
-	require("lspconfig")["sumneko_lua"].setup {
+	require("lspconfig")["lua_ls"].setup {
 		capabilities = capabilities,
 		settings = {
 			workspace = {
@@ -17,6 +17,9 @@ function M.config()
 		}
 	}
 	require("lspconfig")["rust_analyzer"].setup {
+		capabilities = capabilities,
+	}
+	require("lspconfig")["rnix"].setup {
 		capabilities = capabilities,
 	}
 end

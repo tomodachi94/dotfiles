@@ -12,7 +12,7 @@ function M.config()
 
 	vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
-	cmp.setup {
+	cmp.setup({
 		snippet = {
 			-- REQUIRED - you must specify a snippet engine
 			expand = function(args)
@@ -40,7 +40,7 @@ function M.config()
 		{
 			{ name = "buffer" },
 		},
-	}
+	})
 	-- Set configuration for specific filetype.
 	cmp.setup.filetype("lua", {
 		sources = cmp.config.sources {
@@ -69,7 +69,7 @@ function M.config()
 
 	-- Set up lspconfig.
 	local capabilities = require("cmp_nvim_lsp").default_capabilities()
-	require("lspconfig")["sumneko_lua"].setup {
+	require("lspconfig")["lua_ls"].setup {
 		capabilities = capabilities,
 	}
 end

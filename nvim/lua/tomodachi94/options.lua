@@ -14,6 +14,8 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 --Hide the 'How to disable mouse' prompt in the right-click dialog
+vim.cmd('aunmenu PopUp.How-to\\ disable\\ mouse')
+vim.cmd('aunmenu PopUp.-1-')
 
 --Enable per-filetype indentation settings
 if vim.fn.has("autocmd") == 1 then

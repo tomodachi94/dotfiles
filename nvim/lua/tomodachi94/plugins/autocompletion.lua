@@ -1,9 +1,9 @@
 local M = { "hrsh7th/nvim-cmp", lazy = true }
-local N = { "hrsh7th/cmp-buffer", dependencies = "hrsh7th/nvim-cmp" }
-local O = { "hrsh7th/cmp-path", dependencies = "hrsh7th/nvim-cmp" }
-local P = { "hrsh7th/cmp-nvim-lsp", dependencies = "hrsh7th/nvim-cmp", "neovim/nvim-lspconfig" }
-local Q = { "saadparwaiz1/cmp_luasnip", dependencies = "hrsh7th/nvim-cmp", "L3MON4D3/LuaSnip" }
-local R = { "onsails/lspkind.nvim", lazy = true }
+local N = { "hrsh7th/cmp-buffer", dependencies = "hrsh7th/nvim-cmp", event = { "InsertEnter" } }
+local O = { "hrsh7th/cmp-path", dependencies = "hrsh7th/nvim-cmp", event = { "InsertEnter" } }
+local P = { "hrsh7th/cmp-nvim-lsp", dependencies = "hrsh7th/nvim-cmp", "neovim/nvim-lspconfig", event = { "InsertEnter" } }
+local Q = { "saadparwaiz1/cmp_luasnip", dependencies = "hrsh7th/nvim-cmp", "L3MON4D3/LuaSnip", event = { "InsertEnter" } }
+local R = { "onsails/lspkind.nvim", lazy = true, event = { "InsertEnter" } }
 
 function M.config()
 	-- Set up nvim-cmp.

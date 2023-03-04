@@ -6,7 +6,8 @@
 
 local M = {
 	"nvim-treesitter/nvim-treesitter",
-	build = ":TSUpdate"
+	build = ":TSUpdate",
+	event = { "BufEnter" }
 }
 
 function M.config()

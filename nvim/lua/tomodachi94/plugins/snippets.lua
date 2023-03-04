@@ -1,6 +1,6 @@
 -- LuaSnip configuration
 
-local M = { "L3MON4D3/LuaSnip" }
+local M = { "L3MON4D3/LuaSnip", event = { "InsertEnter" } }
 
 -- Source: https://www.reddit.com/r/neovim/comments/zrcrv1/luasnip_tab_as_expandjump_trigger/j12xw3x/#c
 local function luasnip_tab()

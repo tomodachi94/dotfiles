@@ -1,4 +1,4 @@
-local M = { "neovim/nvim-lspconfig" }
+local M = { "neovim/nvim-lspconfig", event = { "InsertEnter" } }
 
 function M.config()
 	local lspconfig = require("lspconfig")
@@ -28,7 +28,7 @@ function M.config()
 	}
 end
 
-local N = { "jose-elias-alvarez/null-ls.nvim", dependencies = { "nvim-lua/plenary.nvim" } }
+local N = { "jose-elias-alvarez/null-ls.nvim", dependencies = { "nvim-lua/plenary.nvim" }, event = { "InsertEnter" } }
 
 function N.config()
 	local null_ls = require("null-ls")

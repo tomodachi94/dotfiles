@@ -16,7 +16,8 @@ vim.keymap.set("n", "<Leader>fd", vim.cmd.NERDTreeToggle)
 
 -- Be smart.
 vim.cmd("cnoreabbrev W w")
-vim.cmd("cnoreabbrev W w")
+vim.cmd("cnoreabbrev Qa! qa!")
+vim.cmd("cnoreabbrev QA! qa!")
 vim.cmd("cnoreabbrev Wq wq")
 vim.cmd("cnoreabbrev WQ wq")
 vim.cmd("cnoreabbrev Q q")

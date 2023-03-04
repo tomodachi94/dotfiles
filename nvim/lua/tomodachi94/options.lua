@@ -3,6 +3,8 @@ vim.opt.shiftwidth = 4
 
 vim.opt.termguicolors = true
 
+vim.opt.shortmess = ""
+
 vim.cmd("xnoremap j gj")
 vim.cmd("xnoremap k gk")
 vim.cmd("xnoremap <Down> gj")

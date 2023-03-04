@@ -23,6 +23,11 @@ function M.config()
 		capabilities = capabilities,
 	}
 
+	require("lspconfig")["ruff_lsp"].setup {
+		capabilities = capabilities,
+	}
+end
+
 local N = { "jose-elias-alvarez/null-ls.nvim", dependencies = { "nvim-lua/plenary.nvim" } }
 
 function N.config()
@@ -44,4 +49,4 @@ function N.config()
 	}
 end
 
-return { M }
+return { M, N }

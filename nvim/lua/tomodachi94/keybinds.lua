@@ -22,6 +22,11 @@ vim.cmd("cnoreabbrev WQ wq")
 vim.cmd("cnoreabbrev Q q")
 vim.cmd("cnoreabbrev Q! q!")
 
+vim.cmd("xnoremap j gj")
+vim.cmd("xnoremap k gk")
+vim.cmd("xnoremap <Down> gj")
+vim.cmd("xnoremap <Up> gk")
+
 -- Keep the register clean when using `dd`
 vim.keymap.set("n","dd", function ()
 	if vim.fn.getline(".") == "" then return '"_dd' end

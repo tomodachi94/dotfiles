@@ -1,8 +1,8 @@
-local M = { "hrsh7th/nvim-cmp", lazy = true, dependencies = { "SirVer/UltiSnips" } }
+local M = { "hrsh7th/nvim-cmp", lazy = true }
 local N = { "hrsh7th/cmp-buffer", dependencies = "hrsh7th/nvim-cmp" }
 local O = { "hrsh7th/cmp-path", dependencies = "hrsh7th/nvim-cmp" }
 local P = { "hrsh7th/cmp-nvim-lsp", dependencies = "hrsh7th/nvim-cmp", "neovim/nvim-lspconfig" }
-local Q = { "quangnguyen30192/cmp-nvim-ultisnips", dependencies = "hrsh7th/nvim-cmp", "SirVer/UltiSnips" }
+local Q = { "saadparwaiz1/cmp_luasnip", dependencies = "hrsh7th/nvim-cmp", "L3MON4D3/LuaSnip" }
 local R = { "onsails/lspkind.nvim", lazy = true }
 
 function M.config()
@@ -16,7 +16,7 @@ function M.config()
 		snippet = {
 			-- REQUIRED - you must specify a snippet engine
 			expand = function(args)
-				vim.fn["UltiSnips#Anon"](args.body) -- For `UltiSnips` users.
+				require("luasnip").lsp_expand(args.body)
 			end,
 		},
 		window = {
@@ -35,9 +35,7 @@ function M.config()
 		},
 		sources = cmp.config.sources {
 			{ name = "nvim_lsp" },
-			{ name = "ultisnips" }, -- For luasnip users.
-		},
-		{
+			{ name = "luasnip" }, -- For luasnip users.
 			{ name = "buffer" },
 		},
 	})

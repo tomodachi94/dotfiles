@@ -1,3 +1,7 @@
+---Keyboard-related things.
+--This file is for key (re)mapping that doesn't involve plugins.
+--Plugin keybinds should go into their own file.
+
 vim.g.mapleader = ' '
 
 vim.keymap.set("n", "<Esc>", ":nohl<CR>:echo<CR>") -- Clear highlighting and buffer

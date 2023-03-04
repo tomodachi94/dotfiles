@@ -1,6 +1,7 @@
 ---Keyboard-related things.
 --This file is for key (re)mapping that doesn't involve plugins.
 --Plugin keybinds should go into their own file.
+--Other files that have keybinds: [ setup-plugins.lua, plugins/*.lua ]
 
 vim.g.mapleader = " "
 

@@ -8,4 +8,7 @@ local O = {
 function O.config()
 	vim.g.bullets_enabled_file_types = M.ft
 end
-return { M, N, O }
+
+local P = { "lukas-reineke/indent-blankline.nvim" }
+
+return { M, N, O, P }

@@ -7,11 +7,11 @@
 local M = {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
-	event = { "BufEnter" }
+	event = { "BufEnter" },
 }
 
 function M.config()
-	require("nvim-treesitter.configs").setup{
+	require("nvim-treesitter.configs").setup({
 		ensure_installed = {
 			"lua",
 			"vim",
@@ -19,13 +19,13 @@ function M.config()
 			"json",
 			"bash",
 			"rust",
-			"python"
+			"python",
 		},
 
 		highlight = {
 			enable = true,
-		}
-	}
+		},
+	})
 end
 
 local N = { "chikamichi/mediawiki.vim", ft = { "mediawiki" } }

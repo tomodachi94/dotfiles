@@ -8,24 +8,24 @@ function M.config()
 		vim.tbl_deep_extend("force", lsp_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 	local capabilities = require("cmp_nvim_lsp").default_capabilities()
-	require("lspconfig")["lua_ls"].setup {
+	require("lspconfig")["lua_ls"].setup({
 		capabilities = capabilities,
 		settings = {
 			workspace = {
-				userThirdParty = {"~/.local/share/lua-language-server/libraries"},
-			}
-		}
-	}
-	require("lspconfig")["rust_analyzer"].setup {
+				userThirdParty = { "~/.local/share/lua-language-server/libraries" },
+			},
+		},
+	})
+	require("lspconfig")["rust_analyzer"].setup({
 		capabilities = capabilities,
-	}
-	require("lspconfig")["rnix"].setup {
+	})
+	require("lspconfig")["rnix"].setup({
 		capabilities = capabilities,
-	}
+	})
 
-	require("lspconfig")["ruff_lsp"].setup {
+	require("lspconfig")["ruff_lsp"].setup({
 		capabilities = capabilities,
-	}
+	})
 end
 
 local N = { "jose-elias-alvarez/null-ls.nvim", dependencies = { "nvim-lua/plenary.nvim" }, event = { "InsertEnter" } }
@@ -36,7 +36,7 @@ function N.config()
 
 	sources.code_actions.shellcheck.filetypes = { "sh", "bash", "zsh" }
 
-	null_ls.setup {
+	null_ls.setup({
 		sources = {
 			sources.formatting.stylua,
 			sources.diagnostics.selene,
@@ -45,8 +45,8 @@ function N.config()
 			sources.completion.spell,
 			sources.diagnostics.ruff,
 			sources.diagnostics.mypy,
-		}
-	}
+		},
+	})
 end
 
 return { M, N }

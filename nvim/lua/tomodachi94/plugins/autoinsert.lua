@@ -2,7 +2,7 @@ local M = { "tpope/vim-endwise", event = { "InsertEnter" } }
 local N = { "rstacruz/vim-closer", event = { "InsertEnter" } }
 local O = {
 	"dkarter/bullets.vim",
-	ft = { "markdown", "text", "org", "mediawiki", "gitcommit" }
+	ft = { "markdown", "text", "org", "mediawiki", "gitcommit" },
 }
 
 function O.config()

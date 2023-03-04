@@ -2,7 +2,7 @@
 --This file is for key (re)mapping that doesn't involve plugins.
 --Plugin keybinds should go into their own file.
 
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
 vim.keymap.set("n", "<Esc>", ":nohl<CR>:echo<CR>") -- Clear highlighting and buffer
 
@@ -29,7 +29,9 @@ vim.cmd("xnoremap <Down> gj")
 vim.cmd("xnoremap <Up> gk")
 
 -- Keep the register clean when using `dd`
-vim.keymap.set("n","dd", function ()
-	if vim.fn.getline(".") == "" then return '"_dd' end
+vim.keymap.set("n", "dd", function()
+	if vim.fn.getline(".") == "" then
+		return '"_dd'
+	end
 	return "dd"
-end, {expr = true})
+end, { expr = true })

@@ -14,7 +14,8 @@ depends = [
 	"craftos-pc",
 	"rvm",
 	"ripgrep",
-	"zsh"
+	"zsh",
+	"readline"
 ]
 
 [linux]
@@ -95,6 +96,10 @@ depends = []
 [ripgrep]
 [ripgrep.files]
 "ripgrep" = "~/.config/ripgrep"
+
+[readline]
+[readline.files]
+"readline/inputrc" = "~/.inputrc"
 
 [kitty]
 [kitty.files]

@@ -1,4 +1,4 @@
-local M = { "tpope/vim-endwise", event = { "InsertEnter" } }
+local M = { "RRethy/nvim-treesitter-endwise", dependencies = { "nvim-treesitter/nvim-treesitter" } }
 local N = { "rstacruz/vim-closer", event = { "InsertEnter" } }
 local O = {
 	"dkarter/bullets.vim",

@@ -19,7 +19,6 @@ function M.config()
 			"json",
 			"bash",
 			"rust",
-			"python",
 		},
 
 		highlight = {

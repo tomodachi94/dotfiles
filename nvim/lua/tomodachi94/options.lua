@@ -17,6 +17,8 @@ vim.opt.relativenumber = true
 vim.cmd("aunmenu PopUp.How-to\\ disable\\ mouse")
 vim.cmd("aunmenu PopUp.-1-")
 
+vim.g.python3_host_prog = "/usr/bin/python3"
+
 --Enable per-filetype indentation settings
 if vim.fn.has("autocmd") == 1 then
 	vim.cmd("filetype indent plugin on")

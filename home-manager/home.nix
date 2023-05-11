@@ -1,5 +1,8 @@
 { environment, config, pkgs, lib, ... }:
 
+let
+  nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") { inherit pkgs; };
+in
 {
   home.username = "me";
   home.homeDirectory = "/home/me";
@@ -36,8 +39,11 @@
     pkgs.obsidian
     pkgs.jot
 
-	# Development
-	pkgs.direnv
+	  # Development
+	  pkgs.direnv
+
+    # Specialized tools: FTB Wiki
+    nur.repos.ftbwiki.ftb-rs
   ];
 
   # This value determines the Home Manager release that your
@@ -60,6 +66,9 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
+      packageOverrides = pkgs: {
+        nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") { inherit pkgs; };
+      };
     };
   };
 
@@ -77,7 +86,7 @@
   
   # Setup default browser (Vivaldi)
   xdg.mimeApps = {
-    enable = true;
+    enable = false;
     defaultApplications = {
       "x-scheme-handler/http" = ["vivaldi-stable.desktop"];
       "x-scheme-handler/https" = ["vivaldi-stable.desktop"];
@@ -110,7 +119,6 @@
       ignoreDups = true;
     };
     zplug.plugins = [
-      { name = "themes/robbyrussel"; tags = [ "from:oh-my-zsh" "as:theme" ]; }
       { name = "jarun/nnn"; tags = [ ''use:"misc/quitcd/quitcd.bash_zsh"'' ]; }
       { name = "chisui/zsh-nix-shell"; tags = [ ''if:"[[ -d /nix ]]"'' ]; } # Integrate cleanly with Nix
       { name = "spwhitt/nix-zsh-completions"; } # Nix shell completion
@@ -123,6 +131,9 @@
     enableZshIntegration = true;
     settings = {
       add_newline = false;
+	  directory.substitutions = {
+        "git" = " ";
+	  };
     };
   };
 

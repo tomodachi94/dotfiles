@@ -87,7 +87,7 @@ in
   fonts.fontconfig.enable = true;
 
   programs.dircolors.enable = true;
-  
+
   # Setup default browser (Vivaldi)
   xdg.mimeApps = {
     enable = false;
@@ -112,7 +112,6 @@ in
   # Let's start migrating Zsh here
   programs.zsh = {
     enable = true;
-    zplug.enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
     enableSyntaxHighlighting = true;
@@ -122,11 +121,25 @@ in
       ignoreSpace = true;
       ignoreDups = true;
     };
-    zplug.plugins = [
-      { name = "jarun/nnn"; tags = [ ''use:"misc/quitcd/quitcd.bash_zsh"'' ]; }
-      { name = "chisui/zsh-nix-shell"; tags = [ ''if:"[[ -d /nix ]]"'' ]; } # Integrate cleanly with Nix
-      { name = "spwhitt/nix-zsh-completions"; } # Nix shell completion
 
+    plugins = [
+      {
+        name = "completions-nix";
+        src = pkgs.nix-zsh-completions.src;
+      }
+      {
+        name = "zsh-nix-shell";
+        src = pkgs.zsh-nix-shell.src;
+      }
+      {
+        name = "nnn-quitcd";
+        src = pkgs.fetchFromGitHub {
+            owner = "jarun";
+            repo = "nnn";
+            rev = "efd5bc9db100d0489cfb3d982a69b04dacaff852";
+            sha256 = "sha256-A0XxC8/DNb2GuIxPVUiWNsfaq+UysVRYHG8fl/Iyaaw=";
+        };
+      }
     ];
   };
 

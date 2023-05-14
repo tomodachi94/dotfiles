@@ -16,7 +16,7 @@ in
   targets.genericLinux.enable = true;
   
   home.packages = [
-    # pkgs.home-manager
+    pkgs.coreutils # Duh
     pkgs.zsh # Shell
     pkgs.git # Version control
     pkgs.neovim # Text editor
@@ -24,6 +24,7 @@ in
     pkgs.exa # Better ls
     pkgs.ripgrep # Better grep
     pkgs.bat # Better cat
+    pkgs.renameutils # Do repetitive stuff faster
     # pkgs.nnn # File manager
     pkgs.starship # Shell prompt
     pkgs.gnome.gnome-terminal
@@ -41,8 +42,16 @@ in
     pkgs.obsidian
     pkgs.jot
 
+    # Process management
+    pkgs.lxqt.qps
+
+    # Recording
+    pkgs.kazam
+    pkgs.audacity
+
 	  # Development
 	  pkgs.direnv
+    pkgs.virtualbox
 
     # Specialized tools: FTB Wiki
     nur.repos.ftbwiki.ftb-rs

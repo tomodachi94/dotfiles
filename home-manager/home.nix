@@ -9,8 +9,8 @@ in
   home.username = "me";
   home.homeDirectory = "/home/me";
   home.sessionVariables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
+    EDITOR = "${pkgs.neovim}/bin/nvim";
+    VISUAL = "${pkgs.neovim}/bin/nvim";
   };
 
   targets.genericLinux.enable = true;

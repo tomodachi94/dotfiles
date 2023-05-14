@@ -10,5 +10,5 @@
   xdg.configFile."neofetch".source = ../neofetch;
   # xdg.configFile."nixpkgs".source = ../nixpkgs;
   xdg.configFile."readline".source = ../readline;
-  xdg.configFile."zsh".source = ../zsh;
+  home.file.".zsh".source = ../zsh;
 }

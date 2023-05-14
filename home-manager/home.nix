@@ -95,6 +95,8 @@ in
   # Let HM manage fonts
   fonts.fontconfig.enable = true;
 
+  i18n.inputMethod.enabled = "fcitx5";
+
   programs.dircolors.enable = true;
 
   # Setup default browser (Vivaldi)

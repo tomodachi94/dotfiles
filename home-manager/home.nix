@@ -26,7 +26,7 @@ in
     pkgs.bat # Better cat
     # pkgs.nnn # File manager
     pkgs.starship # Shell prompt
-    pkgs.kitty # Terminal
+    pkgs.gnome.gnome-terminal
     pkgs.atuin # Better shell history
 
     pkgs.nerdfonts # Monospaced font with icons

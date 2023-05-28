@@ -1,7 +1,7 @@
 { environment, config, pkgs, lib, ... }:
 
 let
-  nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") { inherit pkgs; };
+  # nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") { inherit pkgs; };
 in
 {
   imports = [ ./home_files.nix ./gtk.nix ./nix_nixpkgs.nix ./xdg.nix ./programs ];
@@ -58,7 +58,7 @@ in
     pkgs.blueman
 
     # Specialized tools: FTB Wiki
-    nur.repos.ftbwiki.ftb-rs
+    pkgs.nur.repos.ftbwiki.ftb-rs
 
     pkgs.eww
   ];

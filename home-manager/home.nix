@@ -38,7 +38,7 @@ in
 
     # Chat
     pkgs.discord
-    pkgs.element-desktop
+    pkgs.cinny-desktop
 
     # Notes
     pkgs.obsidian

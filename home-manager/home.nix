@@ -42,6 +42,7 @@ in
 
     # Notes
     pkgs.obsidian
+    pkgs.zotero
 
     # Process management
     pkgs.lxqt.qps

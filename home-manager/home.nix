@@ -42,7 +42,6 @@ in
 
     # Notes
     pkgs.obsidian
-    pkgs.jot
 
     # Process management
     pkgs.lxqt.qps

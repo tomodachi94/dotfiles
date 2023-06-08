@@ -17,6 +17,11 @@
       url = "github:nix-community/nur";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    tomodachi94 = {
+      url = "github:tomodachi94/nur-packages";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {self, nixpkgs, home-manager, nur, ...}@inputs:

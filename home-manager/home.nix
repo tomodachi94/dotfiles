@@ -61,6 +61,10 @@ in
     pkgs.nur.repos.ftbwiki.ftb-rs
 
     pkgs.eww
+
+    # For Git
+    # TODO: Migrate this to Home-Manager module
+    pkgs.git-credential-oauth
   ];
 
   # This value determines the Home Manager release that your

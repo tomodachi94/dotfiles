@@ -1,5 +1,6 @@
 [credential]
-	helper = store
+	helper = cache --timeout 14440 # four hours
+  helper = oauth
 [include]
 	path = ~/.git-identities
 [init]

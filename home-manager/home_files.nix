@@ -9,5 +9,6 @@
   xdg.configFile."neofetch".source = ../neofetch;
   # xdg.configFile."nixpkgs".source = ../nixpkgs;
   xdg.configFile."readline".source = ../readline;
-  home.file.".zsh".source = ../zsh;
+  home.file.".Xmodmap".source = ../xorg/Xmodmap;
+  home.file.".zsh".source = ../zsh/config;
 }

@@ -24,7 +24,7 @@
     };
   };
 
-  outputs = {self, nixpkgs, home-manager, nur, ...}@inputs:
+  outputs = {self, nixpkgs, home-manager, nur, tomodachi94, ...}@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -36,13 +36,13 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./home.nix
+          ./home-manager/home.nix
         ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
         extraSpecialArgs = {
-          inherit nur;
+          inherit nur tomodachi94;
         };
 
       };

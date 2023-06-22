@@ -22,9 +22,14 @@
       url = "github:tomodachi94/nur-packages";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixpkgs-ruby = {
+      url = "github:bobvanderlinden/nixpkgs-ruby";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = {self, nixpkgs, home-manager, nur, tomodachi94, ...}@inputs:
+  outputs = {self, nixpkgs, home-manager, nur, tomodachi94, nixpkgs-ruby, ...}@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -42,8 +47,13 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
         extraSpecialArgs = {
-          inherit nur tomodachi94;
+          inherit nur tomodachi94 nixpkgs-ruby;
         };
+
+
+      overlays = [
+        (import ./nixpkgs/overlays/nerdfonts.nix)
+      ];
 
       };
     };

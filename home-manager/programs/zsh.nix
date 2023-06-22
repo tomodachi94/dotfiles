@@ -1,5 +1,8 @@
 { environment, config, pkgs, lib, ... }:
 # Let's start migrating Zsh here
+let
+  zsh_home = ../../zsh;
+in
 {
   programs.zsh = {
     enable = true;
@@ -7,7 +10,14 @@
     enableCompletion = true;
     enableSyntaxHighlighting = true;
     autocd = true;
-    initExtra = ". ~/.zsh/init.zsh"; # TODO: This has things that haven't been migrated to Nix; we should finish that
+    initExtra = ''
+    setopt extendedglob
+
+    ${builtins.readFile ../../zsh/config/path.zsh}
+    ${builtins.readFile ../../zsh/config/plugins.zsh}
+    ${builtins.readFile ../../zsh/config/aliases.zsh}
+    ${builtins.readFile ../../zsh/config/functions/init.zsh}
+    ''; # TODO: This has things that haven't been migrated to Nix; we should finish that
     history = {
       ignoreSpace = true;
       ignoreDups = true;
@@ -22,15 +32,15 @@
       sl = "ls";
     };
 
-    plugins = [
+    plugins = [ /*
       {
         name = "nix-zsh-completions";
         src = "${pkgs.nix-zsh-completions}/share/zsh/site-functions";
       }
-      /* {
+      {
                    name = "nix-shell";
                    src = "${pkgs.zsh-nix-shell}/share/zsh/site-functions";
-                   } */
+                   }
       {
         name = "nnn-quitcd";
         file = "misc/quitcd/quitcd.bash_sh_zsh";
@@ -41,7 +51,7 @@
           sha256 = "sha256-A0XxC8/DNb2GuIxPVUiWNsfaq+UysVRYHG8fl/Iyaaw=";
         };
       }
-
+    */
     ];
   };
 }

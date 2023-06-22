@@ -15,3 +15,7 @@ fi
 if (( $+commands[cargo] )) then
 	PATH="$HOME/.cargo/bin:$PATH"
 fi
+
+if [[ -z $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh ]] then
+	source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+fi

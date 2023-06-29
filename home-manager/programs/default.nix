@@ -7,6 +7,7 @@
     ./gnome-terminal.nix
     ./helix.nix
     ./i3.nix
+    ./neovim.nix
     ./nnn.nix
     ./starship.nix
     ./zoxide.nix

@@ -13,10 +13,12 @@ in
     initExtra = ''
     setopt extendedglob
 
-    ${builtins.readFile ../../zsh/config/path.zsh}
-    ${builtins.readFile ../../zsh/config/plugins.zsh}
-    ${builtins.readFile ../../zsh/config/aliases.zsh}
-    ${builtins.readFile ../../zsh/config/functions/init.zsh}
+    #builtins.readFile ../../zsh/path.zsh}
+    #builtins.readFile ../../zsh/aliases.zsh}
+    #builtins.readFile ../../zsh/functions/init.zsh}
+
+	. ${pkgs.nix-zsh-completions}/share/zsh/site-functions/nix-zsh-completions.plugin.zsh
+	. ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh
     ''; # TODO: This has things that haven't been migrated to Nix; we should finish that
     history = {
       ignoreSpace = true;
@@ -31,27 +33,5 @@ in
       # Common typos
       sl = "ls";
     };
-
-    plugins = [ /*
-      {
-        name = "nix-zsh-completions";
-        src = "${pkgs.nix-zsh-completions}/share/zsh/site-functions";
-      }
-      {
-                   name = "nix-shell";
-                   src = "${pkgs.zsh-nix-shell}/share/zsh/site-functions";
-                   }
-      {
-        name = "nnn-quitcd";
-        file = "misc/quitcd/quitcd.bash_sh_zsh";
-        src = pkgs.fetchFromGitHub {
-          owner = "jarun";
-          repo = "nnn";
-          rev = "efd5bc9db100d0489cfb3d982a69b04dacaff852";
-          sha256 = "sha256-A0XxC8/DNb2GuIxPVUiWNsfaq+UysVRYHG8fl/Iyaaw=";
-        };
-      }
-    */
-    ];
   };
 }

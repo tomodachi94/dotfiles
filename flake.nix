@@ -51,9 +51,9 @@
         };
 
 
-      overlays = [
-        (import ./nixpkgs/overlays/nerdfonts.nix)
-      ];
+      # overlays = [
+      #  (import ./nixpkgs/overlays/nerdfonts.nix)
+      # ];
 
       };
     };

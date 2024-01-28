@@ -49,12 +49,23 @@
         extraSpecialArgs = {
           inherit nur tomodachi94 nixpkgs-ruby;
         };
+      };
+
 
 
       # overlays = [
       #  (import ./nixpkgs/overlays/nerdfonts.nix)
       # ];
 
+      homeConfigurations.mac = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+
+        modules = [
+          ./home-manager/home.nix
+        ];
+        extraSpecialArgs = {
+          inherit nur tomodachi94 nixpkgs-ruby;
+        };
       };
     };
 }

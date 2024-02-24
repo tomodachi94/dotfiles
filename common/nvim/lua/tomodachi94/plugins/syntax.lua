@@ -15,7 +15,6 @@ function M.config()
 		ensure_installed = {
 			"lua",
 			"vim",
-			"help",
 			"json",
 			"bash",
 			"rust",

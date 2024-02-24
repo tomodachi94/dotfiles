@@ -16,3 +16,6 @@ git/credentials
 
 # Package-related things
 nvim/lazy-lock.json
+
+# direnv
+.direnv/

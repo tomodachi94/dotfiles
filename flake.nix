@@ -29,7 +29,7 @@
     };
   };
 
-  outputs = {self, nixpkgs, home-manager, nur, tomodachi94, nixpkgs-ruby, ...}@inputs:
+  outputs = { nixpkgs, home-manager, nur, tomodachi94, nixpkgs-ruby, ...}:
     let
       forAllSystems = function:
       nixpkgs.lib.genAttrs [

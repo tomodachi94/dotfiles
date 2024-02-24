@@ -72,7 +72,7 @@ local Q = {
 }
 
 function Q.config()
-	require("trouble").setup({})
+	require("trouble").setup {}
 end
 
 return { M, N, O, P, Q }

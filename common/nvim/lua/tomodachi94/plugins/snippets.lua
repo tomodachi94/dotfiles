@@ -13,7 +13,7 @@ local function luasnip_tab()
 end
 
 function M.config()
-	require("luasnip.loaders.from_vscode").lazy_load({ paths = { "../vscode-snippets" } })
+	require("luasnip.loaders.from_vscode").lazy_load { paths = { "../vscode-snippets" } }
 	vim.keymap.set({ "i", "s" }, "<Tab>", luasnip_tab, { silent = true })
 end
 

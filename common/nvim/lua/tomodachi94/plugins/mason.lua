@@ -3,7 +3,7 @@ local N = { "williamboman/mason-lspconfig.nvim", config = true }
 local O = { "WhoIsSethDaniel/mason-tool-installer.nvim" }
 
 function M.config()
-	require("mason").setup({
+	require("mason").setup {
 		ui = {
 			icons = {
 				package_installed = "✓",
@@ -11,11 +11,11 @@ function M.config()
 				package_uninstalled = "✗",
 			},
 		},
-	})
+	}
 end
 
 function N.config()
-	require("mason-tool-installer").setup({
+	require("mason-tool-installer").setup {
 		ensure_installed = {
 			"stylua",
 			"selene",
@@ -24,7 +24,7 @@ function N.config()
 			"ruff",
 			"mypy",
 		},
-	})
+	}
 end
 
 return { M, N, O }

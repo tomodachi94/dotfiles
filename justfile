@@ -8,4 +8,4 @@ linux-x86_64:
 
 format:
   stylua ./common/nvim/lua ./common/nvim/init.lua
-  deadnix -eq ./common ./nixos ./darwin
+  deadnix -eq ./common ./nixos ./darwin ./flake.nix

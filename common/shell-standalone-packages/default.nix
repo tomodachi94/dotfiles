@@ -4,7 +4,7 @@
     pkgs.coreutils # Duh
     pkgs.zsh # Shell
     pkgs.neovim # Text editor
-    pkgs.exa # Better ls
+    pkgs.eza # Better ls
     pkgs.fd # Find stuff
     pkgs.ripgrep # Better grep
     pkgs.renameutils # Do repetitive stuff faster

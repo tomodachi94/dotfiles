@@ -31,9 +31,14 @@
 
   outputs = {self, nixpkgs, home-manager, nur, tomodachi94, nixpkgs-ruby, ...}@inputs:
     let
-      system = "aarch64-darwin";
-      pkgs = nixpkgs.legacyPackages.${system};
-      inherit nur;
+      forAllSystems = function:
+      nixpkgs.lib.genAttrs [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ] (system: function nixpkgs.legacyPackages.${system});
+  inherit nur;
     in {
       homeConfigurations.darwin-aarch64 = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
@@ -68,5 +73,11 @@
           inherit nur tomodachi94 nixpkgs-ruby;
         };
       };
+
+      devShells = forAllSystems (pkgs: {
+        default = pkgs.mkShell {
+            packages = [ pkgs.home-manager pkgs.just pkgs.stylua pkgs.deadnix ];
+          };
+        }); 
     };
 }

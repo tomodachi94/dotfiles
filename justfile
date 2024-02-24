@@ -1,24 +1,11 @@
 #!/usr/bin/env just --justfile
 
-set shell := ["bash", "-c"]
-set export
+darwin-aarch64:
+  home-manager switch --flake .#darwin-aarch64
 
-python_bin := "/usr/bin/env python3"
-pip_bin := python_bin + " -m pip"
+linux-x86_64:
+  home-manager switch --flake .#darwin-aarch64
 
-default: install
-
-install:
-	nix-shell --run "dotter deploy"
-
-# TODO: Migrate this to Nix
-nvim-setup-providers: install
-	echo "###### Install Python provider ######"
-	$pip_bin install pynvim
-	echo "###### Install Ruby provider ######"
-	echo "If you don't have superuser privileges, press return three times upon being prompted for the password."
-	-sudo gem install neovim
-	echo "###### Install Node.js provider ######"
-	npm install -g neovim
-	echo "###### Install Perl provider ######"
-	cpan -n "Ext::Neovim"
+format:
+  stylua ./common/nvim/lua ./common/nvim/init.lua
+  deadnix -eq ./common ./nixos ./darwin

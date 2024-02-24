@@ -22,14 +22,9 @@
       url = "github:tomodachi94/nur-packages";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixpkgs-ruby = {
-      url = "github:bobvanderlinden/nixpkgs-ruby";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { nixpkgs, home-manager, nur, tomodachi94, nixpkgs-ruby, ...}:
+  outputs = { nixpkgs, home-manager, nur, tomodachi94, ...}:
     let
       forAllSystems = function:
       nixpkgs.lib.genAttrs [
@@ -53,7 +48,7 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
         extraSpecialArgs = {
-          inherit nur tomodachi94 nixpkgs-ruby;
+          inherit nur tomodachi94;
         };
       };
 
@@ -70,7 +65,7 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
         extraSpecialArgs = {
-          inherit nur tomodachi94 nixpkgs-ruby;
+          inherit nur tomodachi94;
         };
       };
 

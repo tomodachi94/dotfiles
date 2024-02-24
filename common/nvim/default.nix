@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, xdg, ... }:
 {
   home.sessionVariables = {
     EDITOR = "${pkgs.neovim}/bin/nvim";
     VISUAL = "${pkgs.neovim}/bin/nvim";
   };
+  xdg.configFile."nvim".source = ./.;
 }

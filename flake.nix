@@ -31,17 +31,18 @@
 
   outputs = {self, nixpkgs, home-manager, nur, tomodachi94, nixpkgs-ruby, ...}@inputs:
     let
-      system = "x86_64-linux";
+      system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
       inherit nur;
     in {
-      homeConfigurations.me = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      homeConfigurations.darwin-aarch64 = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./home-manager/home.nix
+          ./common
+          ./darwin
         ];
 
         # Optionally use extraSpecialArgs
@@ -51,18 +52,18 @@
         };
       };
 
+      homeConfigurations.nixos-x86_64 = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-
-      # overlays = [
-      #  (import ./nixpkgs/overlays/nerdfonts.nix)
-      # ];
-
-      homeConfigurations.mac = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-
+        # Specify your home configuration modules here, for example,
+        # the path to your home.nix.
         modules = [
-          ./home-manager/home.nix
+          ./common
+          ./nixos
         ];
+
+        # Optionally use extraSpecialArgs
+        # to pass through arguments to home.nix
         extraSpecialArgs = {
           inherit nur tomodachi94 nixpkgs-ruby;
         };

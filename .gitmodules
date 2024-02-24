@@ -2,10 +2,6 @@
 	path = micro/plugins/editorconfig
 	url = https://github.com/10sr/editorconfig-micro
 	ignore = dirty
-[submodule "emacs/emacs.d"]
-	path = emacs/emacs.d
-	url = https://github.com/syl20bnr/spacemacs
-	ignore = dirty
 [submodule "zsh/zplug"]
 	path = zsh/zplug
 	url = https://github.com/zplug/zplug

@@ -1,4 +1,4 @@
-{ environment, config, pkgs, lib, nur, ... }:
+{ config, nur, ... }:
 {
   nixpkgs = {
     overlays = [

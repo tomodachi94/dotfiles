@@ -1,4 +1,4 @@
-{ environment, config, pkgs, lib, tomodachi94, ... }:
+{ pkgs, ... }:
 {
   programs.git = {
     enable = true;

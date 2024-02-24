@@ -1,4 +1,4 @@
-{ environment, config, pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   home.packages = [
     pkgs.coreutils # Duh

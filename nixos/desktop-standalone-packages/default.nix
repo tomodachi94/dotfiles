@@ -1,4 +1,4 @@
-{ environment, config, pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   home.packages = [
     pkgs.lxqt.qps
@@ -9,5 +9,5 @@
     pkgs.gnome.gnome-terminal # Terminal
     pkgs.vivaldi # Web browser
     pkgs.zotero
-  ]
+  ];
 }

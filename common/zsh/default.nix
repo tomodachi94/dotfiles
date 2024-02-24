@@ -1,4 +1,4 @@
-{ environment, config, pkgs, lib, ... }:
+{ pkgs, ... }:
 # Let's start migrating Zsh here
 {
   programs.zsh = {

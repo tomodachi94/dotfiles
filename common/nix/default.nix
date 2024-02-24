@@ -1,4 +1,4 @@
-{ environment, config, pkgs, lib, ... }:
+{ pkgs, lib, ... }:
 {
   nix = {
     package = lib.mkDefault pkgs.nix;

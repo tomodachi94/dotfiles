@@ -1,4 +1,4 @@
-{ environment, config, pkgs, lib, ... }:
+{ ... }:
 {
   programs.gnome-terminal = {
     enable = true;

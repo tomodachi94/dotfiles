@@ -17,4 +17,6 @@ function M.config()
 	vim.keymap.set({ "i", "s" }, "<Tab>", luasnip_tab, { silent = true })
 end
 
-return { M }
+-- return { M }
+-- FIXME: disabled due to fullscreen error
+return { }

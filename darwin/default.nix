@@ -3,5 +3,6 @@
   imports = [
     mac-app-util.homeManagerModules.default
     ./desktop-standalone-packages
+    ./zsh
   ];
 }

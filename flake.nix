@@ -22,9 +22,14 @@
       url = "github:tomodachi94/nur-packages";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    mac-app-util = {
+      url = "github:hraban/mac-app-util";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nur, tomodachi94, ...}:
+  outputs = { nixpkgs, home-manager, nur, tomodachi94, mac-app-util, ...}:
     let
       forAllSystems = function:
       nixpkgs.lib.genAttrs [
@@ -48,7 +53,7 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
         extraSpecialArgs = {
-          inherit nur tomodachi94;
+          inherit nur tomodachi94 mac-app-util;
         };
       };
 
@@ -71,7 +76,7 @@
 
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShell {
-            packages = [ pkgs.home-manager pkgs.just pkgs.stylua pkgs.deadnix ];
+            packages = [ pkgs.home-manager pkgs.just pkgs.stylua pkgs.deadnix pkgs.selene ];
           };
         }); 
     };

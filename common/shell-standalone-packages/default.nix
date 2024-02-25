@@ -8,6 +8,7 @@
     pkgs.fd # Find stuff
     pkgs.ripgrep # Better grep
     pkgs.renameutils # Do repetitive stuff faster
+    pkgs.github-cli
     # pkgs.nnn # File manager
     pkgs.starship # Shell prompt
     pkgs.atuin # Better shell history

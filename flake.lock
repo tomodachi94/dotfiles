@@ -155,11 +155,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1708563280,
-        "narHash": "sha256-SJtt/ds/BqZZ7UCMILEODXHzT1bOM+UrvbSTAH0UOuo=",
+        "lastModified": 1709017645,
+        "narHash": "sha256-KP0VE+nrSix3/Cl6Uzfef9L4ODD54b/GQmvWFTi32DU=",
         "owner": "tomodachi94",
         "repo": "nur-packages",
-        "rev": "2d7555b5f52e387a82466349e3b767a1aca4a6b1",
+        "rev": "84dd3cd3e568775028260d2af13aadd665d1f9de",
         "type": "github"
       },
       "original": {

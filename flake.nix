@@ -74,6 +74,16 @@
         };
       };
 
+      nixosConfigurations = {
+        hp-laptop-df0023 = nixpkgs.lib.nixosSystem {
+          specialArgs = { };
+          modules = [
+		    home-manager.nixosModules.home-manager
+		    ./hosts/hp-laptop-df0023
+          ];
+        };
+      };
+
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShell {
             packages = [ pkgs.home-manager pkgs.just pkgs.stylua pkgs.deadnix pkgs.selene ];

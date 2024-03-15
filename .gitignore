@@ -19,3 +19,6 @@ nvim/lazy-lock.json
 
 # direnv
 .direnv/
+
+# nix
+result

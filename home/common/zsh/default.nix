@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 # Let's start migrating Zsh here
 {
   imports = [ ./aliases.nix ];

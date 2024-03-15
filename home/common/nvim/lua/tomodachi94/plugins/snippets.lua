@@ -19,4 +19,4 @@ end
 
 -- return { M }
 -- FIXME: disabled due to fullscreen error
-return { }
+return {}

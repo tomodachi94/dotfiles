@@ -1,7 +1,7 @@
 { pkgs, ... }:
 # Let's start migrating Zsh here
 {
-  imports = [ ./aliases.nix ./plugins.nix ];
+  imports = [ ./aliases.nix ];
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;

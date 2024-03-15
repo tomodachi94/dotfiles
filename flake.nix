@@ -46,8 +46,8 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./common
-          ./darwin
+          ./home/common
+          ./home/darwin
         ];
 
         # Optionally use extraSpecialArgs
@@ -63,8 +63,8 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./common
-          ./nixos
+          ./home/common
+          ./home/nixos
         ];
 
         # Optionally use extraSpecialArgs

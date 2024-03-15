@@ -54,7 +54,7 @@ bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'm
 exec --no-startup-id dunst -config ~/.config/dunst/config
 
 # Use feh to set the background
-exec --no-startup-id feh --bg-scale ~/.config/i3/wallpaper.png
+exec --no-startup-id feh --bg-scale $wallpaper_path
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -63,7 +63,7 @@ floating_modifier $mod
 bindsym $mod+Return exec gnome-terminal
 
 # start the browser
-bindsym $mod+b exec vivaldi
+bindsym $mod+b exec librewolf
 
 # kill focused window
 bindsym $mod+Shift+q kill

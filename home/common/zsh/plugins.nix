@@ -1,5 +1,6 @@
+{ pkgs, ... }:
 {
-  plugins = [
+  programs.zsh.plugins = [
   {
     name = "nix-zsh-completions";
     src = "${pkgs.nix-zsh-completions}/share/zsh/site-functions";

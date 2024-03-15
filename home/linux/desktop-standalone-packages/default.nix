@@ -7,7 +7,7 @@
     pkgs.blueman
     pkgs.eww
     pkgs.gnome.gnome-terminal # Terminal
-    pkgs.vivaldi # Web browser
+    pkgs.librewolf # Web browser
     pkgs.zotero
   ];
 }

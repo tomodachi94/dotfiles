@@ -1,6 +1,6 @@
-local M = { "williamboman/mason.nvim" }
-local N = { "williamboman/mason-lspconfig.nvim", config = true }
-local O = { "WhoIsSethDaniel/mason-tool-installer.nvim" }
+local M = { "williamboman/mason.nvim", enabled = false }
+local N = { "williamboman/mason-lspconfig.nvim", enabled = false, config = true }
+local O = { "WhoIsSethDaniel/mason-tool-installer.nvim", enabled = false }
 
 function M.config()
 	require("mason").setup {

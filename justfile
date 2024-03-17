@@ -1,5 +1,7 @@
 #!/usr/bin/env just --justfile
 
+git_dir  := `git rev-parse --show-toplevel`
+
 home:
   #!/usr/bin/env sh
   OS_NAME="$(uname -s | tr '[:upper:]' '[:lower:]')"
@@ -8,6 +10,9 @@ home:
 
 system:
   sudo nixos-rebuild switch --flake ".#$(hostname)"
+
+repl:
+  nix repl --expr 'builtins.getFlake "{{git_dir}}"'
 
 format:
   stylua $(git ls-files '*.lua')

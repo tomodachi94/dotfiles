@@ -16,5 +16,9 @@
 	};
     # Enable the i3 window manager.
     windowManager.i3.enable = true;
+	desktopManager.runXdgAutostartIfNone = true;
+
   };
+  # picom is a compositor, enabling us to do things like have a transparent window
+  services.picom.enable = true;
 }

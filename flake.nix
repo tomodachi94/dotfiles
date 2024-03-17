@@ -57,7 +57,7 @@
         };
       };
 
-      homeConfigurations.nixos-x86_64 = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.linux-x86_64 = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
         # Specify your home configuration modules here, for example,
@@ -82,11 +82,19 @@
 		    ./hosts/hp-laptop-df0023
           ];
         };
+        hp-laptop-df0023-iso = nixpkgs.lib.nixosSystem {
+          specialArgs = { };
+          modules = [
+            (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
+		    home-manager.nixosModules.home-manager
+		    ./hosts/hp-laptop-df0023
+          ];
+        };
       };
 
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShell {
-            packages = [ pkgs.home-manager pkgs.just pkgs.stylua pkgs.deadnix pkgs.selene ];
+            packages = [ pkgs.home-manager pkgs.nixos-rebuild pkgs.just pkgs.stylua pkgs.deadnix pkgs.selene ];
           };
         }); 
     };

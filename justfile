@@ -1,10 +1,13 @@
 #!/usr/bin/env just --justfile
 
-darwin-aarch64:
-  home-manager switch --flake .#darwin-aarch64
+home:
+  #!/usr/bin/env sh
+  OS_NAME="$(uname -s | tr '[:upper:]' '[:lower:]')"
+  OS_ARCH="$(uname -m)"
+  home-manager switch --flake ".#$OS_NAME-$OS_ARCH"
 
-linux-x86_64:
-  home-manager switch --flake .#nixos-x86_64 -b backup
+system:
+  sudo nixos-rebuild switch --flake ".#$(hostname)"
 
 format:
   stylua $(git ls-files '*.lua')

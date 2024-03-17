@@ -64,7 +64,7 @@
         # the path to your home.nix.
         modules = [
           ./home/common
-          ./home/nixos
+          ./home/linux
         ];
 
         # Optionally use extraSpecialArgs

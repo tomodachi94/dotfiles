@@ -2,6 +2,6 @@
   home.file.".Xmodmap".source = ./Xmodmap;
 
   xresources.properties = {
-    "Xft.dpi" = 115;
+    "Xft.dpi" = 122;
   };
 }

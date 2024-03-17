@@ -12,6 +12,7 @@
     ./kitty
     ./neofetch
     ./vivaldi
+	./xdg
     ./xorg
   ];
 }

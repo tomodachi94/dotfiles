@@ -1,6 +1,7 @@
 {
   imports = [ 
     ./albert
+	./blueman
     ./desktop-standalone-packages
     ./dunst
 	./fun
@@ -11,7 +12,7 @@
     ./i3status
     ./kitty
     ./neofetch
-    ./vivaldi
+    # ./vivaldi
 	./xdg
     ./xorg
   ];

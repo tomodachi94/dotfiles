@@ -1,0 +1,3 @@
+{
+  imports = [ ./plugins/lsp.nix ];
+}

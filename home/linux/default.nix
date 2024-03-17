@@ -3,6 +3,7 @@
     ./albert
     ./desktop-standalone-packages
     ./dunst
+	./fun
     ./gnome-terminal
     ./gtk
     ./home-manager

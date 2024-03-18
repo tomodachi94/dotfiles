@@ -1,5 +1,6 @@
 {
   imports = [
+    ./battery
     ./bluetooth
     ./bootloader
 	./filesystems

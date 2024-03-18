@@ -4,6 +4,7 @@
 	./blueman
     ./desktop-standalone-packages
     ./dunst
+	./fcitx5
 	./fun
     ./gnome-terminal
     ./gtk

@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     lua-language-server
 	rust-analyzer
-	rnix-lsp
+	nil
 	ruff
 	stylua
 	selene

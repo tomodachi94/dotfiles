@@ -19,7 +19,7 @@ function M.config()
 	require("lspconfig")["rust_analyzer"].setup {
 		capabilities = capabilities,
 	}
-	require("lspconfig")["rnix"].setup {
+	require("lspconfig")["nil_ls"].setup {
 		capabilities = capabilities,
 	}
 

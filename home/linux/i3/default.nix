@@ -1,14 +1,26 @@
 { pkgs, xdg, ... }:
 {
-  xdg.configFile."i3/config".text = ''
-# avoid polluting $HOME with symlinks by setting some paths at the config build stage
+  xdg.configFile."i3/config" = {
+    text = ''
+## start manual config ##
 set $wallpaper_path "${./wallpaper.png}"
 include ${./all.config}
 include ${./background.config}
 include ${./programs.config}
 include ${./keybinds.config}
 include ${./bar.config}
+## end manual config ##
   '';
+    onChange = ''
+	  if [ ${pkgs.xorg.xprop}/bin/xprop -root | ${pkgs.gnugrep} i3 ]; then
+	    noteEcho "Reloading i3 to apply changes"
+	    ${pkgs.i3}/bin/i3-msg reload
+	  else
+	    warnEcho "i3 not running, skipping reload..."
+	  fi
+	'';
+  };
+
   home.file.".background-image".source = ./wallpaper.png;
   # For cleanliness, this contains any packages that are exclusively used in this configuration.
   home.packages = with pkgs; [

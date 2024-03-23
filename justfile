@@ -2,14 +2,14 @@
 
 git_dir  := `git rev-parse --show-toplevel`
 
-home:
+home hm_args="":
   #!/usr/bin/env sh
   OS_NAME="$(uname -s | tr '[:upper:]' '[:lower:]')"
   OS_ARCH="$(uname -m)"
-  home-manager switch --flake ".#$OS_NAME-$OS_ARCH"
+  home-manager switch --flake ".#$OS_NAME-$OS_ARCH" {{hm_args}}
 
-system:
-  sudo nixos-rebuild switch --flake ".#$(hostname)"
+system nixos_args="":
+  sudo nixos-rebuild switch --flake ".#$(hostname)" {{nixos_args}}
 
 repl:
   nix repl --expr 'builtins.getFlake "{{git_dir}}"'

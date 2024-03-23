@@ -2,6 +2,7 @@
   imports = [ 
     ./albert
 	./blueman
+	./copyq
     ./desktop-standalone-packages
     ./dunst
 	./fcitx5

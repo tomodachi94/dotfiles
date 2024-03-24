@@ -1,0 +1,29 @@
+#!/usr/bin/env zsh
+
+# Function to organize files by extension
+organize_files() {
+ local dir="$1"
+ local no_ext_dir="${dir}/no_extension"
+
+ # Create a directory for files without an extension
+ mkdir -p "$no_ext_dir"
+
+ # Iterate over all files in the directory
+ for file in "$dir"/*; do
+    # Check if the file has an extension
+    if [[ -f "$file" && "$file" != *.* ]]; then
+      # Move files without an extension to the no_extension directory
+      mv "$file" "$no_ext_dir"
+    elif [[ -f "$file" ]]; then
+      # Extract the file extension
+      local ext="${file##*.}"
+      local target_dir="${dir}/$ext"
+
+      # Create a directory for the file extension if it doesn't exist
+      mkdir -p "$target_dir"
+
+      # Move the file to the corresponding directory
+      mv "$file" "$target_dir"
+    fi
+ done
+}

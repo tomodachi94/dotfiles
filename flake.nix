@@ -104,7 +104,15 @@
 
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShell {
-          packages = [ pkgs.home-manager pkgs.nixos-rebuild pkgs.just pkgs.stylua pkgs.deadnix pkgs.nixpkgs-fmt pkgs.selene ];
+          packages = with pkgs; [ 
+		    nixos-rebuild
+			just
+			stylua
+			deadnix
+			nixpkgs-fmt
+			selene
+            home-manager.packages.${system}.default 
+		 ];
         };
       });
     };

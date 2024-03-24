@@ -93,6 +93,29 @@
         "type": "github"
       }
     },
+    "nix-craftos-pc": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1711222739,
+        "narHash": "sha256-pCs74ovp4xj3OhLS7nuLY+xAsjevHHTM3vKnzn3kGu0=",
+        "owner": "tomodachi94",
+        "repo": "nix-craftos-pc",
+        "rev": "a5aabc238d400d3a11edd187d0446c5ee6646381",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tomodachi94",
+        "repo": "nix-craftos-pc",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1710701596,
@@ -128,6 +151,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "mac-app-util": "mac-app-util",
+        "nix-craftos-pc": "nix-craftos-pc",
         "nixpkgs": "nixpkgs",
         "nur": "nur",
         "tomodachi94": "tomodachi94"

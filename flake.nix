@@ -27,9 +27,15 @@
       url = "github:hraban/mac-app-util";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-craftos-pc = {
+	  url = "github:tomodachi94/nix-craftos-pc";
+	  inputs.nixpkgs.follows = "nixpkgs";
+	  inputs.home-manager.follows = "home-manager";
+	};
   };
 
-  outputs = { nixpkgs, home-manager, nur, tomodachi94, mac-app-util, ...}:
+  outputs = { nixpkgs, home-manager, nur, tomodachi94, mac-app-util, nix-craftos-pc, ...}:
     let
       forAllSystems = function:
       nixpkgs.lib.genAttrs [
@@ -63,6 +69,8 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
+		  nix-craftos-pc.homeManagerModules.default
+		  # ./home-modules/craftos-pc
           ./home/common
           ./home/linux
         ];
@@ -94,7 +102,7 @@
 
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShell {
-            packages = [ pkgs.home-manager pkgs.nixos-rebuild pkgs.just pkgs.stylua pkgs.deadnix pkgs.selene ];
+            packages = [ pkgs.home-manager pkgs.nixos-rebuild pkgs.just pkgs.stylua pkgs.deadnix pkgs.nixpkgs-fmt pkgs.selene ];
           };
         }); 
     };

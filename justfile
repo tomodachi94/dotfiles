@@ -11,6 +11,14 @@ home hm_args="":
 system nixos_args="":
   sudo nixos-rebuild switch --flake ".#$(hostname)" {{nixos_args}}
 
+update input_name="":
+  #!/usr/bin/env sh
+  if [ -n "{{input_name}}" ]; then
+    nix flake lock --update-input "{{input_name}}"
+  else
+    nix flake lock
+  fi
+
 repl:
   nix repl --expr 'builtins.getFlake "{{git_dir}}"'
 

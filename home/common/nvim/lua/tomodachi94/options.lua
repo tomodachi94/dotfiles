@@ -13,6 +13,8 @@ vim.opt.shortmess = ""
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+vim.opt.clipboard:append { "unnamedplus" }
+
 --Hide the 'How to disable mouse' prompt in the right-click dialog
 vim.cmd("aunmenu PopUp.How-to\\ disable\\ mouse")
 vim.cmd("aunmenu PopUp.-1-")

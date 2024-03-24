@@ -10,11 +10,11 @@
 
   boot.initrd.availableKernelModules = [
     "xhci_pci"
-	"ahci"
-	"nvme"
-	"usbhid"
-	"usb_storage"
-	"sd_mod"
+    "ahci"
+    "nvme"
+    "usbhid"
+    "usb_storage"
+    "sd_mod"
   ];
 
   boot.initrd.kernelModules = [ ];
@@ -23,7 +23,7 @@
   ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = { 
+  fileSystems."/" = {
     device = "/dev/disk/by-uuid/89365f33-4219-4b4c-ba52-730aecfb9a23";
     fsType = "btrfs";
   };

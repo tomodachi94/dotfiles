@@ -3,10 +3,10 @@
   xdg = {
     userDirs = {
       enable = true;
-	};
-	mimeApps = {
-	  enable = true;
-	};
-	configFile."user-dirs.locale".text = "en_US";
+    };
+    mimeApps = {
+      enable = true;
+    };
+    configFile."user-dirs.locale".text = "en_US";
   };
 }

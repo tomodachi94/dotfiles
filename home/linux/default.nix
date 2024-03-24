@@ -1,12 +1,12 @@
 {
-  imports = [ 
+  imports = [
     ./albert
-	./blueman
-	./copyq
+    ./blueman
+    ./copyq
     ./desktop-standalone-packages
     ./dunst
-	./fcitx5
-	./fun
+    ./fcitx5
+    ./fun
     ./gnome-terminal
     ./gtk
     ./home-manager
@@ -15,7 +15,7 @@
     ./kitty
     ./neofetch
     # ./vivaldi
-	./xdg
+    ./xdg
     ./xorg
   ];
 }

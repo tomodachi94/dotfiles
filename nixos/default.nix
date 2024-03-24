@@ -3,8 +3,8 @@
     ./battery
     ./bluetooth
     ./bootloader
-	./filesystems
-	./graphics
+    ./filesystems
+    ./graphics
     ./locale
     ./networking
     ./nix

@@ -5,18 +5,18 @@
     enable = true;
 
     # Enable the LightDM desktop manager.
-	displayManager.defaultSession = "none+i3";
-	displayManager.lightdm = {
-	  enable = true;
-	  # TODO: change wallpaper
-	  greeters.slick = {
+    displayManager.defaultSession = "none+i3";
+    displayManager.lightdm = {
+      enable = true;
+      # TODO: change wallpaper
+      greeters.slick = {
         enable = true;
-		extraConfig = ''user-background = false'';
-	  };
-	};
+        extraConfig = ''user-background = false'';
+      };
+    };
     # Enable the i3 window manager.
     windowManager.i3.enable = true;
-	desktopManager.runXdgAutostartIfNone = true;
+    desktopManager.runXdgAutostartIfNone = true;
 
   };
   # picom is a compositor, enabling us to do things like have a transparent window

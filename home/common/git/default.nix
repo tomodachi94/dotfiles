@@ -46,10 +46,10 @@
   };
 
   programs.git.lfs = {
-      enable = true;
+    enable = true;
   };
 
   programs.git-credential-oauth = {
-      enable = true;
+    enable = true;
   };
 }

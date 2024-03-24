@@ -29,23 +29,25 @@
     };
 
     nix-craftos-pc = {
-	  url = "github:tomodachi94/nix-craftos-pc";
-	  inputs.nixpkgs.follows = "nixpkgs";
-	  inputs.home-manager.follows = "home-manager";
-	};
+      url = "github:tomodachi94/nix-craftos-pc";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nur, tomodachi94, mac-app-util, nix-craftos-pc, ...}:
+  outputs = { nixpkgs, home-manager, nur, tomodachi94, mac-app-util, nix-craftos-pc, ... }:
     let
       forAllSystems = function:
-      nixpkgs.lib.genAttrs [
-        "x86_64-linux"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "aarch64-darwin"
-      ] (system: function nixpkgs.legacyPackages.${system});
-  inherit nur;
-    in {
+        nixpkgs.lib.genAttrs [
+          "x86_64-linux"
+          "aarch64-linux"
+          "x86_64-darwin"
+          "aarch64-darwin"
+        ]
+          (system: function nixpkgs.legacyPackages.${system});
+      inherit nur;
+    in
+    {
       homeConfigurations.darwin-aarch64 = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
 
@@ -69,8 +71,8 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-		  nix-craftos-pc.homeManagerModules.default
-		  # ./home-modules/craftos-pc
+          nix-craftos-pc.homeManagerModules.default
+          # ./home-modules/craftos-pc
           ./home/common
           ./home/linux
         ];
@@ -86,24 +88,24 @@
         hp-laptop-df0023 = nixpkgs.lib.nixosSystem {
           specialArgs = { };
           modules = [
-		    home-manager.nixosModules.home-manager
-		    ./hosts/hp-laptop-df0023
+            home-manager.nixosModules.home-manager
+            ./hosts/hp-laptop-df0023
           ];
         };
         hp-laptop-df0023-iso = nixpkgs.lib.nixosSystem {
           specialArgs = { };
           modules = [
             (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
-		    home-manager.nixosModules.home-manager
-		    ./hosts/hp-laptop-df0023
+            home-manager.nixosModules.home-manager
+            ./hosts/hp-laptop-df0023
           ];
         };
       };
 
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShell {
-            packages = [ pkgs.home-manager pkgs.nixos-rebuild pkgs.just pkgs.stylua pkgs.deadnix pkgs.nixpkgs-fmt pkgs.selene ];
-          };
-        }); 
+          packages = [ pkgs.home-manager pkgs.nixos-rebuild pkgs.just pkgs.stylua pkgs.deadnix pkgs.nixpkgs-fmt pkgs.selene ];
+        };
+      });
     };
 }

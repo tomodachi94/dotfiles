@@ -6,6 +6,10 @@
       /* {
         path = ../../git/config;
       } */
+	  {
+        path = "~/dotfiles/.gitconfig-meta";
+		condition = "gitdir:~/dotfiles";
+	  }
       {
         path = "~/.git-identities";
       }

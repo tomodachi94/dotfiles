@@ -1,0 +1,7 @@
+# This file contains meta-configuration for developing with this repository.
+# Feel free to replace this with your own information.
+# Git is setup to include this file if the current Git directory is ~/dotfiles.
+# All other Git configuration should go elsewhere.
+[user]
+	name = Tomo
+	email = 68489118+Tomodachi94@users.noreply.github.com

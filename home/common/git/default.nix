@@ -31,6 +31,10 @@
       color = {
         ui = "auto";
       };
+	  diff = {
+        algorithm = "histogram";
+		tool = "${pkgs.neovim}/bin/nvim -d";
+	  };
       help = {
         autocorrect = 20;
       };
@@ -39,6 +43,31 @@
           insteadOf = "git://github.com";
         };
       };
+	  commit = {
+        verbose = true;
+	  };
+	  push = {
+        default = "current";
+	  };
+	  pull = {
+        rebase = true;
+	  };
+	  merge = {
+        conflictstyle = "zdiff3";
+	  };
+	  rebase = {
+        autosquash = true;
+		autostash = true;
+	  };
+	  transfer = {
+	    fsckobjects = true;
+      };
+      fetch = {
+	    fsckobjects = true;
+	  };
+      receive = {
+	    fsckObjects = true;
+	  };
       credential = {
         helper = [ "cache --timeout 14440" ];
       };

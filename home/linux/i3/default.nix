@@ -25,14 +25,12 @@
   # For cleanliness, this contains any packages that are exclusively used in this configuration.
   home.packages = with pkgs; [
     xss-lock
-    networkmanagerapplet
     brightnessctl
     lightlocker
     dbus
     pulseaudioFull
     xclip
     scrot
-    dunst
     feh
     dmenu
   ];

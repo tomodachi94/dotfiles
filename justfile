@@ -8,14 +8,8 @@ configure_git:
 
 develop: configure_git
 
-home hm_args="":
-  #!/usr/bin/env sh
-  OS_NAME="$(uname -s | tr '[:upper:]' '[:lower:]')"
-  OS_ARCH="$(uname -m)"
-  home-manager switch --flake ".#$OS_NAME-$OS_ARCH" {{hm_args}}
-
-system nixos_args="":
-  sudo nixos-rebuild switch --flake ".#$(hostname)" {{nixos_args}}
+build args="":
+  sudo nixos-rebuild switch --flake ".#$(hostname)" {{args}}
 
 update input_name="":
   #!/usr/bin/env sh
@@ -24,6 +18,10 @@ update input_name="":
   else
     nix flake lock
   fi
+
+# aliases for legacy habits
+home: build
+system: build
 
 repl:
   nix repl --expr 'builtins.getFlake "{{git_dir}}"'

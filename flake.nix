@@ -46,6 +46,17 @@
         ]
           (system: function nixpkgs.legacyPackages.${system});
       inherit nur;
+
+	  bases.hp-laptop-df0023 = [
+	    home-manager.nixosModules.home-manager
+        ./hosts/hp-laptop-df0023
+        {
+          home-manager.users.me = { pkgs, ... }: {
+            imports = [ ./home/common ./home/linux ];
+          };
+        }
+      ];
+
     in
     {
       homeConfigurations.darwin-aarch64 = home-manager.lib.homeManagerConfiguration {
@@ -65,40 +76,14 @@
         };
       };
 
-      homeConfigurations.linux-x86_64 = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [
-          nix-craftos-pc.homeManagerModules.default
-          # ./home-modules/craftos-pc
-          ./home/common
-          ./home/linux
-        ];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
-        extraSpecialArgs = {
-          inherit nur tomodachi94;
-        };
-      };
-
       nixosConfigurations = {
-        hp-laptop-df0023 = nixpkgs.lib.nixosSystem {
-          specialArgs = { };
-          modules = [
-            home-manager.nixosModules.home-manager
-            ./hosts/hp-laptop-df0023
-          ];
-        };
         hp-laptop-df0023-iso = nixpkgs.lib.nixosSystem {
-          specialArgs = { };
-          modules = [
-            (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
-            home-manager.nixosModules.home-manager
-            ./hosts/hp-laptop-df0023
-          ];
+          specialArgs = {  };
+          modules = bases.hp-laptop-df0023 ++ [ "${nixpkgs.outPath}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix" ];
+        };
+        hp-laptop-df0023 = nixpkgs.lib.nixosSystem {
+          specialArgs = {  };
+          modules = bases.hp-laptop-df0023;
         };
       };
 

@@ -4,7 +4,6 @@
     ../../nixos
   ];
 
-  home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
 
   networking.hostName = "hp-laptop-df0023"; # Define your hostname.

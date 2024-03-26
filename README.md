@@ -8,8 +8,7 @@ Documentation for each individual piece of configuration is inside of its folder
 ```sh
 git clone https://github.com/tomodachi94/dotfiles $HOME/dotfiles
 nix develop --impure .
-just system
-just home
+just build
 ```
 
 If you have `direnv`, you can skip the first part.

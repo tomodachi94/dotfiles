@@ -13,11 +13,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nur = {
-      url = "github:nix-community/nur";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     tomodachi94 = {
       url = "github:tomodachi94/nur-packages";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -45,7 +40,6 @@
           "aarch64-darwin"
         ]
           (system: function nixpkgs.legacyPackages.${system});
-      inherit nur;
 
 	  bases.hp-laptop-df0023 = [
 	    home-manager.nixosModules.home-manager

@@ -8,12 +8,17 @@ Documentation for each individual piece of configuration is inside of its folder
 ```sh
 git clone https://github.com/tomodachi94/dotfiles $HOME/dotfiles
 nix develop --impure .
-just {nixos-x86_64,darwin-aarch64}
+just system
+just home
 ```
 
 If you have `direnv`, you can skip the first part.
 
 The repository MUST be cloned to `~/dotfiles`, as there is one `mkOutOfStoreSymlink` call that expects it to be at this path.
+
+## Developing
+
+The first time you enter this repository, run `direnv allow`, then `just develop` (for now, only configures Git for this repo).
 
 ## Why so many folders and `default.nix`s?
 

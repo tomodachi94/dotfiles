@@ -1,0 +1,18 @@
+name: Check NixOS config
+
+on: [push, pull_request]
+
+jobs:
+ build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2 # failsafe in case stuff starts to download; it should take much longer than 2 minutes to fully download everything
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install Nix
+      uses: cachix/install-nix-action@v17
+      with:
+        extra_nix_config: |
+          experimental-features = nix-command flakes
+    - name: Build NixOS Configurations
+      run: |
+        nix develop .#ci --command "just ci"

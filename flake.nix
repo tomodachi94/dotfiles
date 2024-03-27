@@ -93,6 +93,12 @@
             home-manager.packages.${system}.default 
 		 ];
         };
+	    ci = pkgs.mkShell {
+          packages = with pkgs; [
+            nixos-rebuild
+			jq
+		  ];
+		};
       });
     };
 }

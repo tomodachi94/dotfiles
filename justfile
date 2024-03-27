@@ -30,3 +30,10 @@ format:
   stylua $(git ls-files '*.lua')
   deadnix -eq $(git ls-files '*.nix')
   nixpkgs-fmt $(git ls-files '*.nix')
+
+ci:
+  #!/usr/bin/env sh
+  for config in $(nix flake show --json | jq -r '.nixosConfigurations | keys[]'); do
+    echo "Checking configuration: $config"
+    nixos-rebuild dry-build --flake '.#'"$config"
+  done

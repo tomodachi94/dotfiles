@@ -71,10 +71,10 @@
       };
 
       nixosConfigurations = {
-        hp-laptop-df0023-iso = nixpkgs.lib.nixosSystem {
+        /* hp-laptop-df0023-iso = nixpkgs.lib.nixosSystem {
           specialArgs = {  };
           modules = bases.hp-laptop-df0023 ++ [ "${nixpkgs.outPath}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix" ];
-        };
+        }; */
         hp-laptop-df0023 = nixpkgs.lib.nixosSystem {
           specialArgs = {  };
           modules = bases.hp-laptop-df0023;

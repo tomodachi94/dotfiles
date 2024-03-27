@@ -10,7 +10,6 @@
     ./git
     ./helix
     ./home-manager
-    ./nix
     ./nixpkgs
     ./nnn
     ./nvim

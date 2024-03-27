@@ -15,4 +15,4 @@ jobs:
           experimental-features = nix-command flakes
     - name: Build NixOS Configurations
       run: |
-        nix develop .#ci --command "just ci"
+        nix develop .#ci --command sh -c "just ci"

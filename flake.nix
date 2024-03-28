@@ -41,13 +41,16 @@
         ]
           (system: function nixpkgs.legacyPackages.${system});
 
+	  vars = (import ./vars);
+
 	  bases.hp-laptop-df0023 = [
 	    home-manager.nixosModules.home-manager
         ./hosts/hp-laptop-df0023
         {
-          home-manager.users.me = { pkgs, ... }: {
+          home-manager.users.me = { pkgs, vars, ... }: {
             imports = [ ./home/common ./home/linux ];
           };
+		  home-manager.extraSpecialArgs = { inherit vars; };
         }
       ];
 
@@ -76,7 +79,7 @@
           modules = bases.hp-laptop-df0023 ++ [ "${nixpkgs.outPath}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix" ];
         }; */
         hp-laptop-df0023 = nixpkgs.lib.nixosSystem {
-          specialArgs = {  };
+          specialArgs = { inherit vars; };
           modules = bases.hp-laptop-df0023;
         };
       };

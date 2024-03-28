@@ -1,9 +1,10 @@
-{ pkgs, xdg, ... }:
+{ pkgs, vars, ... }:
 {
   xdg.configFile."i3/config" = {
     text = ''
       ## start manual config ##
       set $wallpaper_path "${./wallpaper.png}"
+      set $font "${vars.font.monospace}"
       include ${./all.config}
       include ${./background.config}
       include ${./programs.config}

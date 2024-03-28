@@ -1,4 +1,4 @@
-{ ... }:
+{ vars, ... }:
 {
   programs.gnome-terminal = {
     enable = true;
@@ -6,7 +6,7 @@
       default = true;
       loginShell = true;
       customCommand = null;
-      font = "BlexMono Nerd Font weight=453 12";
+      font = "${vars.font.monospace} weight=453 12";
       visibleName = "tomodachi94";
       colors.palette = [
         "rgb(46,52,54)"

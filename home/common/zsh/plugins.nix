@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, zsh-craftos-select, ... }:
 {
   programs.zsh.plugins = [
     {
@@ -19,6 +19,15 @@
         sha256 = "sha256-A0XxC8/DNb2GuIxPVUiWNsfaq+UysVRYHG8fl/Iyaaw=";
       };
     }
-
+	{
+      name = "craftos-select";
+	  src = "${zsh-craftos-select.packages.${pkgs.system}.default}";
+	}
+  ];
+  home.packages = [
+    # TODO: Patch the craftos-select plugin to properly set its dependencies
+    pkgs.fzf
+    pkgs.jq
+    pkgs.craftos-pc
   ];
 }

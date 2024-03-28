@@ -28,9 +28,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    zsh-craftos-select = {
+      url = "git+https://gist.github.com/tomodachi94/aaae79f7cb4e7b2087727fbbfe05eb12";
+	  inputs.nixpkgs.follows = "nixpkgs";
+	};
   };
 
-  outputs = { nixpkgs, home-manager, nur, tomodachi94, mac-app-util, nix-craftos-pc, ... }:
+  outputs = { nixpkgs, home-manager, nur, tomodachi94, mac-app-util, nix-craftos-pc, zsh-craftos-select, ... }:
     let
       forAllSystems = function:
         nixpkgs.lib.genAttrs [
@@ -50,7 +55,7 @@
           home-manager.users.me = { pkgs, vars, ... }: {
             imports = [ ./home/common ./home/linux ];
           };
-		  home-manager.extraSpecialArgs = { inherit vars; };
+		  home-manager.extraSpecialArgs = { inherit vars zsh-craftos-select; };
         }
       ];
 
@@ -98,6 +103,7 @@
         };
 	    ci = pkgs.mkShell {
           packages = with pkgs; [
+		    just
             nixos-rebuild
 			jq
 		  ];

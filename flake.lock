@@ -153,7 +153,8 @@
         "nix-craftos-pc": "nix-craftos-pc",
         "nixpkgs": "nixpkgs",
         "nur": "nur",
-        "tomodachi94": "tomodachi94"
+        "tomodachi94": "tomodachi94",
+        "zsh-craftos-select": "zsh-craftos-select"
       }
     },
     "systems": {
@@ -189,6 +190,26 @@
         "owner": "tomodachi94",
         "repo": "nur-packages",
         "type": "github"
+      }
+    },
+    "zsh-craftos-select": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1711599238,
+        "narHash": "sha256-fwZys0ODKkn+6q6+Bp8X7LMlEcoigoHXf5bVQ2mQdjw=",
+        "ref": "refs/heads/main",
+        "rev": "6038eb035be8e99c9d6d5401b22e19551ee0ee4e",
+        "revCount": 9,
+        "type": "git",
+        "url": "https://gist.github.com/tomodachi94/aaae79f7cb4e7b2087727fbbfe05eb12"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://gist.github.com/tomodachi94/aaae79f7cb4e7b2087727fbbfe05eb12"
       }
     }
   },

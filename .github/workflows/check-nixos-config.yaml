@@ -1,4 +1,4 @@
-name: Check NixOS config
+name: Checks
 
 on: [push, pull_request]
 
@@ -13,6 +13,6 @@ jobs:
       with:
         extra_nix_config: |
           experimental-features = nix-command flakes
-    - name: Build NixOS Configurations
+    - name: Run `just ci`
       run: |
         nix develop .#ci --command sh -c "just ci"

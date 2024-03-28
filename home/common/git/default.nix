@@ -10,6 +10,7 @@
     aliases = {
       s = "status";
       unadd = "reset HEAD --";
+	  nvim = "!${pkgs.lib.getExe pkgs.neovim} +:G +':bd 1'"; # Open vim-fugitive
       c = "commit";
       last = "log -1 HEAD";
       xdg-open = "!${pkgs.git}/bin/git remote show origin | ${pkgs.gnugrep}/bin/grep https:// | ${pkgs.gnused}/bin/sed 's/Fetch URL: //g' | ${pkgs.gnused}/bin/sed 's/Push  URL: //g' | ${pkgs.coreutils}/bin/uniq | ${pkgs.findutils}/bin/xargs -n 1 ${pkgs.xdg-utils}/bin/xdg-open"; # Open Git remote 'origin' in default web browser"

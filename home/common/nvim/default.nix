@@ -6,8 +6,8 @@ in
 {
   imports = [ ./nix ];
   home.sessionVariables = {
-    EDITOR = "${pkgs.neovim}/bin/nvim";
-    VISUAL = "${pkgs.neovim}/bin/nvim";
+    EDITOR = "${pkgs.lib.getExe pkgs.neovim}";
+    VISUAL = "${pkgs.lib.getExe pkgs.neovim}";
   };
   xdg.configFile."nvim/lua".source = ./lua;
   xdg.configFile."nvim/snips".source = ./snips;

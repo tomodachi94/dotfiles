@@ -26,14 +26,14 @@
         defaultBranch = "main";
       };
       core = {
-        editor = "${pkgs.neovim}/bin/nvim";
+        editor = "${pkgs.lib.getExe pkgs.neovim}";
       };
       color = {
         ui = "auto";
       };
 	  diff = {
         algorithm = "histogram";
-		tool = "${pkgs.neovim}/bin/nvim -d";
+        tool = "${pkgs.lib.getExe pkgs.neovim} -d";
 	  };
       help = {
         autocorrect = 20;

@@ -8,6 +8,10 @@
       inputs = { };
     };
 
+	nixos-hardware = {
+      url = "github:nixos/nixos-hardware";
+	};
+
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -35,7 +39,7 @@
 	};
   };
 
-  outputs = { nixpkgs, home-manager, nur, tomodachi94, mac-app-util, nix-craftos-pc, zsh-craftos-select, ... }:
+  outputs = { nixpkgs, nixos-hardware, home-manager, nur, tomodachi94, mac-app-util, nix-craftos-pc, zsh-craftos-select, ... }:
     let
       forAllSystems = function:
         nixpkgs.lib.genAttrs [
@@ -48,9 +52,18 @@
 
 	  vars = import ./vars;
 
-	  bases.hp-laptop-df0023 = [
+	  bases.hp-laptop-df0023 = let
+        hw = nixos-hardware.nixosModules;
+	  in [
 	    home-manager.nixosModules.home-manager
         ./hosts/hp-laptop-df0023
+        hw.common-cpu-intel
+        hw.common-cpu-intel-sandy-bridge
+	    hw.common-pc
+	    hw.common-pc-laptop
+	    # Note: This laptop had its HDD replaced with an SSD
+	    hw.common-pc-laptop-ssd
+
         {
           home-manager.users.me = { pkgs, vars, ... }: {
             imports = [ ./home/common ./home/linux ];
@@ -74,7 +87,7 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
         extraSpecialArgs = {
-          inherit nur tomodachi94 mac-app-util;
+          inherit nixos-hardware nur tomodachi94 mac-app-util;
         };
       };
 

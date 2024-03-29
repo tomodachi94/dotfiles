@@ -1,4 +1,4 @@
-{ config, pkgs, xdg, ... }:
+{ config, pkgs, ... }:
 let
   inherit (config.lib.file) mkOutOfStoreSymlink;
   dotfilesDir = "${config.home.homeDirectory}/dotfiles";

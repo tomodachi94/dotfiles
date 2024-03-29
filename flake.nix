@@ -46,7 +46,7 @@
         ]
           (system: function nixpkgs.legacyPackages.${system});
 
-	  vars = (import ./vars);
+	  vars = import ./vars;
 
 	  bases.hp-laptop-df0023 = [
 	    home-manager.nixosModules.home-manager

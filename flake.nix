@@ -61,7 +61,6 @@
 
       nixosConfigurations.hp-laptop-df0023 = tomolib.mkNixosConfig {
         hostname = "hp-laptop-df0023";
-        systemArch = "x86_64";
         args = systemLinuxInputs;
         extraModules = let hw = nixos-hardware.nixosModules; in [
           hw.common-cpu-intel

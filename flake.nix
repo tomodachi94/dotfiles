@@ -2,15 +2,14 @@
   description = "Home Manager configuration of Tomodachi94";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixpkgs-unstable";
       inputs = { };
     };
 
-	nixos-hardware = {
+    nixos-hardware = {
       url = "github:nixos/nixos-hardware";
-	};
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -35,92 +34,42 @@
 
     zsh-craftos-select = {
       url = "git+https://gist.github.com/tomodachi94/aaae79f7cb4e7b2087727fbbfe05eb12";
-	  inputs.nixpkgs.follows = "nixpkgs";
-	};
+	    inputs.nixpkgs.follows = "nixpkgs";
+	  };
   };
 
   outputs = { nixpkgs, nixos-hardware, home-manager, nur, tomodachi94, mac-app-util, nix-craftos-pc, zsh-craftos-select, ... }:
     let
-      forAllSystems = function:
-        nixpkgs.lib.genAttrs [
-          "x86_64-linux"
-          "aarch64-linux"
-          "x86_64-darwin"
-          "aarch64-darwin"
-        ]
-          (system: function nixpkgs.legacyPackages.${system});
+    tomolib = import ./lib { inherit nixpkgs home-manager; };
 
-	  vars = import ./vars;
+	  vars = import ./lib/vars.nix;
 
-	  bases.hp-laptop-df0023 = let
-        hw = nixos-hardware.nixosModules;
-	  in [
-	    home-manager.nixosModules.home-manager
-        ./hosts/hp-laptop-df0023
-        hw.common-cpu-intel
-        hw.common-cpu-intel-sandy-bridge
-	    hw.common-pc
-	    hw.common-pc-laptop
-	    # Note: This laptop had its HDD replaced with an SSD
-	    hw.common-pc-laptop-ssd
+    commonInputs = { inherit vars tomodachi94; };
 
-        {
-          home-manager.users.me = { pkgs, vars, ... }: {
-            imports = [ ./home/common ./home/linux ];
-          };
-		  home-manager.extraSpecialArgs = { inherit vars zsh-craftos-select; };
-        }
-      ];
+    homeCommonInputs = commonInputs // { inherit zsh-craftos-select; };
+    homeLinuxInputs = homeCommonInputs // { inherit nix-craftos-pc; };
+    homeDarwinInputs = homeCommonInputs // { inherit mac-app-util; };
+
+    systemCommonInputs = commonInputs // { };
+    systemLinuxInputs = systemCommonInputs // { nixos-hardware = nixos-hardware.nixosModules; homeInputs = homeCommonInputs; };
+    systemDarwinInputs = systemCommonInputs // { };
 
     in
     {
-      homeConfigurations.darwin-aarch64 = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+      homeConfigurations.darwin-aarch64 = tomolib.mkHMConfig { systemType = "darwin"; systemArch = "aarch64"; args = homeDarwinInputs; };
+      homeConfigurations.darwin-x86_64 = tomolib.mkHMConfig { systemType = "darwin"; systemArch = "x86_64"; args = homeDarwinInputs; };
+      homeConfigurations.linux-aarch64 = tomolib.mkHMConfig { systemType = "linux"; systemArch = "aarch64"; args = homeDarwinInputs; };
+      homeConfigurations.linux-x86_64 = tomolib.mkHMConfig { systemType = "linux"; systemArch = "x86_64"; args = homeDarwinInputs; };
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [
-          ./home/common
-          ./home/darwin
-        ];
+      nixosConfigurations.hp-laptop-df0023 = tomolib.mkNixosConfig { hostname = "hp-laptop-df0023"; systemArch = "x86_64"; args = systemLinuxInputs; extraModules = let hw = nixos-hardware.nixosModules; in [
+        hw.common-cpu-intel
+        hw.common-cpu-intel-sandy-bridge
+        hw.common-pc
+        hw.common-pc-laptop
+        # Note: This laptop had its HDD replaced with an SSD
+        hw.common-pc-laptop-ssd
+      ]; };
 
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
-        extraSpecialArgs = {
-          inherit nixos-hardware nur tomodachi94 mac-app-util;
-        };
-      };
-
-      nixosConfigurations = {
-        /* hp-laptop-df0023-iso = nixpkgs.lib.nixosSystem {
-          specialArgs = {  };
-          modules = bases.hp-laptop-df0023 ++ [ "${nixpkgs.outPath}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix" ];
-        }; */
-        hp-laptop-df0023 = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit vars; };
-          modules = bases.hp-laptop-df0023;
-        };
-      };
-
-      devShells = forAllSystems (pkgs: {
-        default = pkgs.mkShell {
-          packages = with pkgs; [ 
-		    nixos-rebuild
-			just
-			stylua
-			deadnix
-			nixpkgs-fmt
-			selene
-            home-manager.packages.${system}.default 
-		 ];
-        };
-	    ci = pkgs.mkShell {
-          packages = with pkgs; [
-		    just
-            nixos-rebuild
-			jq
-		  ];
-		};
-      });
+      devShells = tomolib.forAllSystems (pkgs: import ./lib/shells.nix { inherit pkgs home-manager; } );
     };
 }

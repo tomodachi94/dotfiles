@@ -15,4 +15,7 @@ in
   xdg.configFile."nvim/vimscript".source = ./vimscript;
   xdg.configFile."nvim/init.lua".source = ./init.lua;
   xdg.configFile."nvim/lazy-lock.json".source = mkOutOfStoreSymlink "${dotfilesDir}/home/common/nvim/lazy-lock.json";
+
+  xdg.dataFile."nvim/lazy/lazy.nvim/doc".source = "${pkgs.vimPlugins.lazy-nvim}/doc";
+  xdg.dataFile."nvim/lazy/lazy.nvim/lua".source = "${pkgs.vimPlugins.lazy-nvim}/lua";
 }

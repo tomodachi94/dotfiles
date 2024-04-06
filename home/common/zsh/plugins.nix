@@ -19,14 +19,14 @@
         sha256 = "sha256-A0XxC8/DNb2GuIxPVUiWNsfaq+UysVRYHG8fl/Iyaaw=";
       };
     }
-	{
+    {
       name = "craftos-select";
-	  src = "${zsh-craftos-select.packages.${pkgs.system}.default}";
-	}
-  {
-    src = ./functions;
-    name = "init.zsh";
-  }
+      src = "${zsh-craftos-select.packages.${pkgs.system}.default}";
+    }
+    {
+      src = ./functions;
+      name = "init.zsh";
+    }
   ];
   home.packages = [
     # TODO: Patch the craftos-select plugin to properly set its dependencies

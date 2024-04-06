@@ -6,7 +6,7 @@
     ./desktop-standalone-packages
     ./dircolors
     ./direnv
-	./eza
+    ./eza
     ./fonts
     ./git
     ./helix

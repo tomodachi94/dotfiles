@@ -14,7 +14,7 @@
     ./i3status
     ./kitty
     ./neofetch
-	./network-manager-applet
+    ./network-manager-applet
     # ./vivaldi
     ./xdg
     ./xorg

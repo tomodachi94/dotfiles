@@ -1,11 +1,11 @@
-{ vars, homeInputs, ... }:
+{ homeInputs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
     ../../nixos
   ];
 
-  home-manager.users.me = { pkgs, vars, ... }: {
+  home-manager.users.me = { ... }: {
     imports = [ ../../home/common ../../home/linux ];
   };
 

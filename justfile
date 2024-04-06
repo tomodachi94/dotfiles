@@ -29,6 +29,7 @@ repl:
 format:
   stylua $(git ls-files '*.lua')
   deadnix -eq $(git ls-files '*.nix')
+  statix fix
   nixpkgs-fmt $(git ls-files '*.nix')
 
 check-flake-outputs:

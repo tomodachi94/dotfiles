@@ -13,9 +13,7 @@
     autocd = true;
     initExtra = ". ~/.zsh/init.zsh"; # TODO: This has things that haven't been migrated to Nix; we should finish that
     initExtraBeforeCompInit = ''
-          fpath+=${./functions}
-          fpath+=${./completions}
-      	'';
+    '';
     history = {
       ignoreSpace = true;
       ignoreDups = true;

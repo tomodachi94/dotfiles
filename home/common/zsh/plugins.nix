@@ -23,6 +23,10 @@
       name = "craftos-select";
 	  src = "${zsh-craftos-select.packages.${pkgs.system}.default}";
 	}
+  {
+    src = ./functions;
+    name = "init.zsh";
+  }
   ];
   home.packages = [
     # TODO: Patch the craftos-select plugin to properly set its dependencies

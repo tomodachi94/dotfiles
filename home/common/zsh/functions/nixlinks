@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+nixlink () {
+  OPERATION=${1:-rm -i}
+  find . -path './.direnv' -prune -o -type l -lname '/nix/store/*' -exec $OPERATION {} \;
+}

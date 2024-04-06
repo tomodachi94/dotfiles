@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+rgedit () {
+  rg "$1" -oPl | xargs nvim -p
+}

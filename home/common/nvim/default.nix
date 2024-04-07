@@ -9,14 +9,15 @@ in
     EDITOR = "${pkgs.lib.getExe pkgs.neovim}";
     VISUAL = "${pkgs.lib.getExe pkgs.neovim}";
   };
-  xdg.configFile."nvim/lua/tomodachi94".source = ./lua/tomodachi94;
   xdg.configFile."nvim/lua/keyring".source = ./lua/keyring;
   xdg.configFile."nvim/snips".source = ./snips;
   xdg.configFile."nvim/spell".source = ./spell;
   xdg.configFile."nvim/vimscript".source = ./vimscript;
-  xdg.configFile."nvim/init.lua".source = ./init.lua;
   xdg.configFile."nvim/lazy-lock.json".source = mkOutOfStoreSymlink "${dotfilesDir}/home/common/nvim/lazy-lock.json";
 
+  xdg.configFile."nvim/init.lua".text = ''
+    dofile("${./lua/tomodachi94}/init.lua")
+  '';
   xdg.configFile."nvim/lua/generated_vars.lua".text = ''
     local vars = {}
     vars.python3 = "${pkgs.python310.interpreter}"

@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+nix-shell () {
+  # Simple substitute for nix-shell, since old habits die hard
+  if echo "$@" | grep -- "-p" > /dev/null; then
+	ysu_message "substitute" "nix-shell -p" "nix shell nixpkgs#$2"
+    nix shell nixpkgs#$2
+  else # Avoid breaking local non-flake dev shells
+    command nix-shell $@
+  fi
+}

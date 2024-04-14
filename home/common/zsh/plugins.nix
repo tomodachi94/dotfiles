@@ -33,6 +33,12 @@
       name = "init.zsh";
     }
   ];
+
+  programs.zsh.sessionVariables = {
+    # For vi-mode
+    ZVM_LINE_INIT_MODE = "i"; # Default to insert mode
+  };
+
   home.packages = [
     # TODO: Patch the craftos-select plugin to properly set its dependencies
     pkgs.fzf

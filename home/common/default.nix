@@ -20,5 +20,9 @@
     ./syncthing
     ./zoxide
     ./zsh
+
+    ../../home-modules
   ];
+  programs.neovide.enable = true;
+  programs.neovide.settings.wsl = true;
 }

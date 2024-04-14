@@ -28,6 +28,11 @@
       src = pkgs.zsh-vi-mode;
       file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
     }
+    rec {
+      name = "you-should-use";
+      src = pkgs.zsh-you-should-use;
+      file = "share/zsh/plugins/${name}/${name}.plugin.zsh";
+    }
     {
       src = ./functions;
       name = "init.zsh";
@@ -37,6 +42,8 @@
   programs.zsh.sessionVariables = {
     # For vi-mode
     ZVM_LINE_INIT_MODE = "i"; # Default to insert mode
+    # For you-should-use
+    YSU_MESSAGE_POSITION = "after";
   };
 
   home.packages = [

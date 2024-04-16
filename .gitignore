@@ -1,5 +1,6 @@
 node_modules/
 package-lock.json
+!pkgs/all/awesome-lint/package-lock.json
 .netrwhist
 
 *-creds.vim

@@ -72,8 +72,10 @@
         ];
       };
 
-      packages = import ./pkgs { inherit pkgs; };
-      legacyPackages = packages // { lib = tomolib; };
+      packages = tomolib.forAllSystems (pkgs:
+        import ./pkgs { inherit pkgs; }
+      );
+      /* legacyPackages = tomolib.forAllSystems (system: (packages.${system} // { lib = tomolib; })); */
 
       devShells = tomolib.forAllSystems (pkgs: import ./lib/shells.nix { inherit pkgs home-manager; });
     };

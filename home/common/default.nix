@@ -17,6 +17,7 @@
     ./readline
     ./ripgrep
     ./shell-standalone-packages
+    ./starship
     ./syncthing
     ./zoxide
     ./zsh

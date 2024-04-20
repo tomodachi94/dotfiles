@@ -1,11 +1,11 @@
 {
   imports = [ ./sound.nix ];
+  services.displayManager.defaultSession = "none+i3";
   services.xserver = {
     # Enable the X11 windowing system.
     enable = true;
 
     # Enable the LightDM desktop manager.
-    displayManager.defaultSession = "none+i3";
     displayManager.lightdm = {
       enable = true;
       # TODO: change wallpaper

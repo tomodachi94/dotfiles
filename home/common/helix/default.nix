@@ -1,7 +1,7 @@
 { ... }:
 {
   programs.helix = {
-    enable = true;
+    enable = false;
     settings = {
       theme = "molokai";
     };

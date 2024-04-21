@@ -26,6 +26,11 @@ function M.config()
 	require("lspconfig")["ruff_lsp"].setup {
 		capabilities = capabilities,
 	}
+
+	require("lspconfig")["lexical"].setup {
+		capabilities = capabilities,
+		cmd = { "/etc/profiles/per-user/me/bin/lexical", }
+	}
 end
 
 local N = { "jose-elias-alvarez/null-ls.nvim", dependencies = { "nvim-lua/plenary.nvim" }, event = { "InsertEnter" } }

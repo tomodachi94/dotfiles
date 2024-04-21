@@ -11,5 +11,6 @@
     proselint
     mypy
     hunspell
+    lexical
   ];
 }

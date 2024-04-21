@@ -26,6 +26,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
+    catppuccin-base16 = {
+      url = "github:catppuccin/base16";
+      flake = false;
+    };
+
     nix-craftos-pc = {
       url = "github:tomodachi94/nix-craftos-pc";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,19 +49,19 @@
     };
   };
 
-  outputs = { nixpkgs, nixos-hardware, home-manager, tomodachi94, mac-app-util, zsh-craftos-select, ... }:
+  outputs = { nixpkgs, nixos-hardware, home-manager, tomodachi94, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, ... }:
     let
-      tomolib = import ./lib { inherit nixpkgs home-manager; };
+      tomolib = import ./lib { inherit nixpkgs home-manager stylix; };
 
       vars = import ./lib/vars.nix;
 
       commonInputs = { inherit vars tomodachi94; };
 
-      homeCommonInputs = commonInputs // { inherit zsh-craftos-select; };
+      homeCommonInputs = commonInputs // { inherit zsh-craftos-select stylix; };
       homeDarwinInputs = homeCommonInputs // { inherit mac-app-util; };
 
       systemCommonInputs = commonInputs // { };
-      systemLinuxInputs = systemCommonInputs // { nixos-hardware = nixos-hardware.nixosModules; homeInputs = homeCommonInputs; };
+      systemLinuxInputs = systemCommonInputs // { nixos-hardware = nixos-hardware.nixosModules; homeInputs = homeCommonInputs; inherit catppuccin-base16; };
 
     in
     rec {

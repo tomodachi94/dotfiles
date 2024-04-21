@@ -7,4 +7,6 @@
       pager = "less -RF --long-prompt +Gg";
     };
   };
+
+  stylix.targets.bat.enable = true;
 }

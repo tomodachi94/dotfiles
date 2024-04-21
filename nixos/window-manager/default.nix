@@ -21,4 +21,6 @@
   };
   # picom is a compositor, enabling us to do things like have a transparent window
   services.picom.enable = true;
+
+  stylix.targets.lightdm.enable = true;
 }

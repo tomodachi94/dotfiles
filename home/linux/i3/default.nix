@@ -1,5 +1,6 @@
 { pkgs, vars, ... }:
 {
+  stylix.targets.i3.enable = true;
   xdg.configFile."i3/config" = {
     text = ''
       ## start manual config ##

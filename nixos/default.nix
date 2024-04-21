@@ -9,6 +9,7 @@
     ./networking
     ./nix
     ./shell
+    ./stylix
     ./users
     ./window-manager
   ];

@@ -1,4 +1,4 @@
-{ nixpkgs, home-manager }:
+{ nixpkgs, home-manager, stylix }:
 rec {
   mkHMImports = systemType: [ ../home/common (../. + "home/${systemType}") ];
   mkNixpkgs = { systemType, systemArch }: nixpkgs.legacyPackages."${systemArch}-${systemType}";
@@ -29,6 +29,7 @@ rec {
     modules = [
       (../hosts + "/${hostname}")
       home-manager.nixosModules.home-manager
+      stylix.nixosModules.stylix
     ] ++ extraModules;
   };
 

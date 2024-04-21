@@ -1,10 +1,10 @@
-{ pkgs, vars, ... }:
+{ config, pkgs, vars, ... }:
 {
   stylix.targets.i3.enable = true;
   xdg.configFile."i3/config" = {
     text = ''
       ## start manual config ##
-      set $wallpaper_path "${./wallpaper.png}"
+      set $wallpaper_path "${config.stylix.image}"
       set $font "${vars.font.monospace}"
       include ${./all.config}
       include ${./background.config}

@@ -147,6 +147,27 @@
         "type": "github"
       }
     },
+    "bitwarden-dmenu": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1626345697,
+        "narHash": "sha256-7SEO+mgIePu8U/JtNYA/TLm31EwdbW9opskNne1Z48g=",
+        "owner": "pltanton",
+        "repo": "bitwarden-dmenu",
+        "rev": "928663af71a491c85ae0602bd7700cf5d6788bea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pltanton",
+        "repo": "bitwarden-dmenu",
+        "type": "github"
+      }
+    },
     "catppuccin-base16": {
       "flake": false,
       "locked": {
@@ -212,6 +233,21 @@
       }
     },
     "flake-utils": {
+      "locked": {
+        "lastModified": 1623875721,
+        "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "f7e004a55b120c02ecb6219596820fcd32ca8772",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_2": {
       "inputs": {
         "systems": "systems"
       },
@@ -268,11 +304,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1713566308,
-        "narHash": "sha256-7Y91t8pheIzjJveUMAPyeh5NOq5F49Nq4Hl2532QpJs=",
+        "lastModified": 1713732794,
+        "narHash": "sha256-AYCofb8Zu4Mbc1lHDtju/uxeARawRijmOueAqEMEfMU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "057117a401a34259c9615ce62218aea7afdee4d3",
+        "rev": "670d9ecc3e46a6e3265c203c2d136031a3d3548e",
         "type": "github"
       },
       "original": {
@@ -286,7 +322,7 @@
       "inputs": {
         "cl-nix-lite": "cl-nix-lite",
         "flake-compat": "flake-compat",
-        "flake-utils": "flake-utils",
+        "flake-utils": "flake-utils_2",
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -361,6 +397,7 @@
     },
     "root": {
       "inputs": {
+        "bitwarden-dmenu": "bitwarden-dmenu",
         "catppuccin-base16": "catppuccin-base16",
         "home-manager": "home-manager",
         "mac-app-util": "mac-app-util",

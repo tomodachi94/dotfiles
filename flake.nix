@@ -47,9 +47,14 @@
       url = "git+https://gist.github.com/tomodachi94/aaae79f7cb4e7b2087727fbbfe05eb12";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    bitwarden-dmenu = {
+      url = "github:pltanton/bitwarden-dmenu";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, nixos-hardware, home-manager, tomodachi94, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, ... }:
+  outputs = { nixpkgs, nixos-hardware, home-manager, tomodachi94, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, bitwarden-dmenu, ... }:
     let
       tomolib = import ./lib { inherit nixpkgs home-manager stylix; };
 
@@ -57,7 +62,7 @@
 
       commonInputs = { inherit vars tomodachi94; };
 
-      homeCommonInputs = commonInputs // { inherit zsh-craftos-select stylix; };
+      homeCommonInputs = commonInputs // { inherit zsh-craftos-select stylix bitwarden-dmenu; };
       homeDarwinInputs = homeCommonInputs // { inherit mac-app-util; };
 
       systemCommonInputs = commonInputs // { };

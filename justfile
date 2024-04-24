@@ -8,7 +8,7 @@ configure_git:
 
 develop: configure_git
 
-build args="":
+build *args:
   sudo nixos-rebuild switch --flake ".#$(hostname)" {{args}}
 
 update input_name="":

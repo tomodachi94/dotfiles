@@ -30,6 +30,10 @@
     };
   };
 
+  stylix.fonts.sizes = {
+    applications = 10;
+  };
+
   stylix.cursor = {
     name = "Vanilla-DMZ";
     package = pkgs.vanilla-dmz;

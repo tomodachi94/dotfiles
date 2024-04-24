@@ -2,16 +2,16 @@
 {
   gtk = {
     enable = true;
-    cursorTheme.package = pkgs.vanilla-dmz;
-    cursorTheme.name = "Vanilla-DMZ";
-    cursorTheme.size = 23;
-    font.package = pkgs.ibm-plex;
-    font.name = "IBM Plex Sans";
-    font.size = 10;
-    theme.package = pkgs.gnome.adwaita-icon-theme;
-    theme.name = "Adwaita-dark";
-    iconTheme.package = pkgs.cinnamon.mint-y-icons;
-    iconTheme.name = "Mint-Y-Dark-Grey";
+    # cursorTheme.package = pkgs.vanilla-dmz;
+    # cursorTheme.name = "Vanilla-DMZ";
+    # cursorTheme.size = 23;
+    # font.package = pkgs.ibm-plex;
+    # font.name = "IBM Plex Sans";
+    # font.size = 10;
+    theme.package = pkgs.lib.mkForce pkgs.gnome.adwaita-icon-theme;
+    theme.name = pkgs.lib.mkForce "Adwaita-dark";
+    iconTheme.package = pkgs.lib.mkForce pkgs.cinnamon.mint-y-icons;
+    iconTheme.name = pkgs.lib.mkForce "Mint-Y-Dark-Grey";
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
       gtk-button-images = 0;
@@ -36,4 +36,6 @@
       class "GtkScrollbar" style "cs-scrollbar-style"
     '';
   };
+
+  stylix.targets.gtk.enable = true;
 }

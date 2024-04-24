@@ -23,7 +23,6 @@
       	'';
   };
 
-  home.file.".background-image".source = ./wallpaper.png;
   # For cleanliness, this contains any packages that are exclusively used in this configuration.
   home.packages = with pkgs; [
     xss-lock

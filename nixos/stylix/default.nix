@@ -21,7 +21,7 @@
 
     monospace = {
       package = pkgs.nerdfonts.override (old: { fonts = [ "IBMPlexMono" ]; });
-      name = "BlexMono Nerd Font";
+      name = "BlexMono Nerd Font Mono";
     };
 
     emoji = {

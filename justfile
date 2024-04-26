@@ -34,6 +34,6 @@ check-flake-outputs:
   #!/usr/bin/env sh
   set -euxo pipefail
   export NIXPKGS_ALLOW_UNFREE=1
-  nix flake check --all-systems --verbose
+  nix flake check --all-systems --verbose --impure
 
 ci: check-flake-outputs

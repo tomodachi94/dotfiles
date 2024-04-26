@@ -37,4 +37,7 @@ check-flake-outputs:
   export NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1
   nix flake check --all-systems --verbose --impure
 
-ci: check-flake-outputs
+check-formatting:
+  treefmt --fail-on-change --no-cache
+
+ci: check-flake-outputs check-formatting

@@ -27,10 +27,7 @@ repl:
   nix repl --expr 'builtins.getFlake "{{git_dir}}"'
 
 format:
-  stylua $(git ls-files '*.lua')
-  deadnix -eq $(git ls-files '*.nix')
-  statix fix
-  nixpkgs-fmt $(git ls-files '*.nix')
+  treefmt
 
 check-flake-outputs:
   nix flake check --all-systems --verbose

@@ -10,6 +10,7 @@
       nixpkgs-fmt
       selene
       statix
+      treefmt
       home-manager.packages.${system}.default
     ];
   };

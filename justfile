@@ -30,6 +30,9 @@ repl:
 format:
   treefmt
 
+lint:
+  selene --allow-warnings
+
 check-flake-outputs:
   #!/usr/bin/env sh
   set -euxo pipefail
@@ -40,4 +43,4 @@ check-flake-outputs:
 check-formatting:
   treefmt --fail-on-change --no-cache
 
-ci: check-flake-outputs check-formatting
+ci: check-flake-outputs check-formatting lint

@@ -29,7 +29,7 @@ function M.config()
 
 	require("lspconfig")["lexical"].setup {
 		capabilities = capabilities,
-		cmd = { "/etc/profiles/per-user/me/bin/lexical", }
+		cmd = { "/etc/profiles/per-user/me/bin/lexical" },
 	}
 end
 

@@ -28,10 +28,10 @@ repl:
   nix repl --expr 'builtins.getFlake "{{git_dir}}"'
 
 format:
-  treefmt
+  treefmt --config-file ./lib/tooling-config/treefmt.toml --tree-root {{git_dir}}
 
 lint:
-  selene --allow-warnings
+  selene --allow-warnings --config ./lib/tooling-config/selene.toml
 
 check-flake-outputs:
   #!/usr/bin/env sh
@@ -41,6 +41,6 @@ check-flake-outputs:
   nix flake check --all-systems --verbose --impure
 
 check-formatting:
-  treefmt --fail-on-change --no-cache
+  treefmt --fail-on-change --no-cache --config-file ./lib/tooling-config/treefmt.toml --tree-root {{git_dir}}
 
 ci: check-flake-outputs check-formatting lint

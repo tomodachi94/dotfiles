@@ -2,13 +2,13 @@
 
 [formatter.stylua]
 command = "stylua"
-options = [ "--config-path", "./.formatters/stylua.toml" ]
+options = [ "--config-path", "lib/tooling-config/stylua.toml" ]
 includes = [ "*.lua" ]
 excludes = []
 
 [formatter.statix]
 command = "statix"
-options = [ "--config", "./.formatters/statix.toml" ]
+options = [ "--config", "lib/tooling-config/statix.toml" ]
 includes = [ ".nix" ]
 
 [formatter.deadnix]

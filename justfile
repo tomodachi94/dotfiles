@@ -13,6 +13,7 @@ build *args:
 
 update input_name="":
   #!/usr/bin/env sh
+  set -euxo pipefail
   if [ -n "{{input_name}}" ]; then
     nix flake lock --update-input "{{input_name}}"
   else
@@ -30,6 +31,9 @@ format:
   treefmt
 
 check-flake-outputs:
+  #!/usr/bin/env sh
+  set -euxo pipefail
+  export NIXPKGS_ALLOW_UNFREE=1
   nix flake check --all-systems --verbose
 
 ci: check-flake-outputs

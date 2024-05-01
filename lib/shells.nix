@@ -6,6 +6,10 @@ let
     statix
     deadnix
     nixpkgs-fmt
+    python3Packages.mdformat
+    python3Packages.mdformat-gfm
+    python3Packages.mdformat-frontmatter
+    python3Packages.mdformat-footnote
   ];
 in
 {
@@ -22,7 +26,7 @@ in
     packages = with pkgs; [
       just
       nixos-rebuild
-      jq      
+      jq
     ] ++ treefmt-deps;
   };
 }

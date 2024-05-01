@@ -7,14 +7,18 @@ includes = [ "*.lua" ]
 excludes = []
 
 [formatter.statix]
-command = "statix"
-options = [ "--config", "lib/tooling-config/statix.toml" ]
-includes = [ ".nix" ]
+command = "sh"
+options = ["-euc", "for file in \"$@\"; do statix fix --config lib/tooling-config/statix.toml \"$file\"; done"]
+includes = [ "*.nix" ]
 
 [formatter.deadnix]
 command = "deadnix"
-includes = [ ".nix" ]
+includes = [ "*.nix" ]
 
-[formatters.nixpkgs-fmt]
+[formatter.nixpkgs-fmt]
 command = "nixpkgs-fmt"
-includes = [ ".nix" ]
+includes = [ "*.nix" ]
+
+[formatter.mdformat]
+command = "mdformat"
+includes = [ "*.md" ]

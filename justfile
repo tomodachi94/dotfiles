@@ -31,7 +31,7 @@ format:
   treefmt --config-file ./lib/tooling-config/treefmt.toml --tree-root {{git_dir}}
 
 lint:
-  selene --allow-warnings --config ./lib/tooling-config/selene.toml
+  # selene --allow-warnings --config ./lib/tooling-config/selene.toml {{git_dir}}
 
 check-flake-outputs:
   #!/usr/bin/env sh

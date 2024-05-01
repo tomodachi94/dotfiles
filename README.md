@@ -5,6 +5,7 @@ These are my dotfiles. They are intended for my usage only, but feel free to tak
 Documentation for each individual piece of configuration is inside of its folder, either in the configuration itself or in a README.md in the directory root.
 
 ## Setting up
+
 ```sh
 git clone https://github.com/tomodachi94/dotfiles $HOME/dotfiles --filter=blob:none
 nix develop --impure .

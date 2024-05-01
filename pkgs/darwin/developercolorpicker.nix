@@ -4,8 +4,8 @@ stdenv.mkDerivation {
   version = "1.5.4"; # Mentioned in Read Me.rtfd
   src = fetchzip {
     url = "https://download-cdn.panic.com/picker/developercolorpicker.zip";
-	hash = "sha256-oqejHyx5yhOmSHBCIQSwTtAlzs1siez0MYItl1OxU6w=";
-	stripRoot = false;
+    hash = "sha256-oqejHyx5yhOmSHBCIQSwTtAlzs1siez0MYItl1OxU6w=";
+    stripRoot = false;
   };
   installPhase = ''
     mkdir -p $out/Library/ColorPickers

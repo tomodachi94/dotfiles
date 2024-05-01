@@ -37,4 +37,3 @@ Contains snippets for use with UltiSnips.
 ### `vimscript/`
 
 Contains legacy Vimscript code. This will usually be empty.
-

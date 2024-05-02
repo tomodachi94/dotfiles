@@ -166,6 +166,26 @@
         "type": "github"
       }
     },
+    "comin": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1714572285,
+        "narHash": "sha256-PMFWiQTcbu/HqCsL4zRPN7hscPRlNEk1hFawowQqHlU=",
+        "owner": "nlewo",
+        "repo": "comin",
+        "rev": "425c747ab2fca90db10dc498acfc94f5caaeba52",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nlewo",
+        "repo": "comin",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -366,6 +386,7 @@
       "inputs": {
         "bitwarden-dmenu": "bitwarden-dmenu",
         "catppuccin-base16": "catppuccin-base16",
+        "comin": "comin",
         "home-manager": "home-manager",
         "mac-app-util": "mac-app-util",
         "nix-craftos-pc": "nix-craftos-pc",

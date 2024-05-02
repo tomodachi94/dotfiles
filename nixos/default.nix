@@ -2,6 +2,7 @@
   imports = [
     ./battery
     ./bluetooth
+    ./comin
     ./bootloader
     ./filesystems
     ./graphics

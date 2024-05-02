@@ -52,11 +52,16 @@
       url = "github:pltanton/bitwarden-dmenu";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    comin = {
+      url = "github:nlewo/comin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, nixos-hardware, home-manager, tomodachi94, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, bitwarden-dmenu, ... }:
+  outputs = { nixpkgs, nixos-hardware, home-manager, tomodachi94, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, bitwarden-dmenu, comin, ... }:
     let
-      tomolib = import ./lib { inherit nixpkgs home-manager stylix; };
+      tomolib = import ./lib { inherit nixpkgs home-manager stylix comin; };
 
       vars = import ./lib/vars.nix;
 
@@ -66,7 +71,7 @@
       homeDarwinInputs = homeCommonInputs // { inherit mac-app-util; };
 
       systemCommonInputs = commonInputs // { };
-      systemLinuxInputs = systemCommonInputs // { nixos-hardware = nixos-hardware.nixosModules; homeInputs = homeCommonInputs; inherit catppuccin-base16; };
+      systemLinuxInputs = systemCommonInputs // { nixos-hardware = nixos-hardware.nixosModules; homeInputs = homeCommonInputs; inherit catppuccin-base16 comin; };
 
     in
     rec {

@@ -30,4 +30,9 @@
       colors.foregroundColor = "rgb(207,214,193)";
     };
   };
+
+  # These files are created by GNOME Terminal.
+  # https://floss.social/@tomodachi94/112260860433948002
+  xdg.configFile."xdg-terminals.list".text = "org.gnome.Terminal.desktop";
+  xdg.configFile."none+i3-xdg-terminals.list".text = "org.gnome.Terminal.desktop";
 }

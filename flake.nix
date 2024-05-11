@@ -59,13 +59,16 @@
     };
   };
 
-  outputs = { nixpkgs, nixos-hardware, home-manager, tomodachi94, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, bitwarden-dmenu, comin, ... }:
+  outputs = { nixpkgs, nixos-hardware, home-manager, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, bitwarden-dmenu, comin, ... }:
     let
       tomolib = import ./lib { inherit nixpkgs home-manager stylix comin; };
+      tomopkgs = tomolib.forAllSystems (pkgs:
+        import ./pkgs { inherit pkgs; }
+      );
 
       vars = import ./lib/vars.nix;
 
-      commonInputs = { inherit vars tomodachi94; };
+      commonInputs = { inherit vars tomopkgs; };
 
       homeCommonInputs = commonInputs // { inherit zsh-craftos-select stylix bitwarden-dmenu; };
       homeDarwinInputs = homeCommonInputs // { inherit mac-app-util; };
@@ -93,9 +96,7 @@
         ];
       };
 
-      packages = tomolib.forAllSystems (pkgs:
-        import ./pkgs { inherit pkgs; }
-      );
+      packages = tomopkgs;
       /* legacyPackages = tomolib.forAllSystems (system: (packages.${system} // { lib = tomolib; })); */
 
       devShells = tomolib.forAllSystems (pkgs: import ./lib/shells.nix { inherit pkgs home-manager; });

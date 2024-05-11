@@ -27,7 +27,7 @@ rec {
   mkNixosConfig = { hostname, extraModules, args }: nixpkgs.lib.nixosSystem {
     specialArgs = args;
     modules = [
-      (../hosts + "/${hostname}")
+      (../nixos/hosts + "/${hostname}")
       home-manager.nixosModules.home-manager
       stylix.nixosModules.stylix
       comin.nixosModules.comin

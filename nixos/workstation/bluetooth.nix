@@ -1,5 +1,5 @@
 {
-  services.tlp = {
+  services.blueman = {
     enable = true;
   };
 }

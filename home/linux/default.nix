@@ -15,6 +15,7 @@
     ./kitty
     ./neofetch
     ./network-manager-applet
+    ./notify-on-dotconfig-file-creation
     # ./vivaldi
     ./xdg
     ./xorg

@@ -15,9 +15,14 @@ update input_name="":
   #!/usr/bin/env sh
   set -euxo pipefail
   if [ -n "{{input_name}}" ]; then
-    nix flake lock --update-input "{{input_name}}"
+    nix flake lock --update-input "{{input_name}}" --commit-lock-file
   else
-    nix flake lock
+    nix flake lock --commit-lock-file
+    cd ./pkgs
+    nix flake update \
+      --override-input nixpkgs \
+      github:nixos/nixpkgs/$(nix flake metadata --json '../.#' | jq -r '.locks.nodes.nixpkgs.locked.rev') \
+	git commit --amend --no-edit
   fi
 
 # aliases for legacy habits

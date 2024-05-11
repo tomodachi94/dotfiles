@@ -19,6 +19,7 @@ in
       nixos-rebuild
       just
       selene
+      jq
       home-manager.packages.${system}.default
     ] ++ treefmt-deps;
   };

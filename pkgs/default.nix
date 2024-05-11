@@ -7,4 +7,5 @@ in
   developercolorpicker = cp ./darwin/developercolorpicker.nix { };
   hugo-bearblog = cp ./all/hugo-bearblog.nix { };
   ultisnips-vscode = cp ./all/ultisnips-vscode.nix { };
+  craftos-pc-plugins = cp ./all/craftos-pc-plugins { };
 }

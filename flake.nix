@@ -59,34 +59,26 @@
     };
   };
 
-  outputs = { nixpkgs, nixos-hardware, home-manager, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, bitwarden-dmenu, comin, ... }:
+  outputs = { nixpkgs, nixos-hardware, home-manager, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, bitwarden-dmenu, comin, ... }@inputs:
     let
-      tomolib = import ./lib { inherit nixpkgs home-manager stylix comin; };
+      tomolib = import ./lib { inherit (inputs) nixpkgs home-manager stylix comin; };
       tomopkgs = tomolib.forAllSystems (pkgs:
         import ./pkgs { inherit pkgs; }
       );
 
       vars = import ./lib/vars.nix;
 
-      commonInputs = { inherit vars tomopkgs; };
-
-      homeCommonInputs = commonInputs // { inherit zsh-craftos-select stylix bitwarden-dmenu; };
-      homeDarwinInputs = homeCommonInputs // { inherit mac-app-util; };
-
-      systemCommonInputs = commonInputs // { };
-      systemLinuxInputs = systemCommonInputs // { nixos-hardware = nixos-hardware.nixosModules; homeInputs = homeCommonInputs; inherit catppuccin-base16 comin; };
-
     in
     rec {
-      homeConfigurations.darwin-aarch64 = tomolib.mkHMConfig { systemType = "darwin"; systemArch = "aarch64"; args = homeDarwinInputs; };
-      homeConfigurations.darwin-x86_64 = tomolib.mkHMConfig { systemType = "darwin"; systemArch = "x86_64"; args = homeDarwinInputs; };
-      homeConfigurations.linux-aarch64 = tomolib.mkHMConfig { systemType = "linux"; systemArch = "aarch64"; args = homeDarwinInputs; };
-      homeConfigurations.linux-x86_64 = tomolib.mkHMConfig { systemType = "linux"; systemArch = "x86_64"; args = homeDarwinInputs; };
+      homeConfigurations.darwin-aarch64 = tomolib.mkHMConfig { systemType = "darwin"; systemArch = "aarch64"; args = inputs; };
+      homeConfigurations.darwin-x86_64 = tomolib.mkHMConfig { systemType = "darwin"; systemArch = "x86_64"; args = inputs; };
+      homeConfigurations.linux-aarch64 = tomolib.mkHMConfig { systemType = "linux"; systemArch = "aarch64"; args = inputs; };
+      homeConfigurations.linux-x86_64 = tomolib.mkHMConfig { systemType = "linux"; systemArch = "x86_64"; args = inputs; };
 
       nixosConfigurations.hp-laptop-df0023 = tomolib.mkNixosConfig {
         hostname = "hp-laptop-df0023";
-        args = systemLinuxInputs;
-        extraModules = let hw = nixos-hardware.nixosModules; in [
+        args = inputs;
+        extraModules = let hw = inputs.nixos-hardware.nixosModules; in [
           hw.common-cpu-intel
           hw.common-cpu-intel-sandy-bridge
           hw.common-pc
@@ -99,7 +91,7 @@
       packages = tomopkgs;
       /* legacyPackages = tomolib.forAllSystems (system: (packages.${system} // { lib = tomolib; })); */
 
-      devShells = tomolib.forAllSystems (pkgs: import ./lib/shells.nix { inherit pkgs home-manager; });
+      devShells = tomolib.forAllSystems (pkgs: import ./lib/shells.nix { inherit pkgs; home-manager = inputs.home-manager; });
     };
 
   nixConfig = {

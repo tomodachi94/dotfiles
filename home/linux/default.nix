@@ -12,6 +12,7 @@
     ./home-manager
     ./i3
     ./i3status
+    ./iamb
     ./kitty
     ./neofetch
     ./network-manager-applet

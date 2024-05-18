@@ -21,8 +21,8 @@ update input_name="":
     cd ./pkgs
     nix flake update \
       --override-input nixpkgs \
-      github:nixos/nixpkgs/$(nix flake metadata --json '../.#' | jq -r '.locks.nodes.nixpkgs.locked.rev') \
-	git commit --amend --no-edit
+      github:nixos/nixpkgs/$(nix flake metadata --json '../.#' | jq -r '.locks.nodes.nixpkgs.locked.rev')
+    git commit --amend --no-edit
   fi
 
 # aliases for legacy habits

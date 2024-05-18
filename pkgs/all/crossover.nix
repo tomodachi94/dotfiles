@@ -1,43 +1,19 @@
-{ lib
-, fetchFromGitHub
-, buildNpmPackage
-, electron
-}:
-
-buildNpmPackage rec {
+{ appimageTools, fetchurl, lib }:
+let
   pname = "crossover";
   version = "3.3.4";
 
-  src = fetchFromGitHub {
-    owner = "Lacymorrow";
-    repo = "crossover";
-    rev = "v${version}";
-    hash = "sha256-U2UmcbSVF21MOjqFqoKuuckSARcmH8oG/HcfwtUMJOM=";
+  src = fetchurl {
+    url = "https://github.com/lacymorrow/crossover/releases/download/v${version}/CrossOver-${version}-x86_64.AppImage";
+    hash = "sha256-q9QpfUYerAsghTbEV9d1W+O2Jjv61UiEKsNEpoKXn0E=";
   };
-
-  buildInputs = [ electron ];
-
-  npmDepsHash = "sha256-Nlh90eyRrDNC0c8ihHnzRrRlvWjXxqwGJ+QCxU/tsbc=";
-
-  # 'electron-builder: command not found'
-  dontNpmBuild = true;
-  makeCacheWritable = true;
-
-  env = {
-    ELECTRON_SKIP_BINARY_DOWNLOAD = 1;
-  };
-
-  postInstall = ''
-    makeWrapper ${lib.getExe electron} $out/bin/${pname} \
-      --add-flags $out/lib/node_modules/${pname}/main.js
-  '';
-
+in
+appimageTools.wrapType2 {
+  inherit pname version src;
   meta = with lib; {
-    description = "A Crosshair overlay for any screen";
-    homepage = "https://gh.lacymorrow.com/crossover";
-    changelog = "https://github.com/Lacymorrow/crossover/blob/${src.rev}/CHANGELOG.md";
-    license = # licenses.cc-by-nc-sa-40;
-    licenses.free;
+    license = licenses.cc-by-nc-sa-40;
     maintainers = with maintainers; [ tomodachi94 ];
+    homepage = "https://lacymorrow.github.io/crossover";
+    platforms = [ "linux-x86_64" ];
   };
 }

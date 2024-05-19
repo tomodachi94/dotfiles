@@ -31,7 +31,7 @@
     dbus
     pulseaudioFull
     xclip
-    scrot
+    maim
     feh
     dmenu
   ];

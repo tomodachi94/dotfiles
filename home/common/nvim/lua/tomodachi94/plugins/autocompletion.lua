@@ -4,7 +4,7 @@ local O = { "hrsh7th/cmp-path", dependencies = "hrsh7th/nvim-cmp", event = { "In
 local P =
 	{ "hrsh7th/cmp-nvim-lsp", dependencies = "hrsh7th/nvim-cmp", "neovim/nvim-lspconfig", event = { "InsertEnter" } }
 local Q =
-	{ "saadparwaiz1/cmp_luasnip", dependencies = "hrsh7th/nvim-cmp", "L3MON4D3/LuaSnip", event = { "InsertEnter" } }
+	{ "saadparwaiz1/cmp_luasnip", dependencies = { "hrsh7th/nvim-cmp", "L3MON4D3/LuaSnip" }, event = { "InsertEnter" } }
 local R = { "onsails/lspkind.nvim", lazy = true, event = { "InsertEnter" } }
 
 function M.config()
@@ -41,14 +41,6 @@ function M.config()
 			{ name = "buffer" },
 		},
 	}
-	-- Set configuration for specific filetype.
-	cmp.setup.filetype("lua", {
-		sources = cmp.config.sources {
-			{ name = "nvim_lsp" },
-			{ name = "ultisnips" },
-		},
-	})
-
 	-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
 	cmp.setup.cmdline({ "/", "?" }, {
 		mapping = cmp.mapping.preset.cmdline(),

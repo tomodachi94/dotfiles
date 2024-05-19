@@ -1,4 +1,5 @@
 -- LuaSnip configuration
+local vars = require("generated_vars")
 
 local M = { "L3MON4D3/LuaSnip", event = { "InsertEnter" } }
 
@@ -13,10 +14,8 @@ local function luasnip_tab()
 end
 
 function M.config()
-	require("luasnip.loaders.from_vscode").lazy_load { paths = { "../vscode-snippets" } }
+	require("luasnip.loaders.from_lua").lazy_load { paths = { vars.snippet_dir } }
 	vim.keymap.set({ "i", "s" }, "<Tab>", luasnip_tab, { silent = true })
 end
 
--- return { M }
--- FIXME: disabled due to fullscreen error
-return {}
+return { M }

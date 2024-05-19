@@ -18,22 +18,22 @@ order += "tztime local"
 
 battery all {
 	format = "%status %percentage %remaining"
-		status_chr = "⚡ "
-		status_bat = " "
+		status_chr = "⚡  "
+		status_bat = "  "
 		status_unk = "?? "
-		status_full = " "
+		status_full = "  "
 }
 
 disk "/" {
-	format = " %avail"
+	format = "  %avail"
 }
 
 memory {
-	format = " %used / %available"
+	format = "  %used / %available"
 		threshold_degraded = "1G"
 		format_degraded = "MEMORY < %available"
 }
 
 tztime local {
-	format = " %a %Y-%m-%d %I:%M %p"
+	format = "  %a %Y-%m-%d %I:%M %p"
 }

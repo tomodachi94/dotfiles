@@ -37,6 +37,7 @@ format:
 
 lint:
   selene --allow-warnings --config ./lib/tooling-config/selene.toml {{git_dir}} --quiet
+  statix check --config ./lib/tooling-config/statix.toml
 
 check-flake-outputs:
   #!/usr/bin/env sh

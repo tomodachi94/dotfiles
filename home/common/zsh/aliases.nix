@@ -8,6 +8,7 @@ in
     tree = "${eza} --tree";
     lsdot = "${eza} -ad .?* 2>/dev/null"; # Source: https://github.com/Nekohime/dotfiles/blob/main/.aliases
     c = "clear";
+    j = "just";
 
     # Common typos
     sl = "${eza}";

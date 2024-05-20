@@ -6,6 +6,7 @@ local P =
 local Q =
 	{ "saadparwaiz1/cmp_luasnip", dependencies = { "hrsh7th/nvim-cmp", "L3MON4D3/LuaSnip" }, event = { "InsertEnter" } }
 local R = { "onsails/lspkind.nvim", lazy = true, event = { "InsertEnter" } }
+local S = { "petertriho/cmp-git", lazy = true, event = { "InsertEnter" } }
 
 function M.config()
 	-- Set up nvim-cmp.
@@ -39,6 +40,7 @@ function M.config()
 			{ name = "nvim_lsp" },
 			{ name = "luasnip" }, -- For luasnip users.
 			{ name = "buffer" },
+			{ name = "git" },
 		},
 	}
 	-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
@@ -65,4 +67,4 @@ function M.config()
 		capabilities = capabilities,
 	}
 end
-return { M, N, O, P, Q, R }
+return { M, N, O, P, Q, R, S }

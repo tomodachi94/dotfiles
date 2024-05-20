@@ -1,4 +1,4 @@
-{ pkgs, zsh-craftos-select, ... }:
+{ config, pkgs, zsh-craftos-select, ... }:
 {
   programs.zsh.plugins = [
     {
@@ -39,6 +39,8 @@
   ];
 
   programs.zsh.sessionVariables = {
+    # For nnn-quitcd
+    NNN_TMPFILE = "${config.xdg.stateHome}/nnn-quitcd-lastd";
     # For vi-mode
     ZVM_LINE_INIT_MODE = "i"; # Default to insert mode
     # For you-should-use

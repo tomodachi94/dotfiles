@@ -2,6 +2,7 @@
 let
   treefmt-deps = with pkgs; [
     treefmt
+    taplo
     stylua
     statix
     deadnix

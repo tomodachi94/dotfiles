@@ -2,27 +2,35 @@
 
 [formatter.stylua]
 command = "stylua"
-options = [ "--config-path", "lib/tooling-config/stylua.toml" ]
-includes = [ "*.lua" ]
+options = ["--config-path", "lib/tooling-config/stylua.toml"]
+includes = ["*.lua"]
 excludes = []
 
 [formatter.statix]
 command = "sh"
-options = ["-euc", "for file in \"$@\"; do statix fix --config lib/tooling-config/statix.toml \"$file\"; done"]
-includes = [ "*.nix" ]
+options = [
+  "-euc",
+  "for file in \"$@\"; do statix fix --config lib/tooling-config/statix.toml \"$file\"; done",
+]
+includes = ["*.nix"]
 
 [formatter.deadnix]
 command = "deadnix"
-includes = [ "*.nix" ]
+includes = ["*.nix"]
 
 [formatter.nixpkgs-fmt]
 command = "nixpkgs-fmt"
-includes = [ "*.nix" ]
+includes = ["*.nix"]
+
+[formatter.taplo]
+command = "taplo"
+options = ["format"]
+includes = ["*.toml"]
 
 [formatter.mdformat]
 command = "mdformat"
-includes = [ "*.md" ]
+includes = ["*.md"]
 
 [formatter.yamlfmt]
 command = "yamlfmt"
-includes = [ "*.yaml", "*.yml" ]
+includes = ["*.yaml", "*.yml"]

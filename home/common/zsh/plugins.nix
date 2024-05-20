@@ -26,12 +26,16 @@
     {
       name = "vi-mode";
       src = pkgs.zsh-vi-mode;
-      file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
     }
     rec {
       name = "you-should-use";
       src = pkgs.zsh-you-should-use;
       file = "share/zsh/plugins/${name}/${name}.plugin.zsh";
+    }
+    rec {
+      name = "bd";
+      src = pkgs.zsh-bd;
+      file = "share/zsh-${name}/${name}.plugin.zsh";
     }
     {
       src = ./functions;

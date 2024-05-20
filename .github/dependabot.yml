@@ -5,4 +5,3 @@ updates:
     directory: "/.github/workflows"
     schedule:
       interval: "weekly"
-

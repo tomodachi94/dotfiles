@@ -22,3 +22,7 @@ includes = [ "*.nix" ]
 [formatter.mdformat]
 command = "mdformat"
 includes = [ "*.md" ]
+
+[formatter.yamlfmt]
+command = "yamlfmt"
+includes = [ "*.yaml", "*.yml" ]

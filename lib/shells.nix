@@ -5,6 +5,7 @@ let
     stylua
     statix
     deadnix
+    yamlfmt
     nixpkgs-fmt
     python3Packages.mdformat
     python3Packages.mdformat-gfm

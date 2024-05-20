@@ -1,4 +1,4 @@
-{ pkgs, home-manager, ... }:
+{ pkgs, home-manager, checks, ... }:
 let
   treefmt-deps = with pkgs; [
     treefmt
@@ -22,6 +22,7 @@ in
       jq
       home-manager.packages.${system}.default
     ] ++ treefmt-deps;
+    inherit (checks.${pkgs.system}.pre-commit-check) shellHook;
   };
   ci = pkgs.mkShell {
     packages = with pkgs; [

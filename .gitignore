@@ -23,3 +23,6 @@ nvim/lazy-lock.json
 
 # nix
 result
+
+# pre-commit-hooks.nix
+.pre-commit-config.yaml

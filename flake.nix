@@ -57,9 +57,15 @@
       url = "github:nlewo/comin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    pre-commit-hooks = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-stable.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, nixos-hardware, home-manager, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, bitwarden-dmenu, comin, ... }:
+  outputs = { nixpkgs, nixos-hardware, home-manager, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, bitwarden-dmenu, comin, pre-commit-hooks, ... }:
     let
       tomolib = import ./lib { inherit nixpkgs home-manager stylix comin; };
       tomopkgs = tomolib.forAllSystems (pkgs:
@@ -96,11 +102,15 @@
         ];
       };
 
+      checks = tomolib.forAllSystems (pkgs: import ./lib/checks.nix { inherit pkgs pre-commit-hooks; });
+
       packages = tomopkgs;
       /* legacyPackages = tomolib.forAllSystems (system: (packages.${system} // { lib = tomolib; })); */
 
-      devShells = tomolib.forAllSystems (pkgs: import ./lib/shells.nix { inherit pkgs home-manager; });
+      devShells = tomolib.forAllSystems (pkgs: import ./lib/shells.nix { inherit pkgs home-manager checks; });
+
     };
+
 
   nixConfig = {
     trusted-substituters = [

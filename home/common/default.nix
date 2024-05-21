@@ -7,6 +7,7 @@
     ./dircolors
     ./direnv
     ./eza
+    ./fd
     ./fonts
     ./git
     ./helix

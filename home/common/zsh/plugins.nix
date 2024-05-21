@@ -21,6 +21,7 @@
     {
       name = "vi-mode";
       src = pkgs.zsh-vi-mode;
+      file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
     }
     rec {
       name = "you-should-use";
@@ -40,7 +41,7 @@
 
   programs.zsh.sessionVariables = {
     # For nnn-quitcd
-    NNN_TMPFILE = "${config.xdg.stateHome}/nnn-quitcd-lastd";
+    NNN_TMPFILE = config.xdg.stateHome;
     # For vi-mode
     ZVM_LINE_INIT_MODE = "i"; # Default to insert mode
     # For you-should-use

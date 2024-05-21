@@ -13,7 +13,7 @@
       nvim = "!${pkgs.lib.getExe pkgs.neovim} +:G +':bd 1'"; # Open vim-fugitive
       c = "commit";
       last = "log -1 HEAD";
-      xdg-open = "!${pkgs.git}/bin/git remote show origin | ${pkgs.gnugrep}/bin/grep https:// | ${pkgs.gnused}/bin/sed 's/Fetch URL: //g' | ${pkgs.gnused}/bin/sed 's/Push  URL: //g' | ${pkgs.coreutils}/bin/uniq | ${pkgs.findutils}/bin/xargs -n 1 ${pkgs.xdg-utils}/bin/xdg-open"; # Open Git remote 'origin' in default web browser"
+      xdg-open = "!${lib.getExe pkgs.github-cli} browse";
       sync-upstream = "!${pkgs.git}/bin/git fetch upstream master && ${pkgs.git}/bin/git rebase upstream/master && ${pkgs.git}/bin/git push origin master";
     };
 

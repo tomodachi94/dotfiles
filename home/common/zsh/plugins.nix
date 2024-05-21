@@ -1,4 +1,14 @@
 { config, pkgs, zsh-craftos-select, ... }:
+let
+  zshCompletions = with pkgs; runCommandNoCC "vendored-zsh-completions" { } ''
+    mkdir -p $out
+    ${fd}/bin/fd -t f '^_[^.]+$' \
+      ${lib.escapeShellArgs config.home.packages} \
+      --exec ${ripgrep}/bin/rg -0l '^#compdef' {} \
+        | xargs -0 ln -s -t $out/
+  '';
+
+in
 {
   programs.zsh.plugins = [
     {
@@ -37,6 +47,13 @@
       name = "init.zsh";
     }
   ];
+
+  programs.zsh.initExtra = with pkgs; ''
+    fpath=(
+      ${zshCompletions}
+      $fpath
+     )
+  '';
 
   programs.zsh.sessionVariables = {
     # For nnn-quitcd

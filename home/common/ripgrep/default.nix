@@ -1,5 +1,8 @@
 {
-  home.sessionVariables = {
-    RIPGREP_CONFIG_PATH = ./config;
+  programs.ripgrep = {
+    enable = true;
+    arguments = [
+      "--smart-case"
+    ];
   };
 }

@@ -23,6 +23,7 @@ in
     local vars = {}
     vars.python3 = "${pkgs.python310.interpreter}"
     vars.snippet_dir = "${./lua/tomodachi94/luasnip}"
+    vars.notify_send = "${pkgs.lib.getExe pkgs.libnotify}"
     return vars
   '';
 

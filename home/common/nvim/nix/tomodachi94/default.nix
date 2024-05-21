@@ -1,3 +1,3 @@
 {
-  imports = [ ./plugins/lsp.nix ];
+  imports = [ ./plugins/lsp.nix ./plugins/notifications.nix ];
 }

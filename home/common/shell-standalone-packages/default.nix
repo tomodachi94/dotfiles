@@ -8,7 +8,6 @@
     pkgs.renameutils # Do repetitive stuff faster
     pkgs.github-cli
     # pkgs.nnn # File manager
-    pkgs.starship # Shell prompt
     pkgs.bitwarden-cli
     # pkgs.nur.repos.ftbwiki.ftb-rs
   ];

@@ -9,6 +9,7 @@
     ./eza
     ./fd
     ./fonts
+    ./gh
     ./git
     ./helix
     ./home-manager

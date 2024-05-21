@@ -1,12 +1,9 @@
 { pkgs, ... }:
 {
   home.packages = [
-    pkgs.coreutils # Duh
-    pkgs.neovim # Text editor
-    pkgs.renameutils # Do repetitive stuff faster
-    pkgs.github-cli
-    # pkgs.nnn # File manager
+    pkgs.coreutils
+    pkgs.neovim
+    pkgs.renameutils
     pkgs.bitwarden-cli
-    # pkgs.nur.repos.ftbwiki.ftb-rs
   ];
 }

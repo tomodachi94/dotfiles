@@ -11,6 +11,7 @@
     ./fonts
     ./gh
     ./git
+    ./h
     ./helix
     ./home-manager
     ./nixpkgs

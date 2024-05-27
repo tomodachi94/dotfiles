@@ -13,7 +13,7 @@
       nvim = "!${pkgs.lib.getExe pkgs.neovim} +:G +':bd 1'"; # Open vim-fugitive
       c = "commit";
       last = "log -1 HEAD";
-      xdg-open = "!${lib.getExe pkgs.github-cli} browse";
+      xdg-open = "!${pkgs.lib.getExe pkgs.github-cli} browse";
       sync-upstream = "!${pkgs.git}/bin/git fetch upstream master && ${pkgs.git}/bin/git rebase upstream/master && ${pkgs.git}/bin/git push origin master";
     };
 

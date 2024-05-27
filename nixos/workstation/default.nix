@@ -1,6 +1,7 @@
 {
   imports = [
     ./bluetooth.nix
+    ./gpg.nix
     ./graphics.nix
     ./ime.nix
     ./networking.nix

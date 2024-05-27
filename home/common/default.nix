@@ -11,6 +11,7 @@
     ./fonts
     ./gh
     ./git
+    ./gpg
     ./h
     ./helix
     ./home-manager

@@ -1,23 +1,23 @@
 {
   imports = [
     ./albert
-    ./blueman
-    ./copyq
-    ./desktop-standalone-packages
-    ./dunst
+    ./blueman.nix
+    ./copyq.nix
+    ./desktop-standalone-packages.nix
+    ./dunst.nix
     ./fcitx5
-    ./fun
-    ./gnome-terminal
-    ./gtk
-    ./home-manager
+    ./fun.nix
+    ./gnome-terminal.nix
+    ./gtk.nix
+    ./home-manager.nix
     ./i3
     ./i3status
     ./iamb
     ./kitty
     ./neofetch
-    ./network-manager-applet
-    # ./vivaldi
-    ./xdg
+    ./network-manager-applet.nix
+    # ./vivaldi.nix
+    ./xdg.nix
     ./xorg
   ];
 }

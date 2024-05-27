@@ -1,29 +1,29 @@
 {
   imports = [
-    ./atuin
-    ./bat
+    ./atuin.nix
+    ./bat.nix
     # ./craftos-pc
-    ./desktop-standalone-packages
-    ./dircolors
-    ./direnv
-    ./eza
-    ./fd
-    ./fonts
-    ./gh
-    ./git
-    ./gpg
-    ./h
-    ./helix
-    ./home-manager
+    ./desktop-standalone-packages.nix
+    ./dircolors.nix
+    ./direnv.nix
+    ./eza.nix
+    ./fd.nix
+    ./fonts.nix
+    ./gh.nix
+    ./git.nix
+    ./gpg.nix
+    ./h.nix
+    ./helix.nix
+    ./home-manager.nix
     ./nixpkgs
-    ./nnn
+    ./nnn.nix
     ./nvim
     ./readline
-    ./ripgrep
-    ./shell-standalone-packages
-    ./starship
-    ./syncthing
-    ./zoxide
+    ./ripgrep.nix
+    ./shell-standalone-packages.nix
+    ./starship.nix
+    ./syncthing.nix
+    ./zoxide.nix
     ./zsh
   ];
 }

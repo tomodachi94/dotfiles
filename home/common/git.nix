@@ -41,9 +41,11 @@
           insteadOf = "git://github.com";
         };
       };
-      # Show full diff when running `git commit`
       commit = {
+        # Show full diff when running `git commit`
         verbose = true;
+        # Sign commits automatically
+        gpgsign = true;
       };
       # Push to branch origin/whatever_my_current_branch_is if no upstream branch is set
       push = {

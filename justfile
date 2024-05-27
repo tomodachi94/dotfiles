@@ -22,6 +22,7 @@ update input_name="":
     nix flake update \
       --override-input nixpkgs \
       github:nixos/nixpkgs/$(nix flake metadata --json '../.#' | jq -r '.locks.nodes.nixpkgs.locked.rev')
+    git add ./flake.lock
     git commit --amend --no-edit
   fi
 

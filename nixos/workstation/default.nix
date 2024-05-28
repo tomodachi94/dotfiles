@@ -1,6 +1,7 @@
 {
   imports = [
     ./bluetooth.nix
+    ./firejail.nix
     ./gpg.nix
     ./graphics.nix
     ./ime.nix

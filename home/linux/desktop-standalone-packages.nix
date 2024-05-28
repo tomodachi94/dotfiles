@@ -1,9 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, tomolib, ... }:
+let
+  firejailWrappers = tomolib.firejailWrappers { inherit pkgs; };
+in
 {
   home.packages = [
     pkgs.lxqt.qps
     pkgs.vscodium-fhs # GUI IDE
-    pkgs.librewolf # Web browser
+    firejailWrappers.librewolf # Web browser
     pkgs.zotero
   ];
 }

@@ -9,4 +9,8 @@ in
     firejailWrappers.librewolf # Web browser
     pkgs.zotero
   ];
+
+  home.sessionVariables = {
+    BROWSER = pkgs.lib.getExe firejailWrappers.librewolf;
+  };
 }

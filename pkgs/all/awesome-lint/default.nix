@@ -18,7 +18,7 @@ buildNpmPackage rec {
 
   dontNpmPrune = true;
 
-  npmDepsHash = "sha256-/Nhb1GwHl61H6T7wKjgG/dINpneHXOt8hzzw+7C0i3o=";
+  npmDepsHash = "sha256-CVOOkCID9gLYqyrfV8Vgwper6vW79R3ru12MaTolB4I=";
 
   postPatch = ''
     cp ${./package-lock.json} ./package-lock.json
@@ -31,6 +31,5 @@ buildNpmPackage rec {
     maintainers = with maintainers; [ tomodachi94 ];
     mainProgram = "awesome-lint";
     platforms = platforms.all;
-    broken = true;
   };
 }

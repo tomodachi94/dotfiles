@@ -5,20 +5,20 @@
 
 buildNpmPackage rec {
   pname = "awesome-lint";
-  version = "1.1.0";
+  version = "1.2.0";
 
   src = fetchFromGitHub {
     owner = "sindresorhus";
     repo = "awesome-lint";
     rev = "v${version}";
-    hash = "sha256-yiH2HiW3MQEYkwC5D09Vs43pdUiKl2D3lIhlOdZ6fMY=";
+    hash = "sha256-W1Dd0MdP9gqYqydUFSWqUzAP1WeS7Qveoqns1D5dwEw=";
   };
 
   dontNpmBuild = true;
 
   dontNpmPrune = true;
 
-  npmDepsHash = "sha256-CVOOkCID9gLYqyrfV8Vgwper6vW79R3ru12MaTolB4I=";
+  npmDepsHash = "sha256-c49XOazBUPsplFx+/ZDDW3NtXhBpyxy5FAjInMNldf4=";
 
   postPatch = ''
     cp ${./package-lock.json} ./package-lock.json

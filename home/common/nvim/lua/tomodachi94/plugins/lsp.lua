@@ -50,6 +50,12 @@ function N.config()
 			sources.completion.spell,
 			sources.diagnostics.ruff,
 			sources.diagnostics.mypy,
+			sources.formatting.treefmt.with {
+				-- treefmt requires a config file
+				condition = function(utils)
+					return utils.root_has_file("treefmt.toml")
+				end,
+			},
 		},
 	}
 end

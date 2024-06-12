@@ -11,7 +11,8 @@
     ./gtk.nix
     ./home-manager.nix
     ./i3
-    ./i3status
+    # ./i3status
+    ./i3status-rust
     ./iamb
     ./kitty
     ./neofetch

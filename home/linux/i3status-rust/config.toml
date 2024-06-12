@@ -1,0 +1,34 @@
+icons_format = "{icon}"
+[icons]
+icons = "awesome4"
+
+[theme]
+theme = "dracula"
+
+[[block]]
+block = "battery"
+format = " $icon $percentage "
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "available"
+alert_unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+format = " $icon $available.eng(w:2) "
+format_alt = " $icon $available / $total "
+
+[[block]]
+block = "memory"
+format = " $icon $mem_used_percents.eng(w:1) "
+interval = 30
+warning_mem = 70
+critical_mem = 90
+
+[[block]]
+block = "time"
+interval = 5
+format = " $icon $timestamp.datetime(f:'%a %Y-%m-%d %I:%M %p') "
+# next_timezone = "Etc/UTC"

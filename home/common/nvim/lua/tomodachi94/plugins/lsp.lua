@@ -33,7 +33,7 @@ function M.config()
 	}
 end
 
-local N = { "jose-elias-alvarez/null-ls.nvim", dependencies = { "nvim-lua/plenary.nvim" }, event = { "InsertEnter" } }
+local N = { "nvimtools/none-ls.nvim", dependencies = { "nvim-lua/plenary.nvim" }, event = { "InsertEnter" } }
 
 function N.config()
 	local null_ls = require("null-ls")

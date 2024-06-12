@@ -27,6 +27,7 @@
   home.packages = with pkgs; [
     xss-lock
     brightnessctl
+    playerctl
     lightlocker
     dbus
     pulseaudioFull

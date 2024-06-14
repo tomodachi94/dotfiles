@@ -11,6 +11,6 @@ in
   ];
 
   home.sessionVariables = {
-    BROWSER = pkgs.lib.getExe firejailWrappers.librewolf;
+    BROWSER = "${firejailWrappers.librewolf}/bin/librewolf";
   };
 }

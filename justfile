@@ -2,12 +2,6 @@
 
 git_dir  := `git rev-parse --show-toplevel`
 
-configure_git:
-  git config user.name "Tomo"
-  git config user.email "68489118+Tomodachi94@users.noreply.github.com"
-
-develop: configure_git
-
 build *args:
   sudo nixos-rebuild switch --flake ".#$(hostname)" {{args}}
 

@@ -39,14 +39,11 @@ function N.config()
 	local null_ls = require("null-ls")
 	local sources = null_ls.builtins
 
-	sources.code_actions.shellcheck.filetypes = { "sh", "bash", "zsh" }
-
 	null_ls.setup {
 		sources = {
 			sources.formatting.stylua,
 			sources.diagnostics.selene,
 			sources.code_actions.proselint,
-			sources.code_actions.shellcheck,
 			sources.completion.spell,
 			sources.diagnostics.ruff,
 			sources.diagnostics.mypy,

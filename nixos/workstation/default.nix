@@ -6,6 +6,7 @@
     ./graphics.nix
     ./ime.nix
     ./networking.nix
+    ./printing.nix
     ./sound.nix
     ./stylix
     ./syncthing.nix

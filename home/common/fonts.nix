@@ -5,5 +5,6 @@
   home.packages = with pkgs; [
     nerdfonts
     noto-fonts-cjk-sans # Japanese
+    atkinson-hyperlegible
   ];
 }

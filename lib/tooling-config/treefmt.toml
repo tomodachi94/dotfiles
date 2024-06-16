@@ -18,6 +18,17 @@ includes = ["*.nix"]
 command = "deadnix"
 includes = ["*.nix"]
 
+[formatter.just-fmt]
+# command = "just"
+# options = ["--fmt", "--unstable", "--justfile"]
+command = "sh"
+options = [
+  "-euc",
+  "for file in \"$@\"; do just --unstable --fmt --justfile \"$file\"; done",
+]
+
+includes = ["{J,j}ustfile", ".{J,j}ustfile", "*.just"]
+
 [formatter.nixpkgs-fmt]
 command = "nixpkgs-fmt"
 includes = ["*.nix"]

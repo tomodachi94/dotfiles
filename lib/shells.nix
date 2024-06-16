@@ -16,7 +16,7 @@ let
 in
 {
 
-  default = pkgs.mkShell {
+  default = pkgs.mkShellNoCC {
     packages = with pkgs; [
       nixos-rebuild
       just
@@ -26,7 +26,7 @@ in
     ] ++ treefmt-deps;
     inherit (checks.${pkgs.system}.pre-commit-check) shellHook;
   };
-  ci = pkgs.mkShell {
+  ci = pkgs.mkShellNoCC {
     packages = with pkgs; [
       just
       nixos-rebuild

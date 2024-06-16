@@ -1,3 +1,4 @@
+{ pkgs, rawNixpkgs, ... }:
 {
   nix = {
     settings = {
@@ -20,5 +21,7 @@
       dates = "weekly";
       options = "--delete-old --delete-older-than 14d";
     };
+    nixPath = [ "nixpkgs=${pkgs.path}" ];
+    registry.nixpkgs.flake = rawNixpkgs;
   };
 }

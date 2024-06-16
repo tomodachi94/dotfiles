@@ -74,7 +74,7 @@
 
       vars = import ./lib/vars.nix;
 
-      commonInputs = { inherit vars tomopkgs tomolib; };
+      commonInputs = { inherit vars tomopkgs tomolib; rawNixpkgs = nixpkgs; };
 
       homeCommonInputs = commonInputs // { inherit zsh-craftos-select stylix bitwarden-dmenu; };
       homeDarwinInputs = homeCommonInputs // { inherit mac-app-util; };

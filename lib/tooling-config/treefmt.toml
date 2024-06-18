@@ -28,6 +28,11 @@ includes = ["*.toml"]
 command = "mdformat"
 includes = ["*.md"]
 
+[formatter.just]
+command = "just"
+options = ["_format-wrapper-just"]
+includes = ["**/justfile", "*.just"]
+
 [formatter.yamlfmt]
 command = "yamlfmt"
 includes = ["*.yaml", "*.yml"]

@@ -34,6 +34,15 @@
       file = "share/zsh-${name}/${name}.plugin.zsh";
     }
     {
+      name = "auto-notify";
+      src = pkgs.fetchFromGitHub {
+        owner = "MichaelAquilina";
+        repo = "zsh-auto-notify";
+        rev = "837b81de92cbf12d45d638b77f1ecd6a942266fe";
+        hash = "sha256-U4XJymu2SDzBAXTp88utcQRwYnOUY4RVXYrtGFbh3dM=";
+      };
+    }
+    {
       src = ./functions;
       name = "init.zsh";
     }

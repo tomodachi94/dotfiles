@@ -19,5 +19,15 @@ update-all:
     git add ./pkgs/flake.lock && git commit --amend --no-edit
   fi
 
+update-lazy:
+  #!/usr/bin/env sh
+  set -euxo pipefail
+  if [ -f $HOME/.config/nvim/lazy-lock.json ]; then
+    nvim --headless +"Lazy! update" +"qa"
+  else
+    echo "error: $HOME/.config/nvim/lazy-lock.json missing. Did you install with the instructions in /README.md?"
+    exit 1
+  fi
+
 format:
   treefmt --config-file ./lib/tooling-config/treefmt.toml --tree-root {{git_dir}}

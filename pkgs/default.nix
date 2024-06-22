@@ -4,7 +4,6 @@ let
 in
 {
   awesome-lint = cp ./all/awesome-lint { };
-  doctoc = cp ./all/doctoc.nix { };
   ultisnips-vscode = cp ./all/ultisnips-vscode.nix { };
 } // pkgs.lib.optionalAttrs pkgs.stdenv.isLinux {
   crossover = cp ./linux/crossover.nix { };

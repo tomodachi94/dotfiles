@@ -16,7 +16,10 @@
       xdg-open = "!${pkgs.lib.getExe pkgs.github-cli} browse";
       sync-upstream = "!${pkgs.git}/bin/git fetch upstream master && ${pkgs.git}/bin/git rebase upstream/master && ${pkgs.git}/bin/git push origin master";
     };
-
+    ignores = [
+      ".direnv/"
+      "/tags" # Neovim
+    ];
     extraConfig = {
       init = {
         defaultBranch = "main";

@@ -54,6 +54,7 @@ local O = {
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 		vim.keymap.set("n", "<leader>fr", builtin.lsp_references, {})
 		vim.keymap.set("n", "<leader>fs", builtin.lsp_symbols, {})
+		vim.keymap.set("n", "<leader>fn", extensions.notify.notify, {})
 	end,
 }
 

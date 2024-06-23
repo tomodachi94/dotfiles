@@ -15,6 +15,7 @@ function M.config()
 end
 
 function N.config()
+	--[[
 	require("mason-tool-installer").setup({
 		ensure_installed = {
 			"stylua",
@@ -25,6 +26,7 @@ function N.config()
 			"mypy",
 		},
 	})
+	--]]
 end
 
 return { M, N, O }

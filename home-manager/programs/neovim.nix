@@ -5,6 +5,6 @@
     lua-language-server
     stylua
     vale
-    ruby-lsp
+    rubyPackages_3_2.solargraph
   ];
 }

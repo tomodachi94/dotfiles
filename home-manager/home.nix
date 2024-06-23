@@ -1,8 +1,4 @@
-{ environment, config, pkgs, lib, ... }:
-
-let
-  # nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") { inherit pkgs; };
-in
+{ environment, config, pkgs, lib, tomodachi94, ... }:
 {
   imports = [ ./home_files.nix ./gtk.nix ./nix_nixpkgs.nix ./xdg.nix ./programs ];
 
@@ -11,6 +7,7 @@ in
   home.sessionVariables = {
     EDITOR = "${pkgs.neovim}/bin/nvim";
     VISUAL = "${pkgs.neovim}/bin/nvim";
+    DEFAULT_BROWSER = "${pkgs.vivaldi}/bin/vivaldi-stable";
   };
 
   targets.genericLinux.enable = true;
@@ -38,7 +35,7 @@ in
 
     # Chat
     pkgs.discord
-    pkgs.cinny-desktop
+    # pkgs.cinny-desktop
 
     # Notes
     pkgs.obsidian
@@ -51,20 +48,22 @@ in
     pkgs.kazam
     pkgs.audacity
 
+    # Fun
+    # pkgs.prismlauncher
+    pkgs.grapejuice
+
     # Development
     pkgs.direnv
     pkgs.virtualbox
 
-    pkgs.blueman
-
     # Specialized tools: FTB Wiki
     pkgs.nur.repos.ftbwiki.ftb-rs
-
-    pkgs.eww
 
     # For Git
     # TODO: Migrate this to Home-Manager module
     pkgs.git-credential-oauth
+
+    # tomodachi94.packages.x86_64-linux.spyglass
   ];
 
   # This value determines the Home Manager release that your
@@ -103,5 +102,10 @@ in
 
   services.syncthing = {
     enable = true;
+  };
+
+  systemd.user = {
+    startServices = "sd-switch";
+    systemctlPath = "/bin/systemctl";
   };
 }

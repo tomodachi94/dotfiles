@@ -1,6 +1,6 @@
 -- LuaSnip configuration
 
-local M = { "L3MON4D3/LuaSnip", event = { "InsertEnter" } }
+local M = { "L3MON4D3/LuaSnip", event = { "InsertEnter" }, build = "make install_jsregexp", }
 
 -- Source: https://www.reddit.com/r/neovim/comments/zrcrv1/luasnip_tab_as_expandjump_trigger/j12xw3x/#c
 local function luasnip_tab()
@@ -13,8 +13,10 @@ local function luasnip_tab()
 end
 
 function M.config()
-	require("luasnip.loaders.from_vscode").lazy_load({ paths = { "../vscode-snippets" } })
 	vim.keymap.set({ "i", "s" }, "<Tab>", luasnip_tab, { silent = true })
+
+	-- Load the snippets last
+	require("luasnip.loaders.from_snipmate").lazy_load({paths = "~/.config/nvim/snippets"})
 end
 
 return { M }

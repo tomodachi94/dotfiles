@@ -23,3 +23,7 @@
 	editor = nvim
 [color]
 	ui = auto
+[url "https://github.com/"]
+	insteadOf = git://github.com/
+[help]
+  autocorrect = 20

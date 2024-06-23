@@ -33,7 +33,7 @@
     "ignoreHotkeys" : false,
     "initialComputer" : 0,
     "keepOpenOnShutdown" : false,
-    "lastVersion" : "v2.7.2",
+    "lastVersion" : "v2.7.4",
     "logErrors" : false,
     "maxNotesPerTick" : 8,
     "maxOpenPorts" : 128,

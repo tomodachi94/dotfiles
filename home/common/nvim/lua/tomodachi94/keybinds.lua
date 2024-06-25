@@ -2,18 +2,19 @@
 --This file is for key (re)mapping that doesn't involve plugins.
 --Plugin keybinds should go into their own file.
 --Other files that have keybinds: [ setup-plugins.lua, plugins/*.lua ]
+local uniqueKeymap = require("tomodachi94.util").uniqueKeymap
 
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<Esc>", ":nohl<CR>:echo<CR>") -- Clear highlighting and buffer
+uniqueKeymap("n", "<Esc>", ":nohl<CR>:echo<CR>") -- Clear highlighting and buffer
 
 -- Convinience functions for yanking/putting
-vim.keymap.set("n", "<Leader>y", "*y")
-vim.keymap.set("n", "<Leader>p", "*p")
-vim.keymap.set("n", "<Leader>Y", "+y")
-vim.keymap.set("n", "<Leader>P", "+p")
+uniqueKeymap("n", "<Leader>y", "*y")
+uniqueKeymap("n", "<Leader>p", "*p")
+uniqueKeymap("n", "<Leader>Y", "+y")
+uniqueKeymap("n", "<Leader>P", "+p")
 
-vim.keymap.set("n", "<Leader>fd", vim.cmd.NERDTreeToggle)
+uniqueKeymap("n", "<Leader>fd", vim.cmd.NERDTreeToggle)
 
 -- Be smart.
 vim.cmd("cnoreabbrev W w")
@@ -30,7 +31,7 @@ vim.cmd("xnoremap <Down> gj")
 vim.cmd("xnoremap <Up> gk")
 
 -- Keep the register clean when using `dd`
-vim.keymap.set("n", "dd", function()
+uniqueKeymap("n", "dd", function()
 	if vim.fn.getline(".") == "" then
 		return '"_dd'
 	end

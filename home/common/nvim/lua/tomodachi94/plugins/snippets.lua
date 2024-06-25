@@ -15,7 +15,7 @@ end
 
 function M.config()
 	require("luasnip.loaders.from_lua").lazy_load { paths = { vars.snippet_dir } }
-	vim.keymap.set({ "i", "s" }, "<Tab>", luasnip_tab, { silent = true })
+	require("tomodachi94.util").uniqueKeymap({ "i", "s" }, "<Tab>", luasnip_tab, { silent = true })
 end
 
 return { M }

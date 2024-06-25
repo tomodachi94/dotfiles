@@ -8,8 +8,9 @@ vim.cmd("syntax enable")
 vim.cmd.colorscheme("catppuccin")
 
 -- Setup keybinds
-vim.keymap.set("n", "<Leader>pp", require("lazy").home)
-vim.keymap.set("n", "<Leader>pc", require("lazy").check)
-vim.keymap.set("n", "<Leader>px", require("lazy").clean)
-vim.keymap.set("n", "<Leader>pu", require("lazy").update)
-vim.keymap.set("n", "<Leader>ps", require("lazy").sync)
+local uniqueKeymap = require("tomodachi94.util").uniqueKeymap
+uniqueKeymap("n", "<Leader>pp", require("lazy").home)
+uniqueKeymap("n", "<Leader>pc", require("lazy").check)
+uniqueKeymap("n", "<Leader>px", require("lazy").clean)
+uniqueKeymap("n", "<Leader>pu", require("lazy").update)
+uniqueKeymap("n", "<Leader>ps", require("lazy").sync)

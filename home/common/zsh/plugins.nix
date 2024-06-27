@@ -1,4 +1,4 @@
-{ config, pkgs, zsh-craftos-select, ... }:
+{ config, pkgs, tomopkgs, zsh-craftos-select, ... }:
 {
   programs.zsh.plugins = [
     {
@@ -32,6 +32,11 @@
       name = "bd";
       src = pkgs.zsh-bd;
       file = "share/zsh-${name}/${name}.plugin.zsh";
+    }
+    rec {
+      name = "window-title";
+      src = tomopkgs.${pkgs.system}.zsh-window-title;
+      file = "share/zsh/plugins/zsh-${name}/zsh-${name}.plugin.zsh";
     }
     {
       name = "auto-notify";

@@ -7,6 +7,7 @@
     ./dunst.nix
     ./fcitx5
     ./fun.nix
+    ./gnome-keyring.nix
     ./gnome-terminal.nix
     ./gtk.nix
     ./home-manager.nix

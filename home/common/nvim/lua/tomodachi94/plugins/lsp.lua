@@ -45,7 +45,6 @@ function N.config()
 			sources.diagnostics.selene,
 			sources.code_actions.proselint,
 			sources.completion.spell,
-			sources.diagnostics.ruff,
 			sources.diagnostics.mypy,
 			sources.formatting.treefmt.with {
 				-- treefmt requires a config file

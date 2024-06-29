@@ -5,7 +5,7 @@
     lua-language-server
     rust-analyzer
     nil
-    ruff
+    ruff-lsp
     stylua
     selene
     proselint

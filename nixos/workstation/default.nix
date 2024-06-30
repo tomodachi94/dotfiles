@@ -1,6 +1,7 @@
 {
   imports = [
     ./bluetooth.nix
+    ./dash2.nix
     ./firejail.nix
     ./gpg.nix
     ./graphics.nix

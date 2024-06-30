@@ -63,9 +63,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-stable.follows = "nixpkgs";
     };
+
+    dash2 = {
+      url = "github:tomodachi94/dash2";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, nixos-hardware, home-manager, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, bitwarden-dmenu, comin, pre-commit-hooks, ... }:
+  outputs = { nixpkgs, nixos-hardware, home-manager, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, bitwarden-dmenu, comin, pre-commit-hooks, dash2, ... }:
     let
       tomolib = import ./lib { inherit nixpkgs home-manager stylix comin; };
       tomopkgs = tomolib.forAllSystems (pkgs:
@@ -80,7 +85,7 @@
       homeDarwinInputs = homeCommonInputs // { inherit mac-app-util; };
 
       systemCommonInputs = commonInputs // { };
-      systemLinuxInputs = systemCommonInputs // { nixos-hardware = nixos-hardware.nixosModules; homeInputs = homeCommonInputs; inherit catppuccin-base16 comin; };
+      systemLinuxInputs = systemCommonInputs // { nixos-hardware = nixos-hardware.nixosModules; homeInputs = homeCommonInputs; inherit catppuccin-base16 comin dash2; };
 
     in
     rec {
@@ -99,6 +104,7 @@
           hw.common-pc-laptop
           # Note: This laptop had its HDD replaced with an SSD
           hw.common-pc-laptop-ssd
+          dash2.nixosModules.default
         ];
       };
 

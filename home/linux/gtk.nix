@@ -8,7 +8,7 @@
     # font.package = pkgs.ibm-plex;
     # font.name = "IBM Plex Sans";
     # font.size = 10;
-    theme.package = pkgs.lib.mkForce pkgs.gnome.adwaita-icon-theme;
+    theme.package = pkgs.lib.mkForce pkgs.adwaita-icon-theme;
     theme.name = pkgs.lib.mkForce "Adwaita-dark";
     iconTheme.package = pkgs.lib.mkForce pkgs.cinnamon.mint-y-icons;
     iconTheme.name = pkgs.lib.mkForce "Mint-Y-Dark-Grey";

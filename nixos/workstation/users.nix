@@ -9,7 +9,7 @@
     shell = pkgs.zsh;
     packages = with pkgs; [
       neovim
-      gnome.gnome-terminal
+      gnome-terminal
       networkmanagerapplet
     ];
   };

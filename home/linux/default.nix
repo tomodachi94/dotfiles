@@ -15,6 +15,7 @@
     # ./i3status
     ./i3status-rust
     ./iamb
+    ./kdeconnect.nix
     ./kitty
     ./neofetch
     ./network-manager-applet.nix

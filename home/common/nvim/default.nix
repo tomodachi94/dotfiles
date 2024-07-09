@@ -10,7 +10,7 @@ in
     VISUAL = "${pkgs.lib.getExe pkgs.neovim}";
   };
   xdg.configFile."nvim/spell".source = ./spell;
-  xdg.configFile."nvim/vimscript".source = ./vimscript;
+  xdg.configFile."nvim/plugin".source = ./plugin;
   xdg.configFile."nvim/lazy-lock.json".source = mkOutOfStoreSymlink "${dotfilesDir}/home/common/nvim/lazy-lock.json";
 
   xdg.configFile."nvim/lua/tomodachi94".source = ./lua/tomodachi94;

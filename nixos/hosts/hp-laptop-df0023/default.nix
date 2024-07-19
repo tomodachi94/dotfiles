@@ -17,5 +17,8 @@
 
   hardware.bluetooth.enable = true;
 
+  # This specific CPU benefits from having its microcode updated.
+  hardware.cpu.intel.updateMicrocode = true;
+
   networking.hostName = "hp-laptop-df0023"; # Define your hostname.
 }

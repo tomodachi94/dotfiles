@@ -1,5 +1,6 @@
 {
   imports = [
+    ./antivirus.nix
     ./bootloader.nix
     ./comin.nix
     ./locale.nix

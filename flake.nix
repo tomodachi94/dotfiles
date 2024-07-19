@@ -99,7 +99,7 @@
         args = systemLinuxInputs;
         extraModules = let hw = nixos-hardware.nixosModules; in [
           hw.common-cpu-intel
-          hw.common-gpu-intel-sandy-bridge
+          hw.common-gpu-intel-kaby-lake
           hw.common-pc
           hw.common-pc-laptop
           # Note: This laptop had its HDD replaced with an SSD

@@ -50,5 +50,5 @@ in
 mkNewDS {
   name = "new-2ds-xl";
   region = "USA";
-  systemVersion = "11.16.0-49U";
+  systemVersion = "11.17.0-50U";
 }

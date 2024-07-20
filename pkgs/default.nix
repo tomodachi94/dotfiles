@@ -3,6 +3,7 @@ let
   cp = pkgs.callPackage;
 in
 {
+  "3ds" = cp ./all/3ds.nix { };
   awesome-lint = cp ./all/awesome-lint { };
   ultisnips-vscode = cp ./all/ultisnips-vscode.nix { };
   zsh-window-title = cp ./all/zsh-window-title.nix { };

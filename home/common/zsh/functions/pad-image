@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+pad-image() {
+  # Get trim box w, h, x, y
+  IFS=" x+" read w h x y < <(nix-shell -p imagemagick --run 'convert -fuzz 10% $1 -format "%@" info:')
+
+  # Get longest side
+  longest=$w
+  [ $h -gt $longest ] && longest=$h
+
+  # Increase by 20%
+  longest=$(echo "scale=0;$longest*1.2/1" | nix-shell -p bc --run "bc")
+  echo $longest
+
+  nix-shell -p imagemagick --run 'convert -fuzz 10% start.jpg -trim -background white -gravity center -extent ${longest}x${longest} $1-result'
+}

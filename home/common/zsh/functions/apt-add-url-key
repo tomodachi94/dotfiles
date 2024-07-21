@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+apt-add-url-key () {
+  local GPG_KEY=$1
+  curl -SsL $GPG_KEY | sudo apt-key add -
+}

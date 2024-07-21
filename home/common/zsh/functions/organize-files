@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Function to organize files by extension
-organize_files() {
+organize-files() {
  local dir="$1"
  local no_ext_dir="${dir}/no_extension"
 

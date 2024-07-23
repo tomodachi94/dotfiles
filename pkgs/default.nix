@@ -10,7 +10,7 @@ in
   zsh-window-title = cp ./all/zsh-window-title.nix { };
 } // pkgs.lib.optionalAttrs pkgs.stdenv.isLinux {
   crossover = cp ./linux/crossover.nix { };
-  hp-flash = cp ./linux/hp-flash.nix { };
+  hp-linuxtools = cp ./linux/hp-linuxtools.nix { };
 } // pkgs.lib.optionalAttrs pkgs.stdenv.isDarwin {
   developercolorpicker = cp ./darwin/developercolorpicker.nix { };
 }

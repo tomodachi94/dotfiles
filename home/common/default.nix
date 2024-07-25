@@ -16,6 +16,7 @@
     ./h.nix
     ./helix.nix
     ./home-manager.nix
+    ./librewolf.nix
     ./nheko.nix
     ./nixpkgs
     ./nnn.nix

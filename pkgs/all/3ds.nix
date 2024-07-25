@@ -18,7 +18,7 @@ let
   };
   nimdsphax = fetchzip {
     url = "https://github.com/luigoalma/nimdsphax/releases/download/v1.0/nimdsphax_v1.0.zip";
-    hash = "sha256-YAIbTh6QtqGBb79UeeAN6neQ7PEpZlsnO9kxbtgI19Y=";
+    hash = "sha256-9CZ7fNSALm8FngTfLGHTOTayEUTs717CSNiywQ/ncFY=";
     stripRoot = false;
   };
   luma3ds = fetchzip {
@@ -43,7 +43,7 @@ let
       cp ${super-skaterhax}/${attrs.region}\ \(*${attrs.systemVersion}*\)/*.bin $out/
       cp ${boot9strap}/boot9strap.* $out/boot9strap
       cp ${safeb9sinstaller}/SafeB9SInstaller.bin $out/
-      cp ${nimdsphax}/* $out/3ds/nimdsphax
+      cp -r ${nimdsphax}/* $out/3ds/nimdsphax
     '';
   };
 in

@@ -21,7 +21,7 @@
     ./nixpkgs
     ./nnn.nix
     ./nvim
-    ./readline
+    ./readline.nix
     ./ripgrep.nix
     ./shell-standalone-packages.nix
     ./starship.nix

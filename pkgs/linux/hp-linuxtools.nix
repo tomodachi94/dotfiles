@@ -32,7 +32,8 @@ stdenvNoCC.mkDerivation rec {
       --replace-fail "/opt/hp/hp-flash" "$out" \
       --replace-fail "/sbin/modprobe" "${kmod}/bin/modprobe" \
       --replace-fail "/sbin/rmmod" "${kmod}/bin/rmmod" \
-      --replace-fail "$out/bin/hp-" "$out/bin/.hp-"
+      --replace-fail "$out/bin/hp-" "$out/bin/.hp-" \
+      --replace-fail "/lib/modules" "/run/current-system/kernel-modules/lib/modules"
 
     mv builds/hp-flash.u2204 bin/hp-flash
     mv builds/hp-repsetup.u2204 bin/hp-repsetup

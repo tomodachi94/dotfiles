@@ -24,6 +24,11 @@ command = "taplo"
 options = ["format"]
 includes = ["*.toml"]
 
+[formatter.jq]
+command = "just"
+options = ["_format-wrapper-jq"]
+includes = ["*.json", "*.jsonc"]
+
 [formatter.mdformat]
 command = "mdformat"
 includes = ["*.md"]

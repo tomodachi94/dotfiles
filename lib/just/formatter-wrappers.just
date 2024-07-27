@@ -7,3 +7,9 @@ _format-wrapper-statix *files:
     statix fix --config lib/tooling-config/statix.toml "$file"
   done
 
+_format-wrapper-jq *files:
+  #!/usr/bin/env sh
+  set -euxo pipefail
+  for file in {{files}}; do
+    echo "$file" | jq -S > "$file"
+  done

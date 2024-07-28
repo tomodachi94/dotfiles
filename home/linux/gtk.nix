@@ -10,7 +10,7 @@
     # font.size = 10;
     theme.package = pkgs.lib.mkForce pkgs.adwaita-icon-theme;
     theme.name = pkgs.lib.mkForce "Adwaita-dark";
-    iconTheme.package = pkgs.lib.mkForce pkgs.cinnamon.mint-y-icons;
+    iconTheme.package = pkgs.lib.mkForce pkgs.mint-y-icons;
     iconTheme.name = pkgs.lib.mkForce "Mint-Y-Dark-Grey";
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = 1;

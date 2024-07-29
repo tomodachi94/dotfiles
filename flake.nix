@@ -108,6 +108,18 @@
         ];
       };
 
+      nixosConfigurations.ponyo = tomolib.mkNixosConfig {
+        hostname = "ponyo";
+        args = systemLinuxInputs;
+        extraModules = let hw = nixos-hardware.nixosModules; in [
+          hw.common-cpu-intel
+          hw.common-pc
+          hw.common-pc-laptop
+          hw.common-pc-laptop-ssd
+          dash2.nixosModules.default
+        ];
+      };
+
       checks = tomolib.forAllSystems (pkgs: import ./lib/checks.nix { inherit pkgs pre-commit-hooks; });
 
       packages = tomopkgs;

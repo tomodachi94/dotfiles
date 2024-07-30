@@ -26,4 +26,8 @@
   # This machine does not support hpuefi-mod/hp-linuxtools,
   # but I made a module and didn't want to waste it.
   # bios.hpuefi.enable = false;
+
+  services.fwupd = {
+    enable = true;
+  };
 }

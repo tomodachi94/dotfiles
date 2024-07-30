@@ -6,6 +6,7 @@
     ../../base
     ../../workstation
     ./hpuefi-module.nix
+    ./dash2.nix
   ];
 
   home-manager.users.me = { ... }: {

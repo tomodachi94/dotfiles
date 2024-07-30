@@ -31,3 +31,8 @@ update-lazy:
 
 format:
   treefmt --config-file ./lib/tooling-config/treefmt.toml --tree-root {{git_dir}}
+
+generate-hardware-config host:
+  mkdir nixos/hosts/{{host}}
+  cp lib/templates/new-host.nix nixos/hosts/{{host}}/default.nix
+  nixos-generate-config --show-hardware-config > nixos/hosts/{{host}}/hardware-configuration.nix

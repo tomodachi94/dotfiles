@@ -19,7 +19,7 @@
   hardware.bluetooth.enable = true;
 
   # This specific CPU benefits from having its microcode updated.
-  # hardware.cpu.intel.updateMicrocode = true;
+  hardware.cpu.intel.updateMicrocode = true;
 
   networking.hostName = "ponyo"; # Define your hostname.
 

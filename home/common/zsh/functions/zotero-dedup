@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+zotero-dedup() {
+  dir1=$USER/Downloads
+  dir2=$USER/Zotero/storage
+
+  for file in "$dir1"/*; do
+    # Calculate the hash of the current file
+    fileHash=$(shasum -a 256 "$file" | awk '{ print $1 }')
+
+    # Check if a file with the same hash exists in dir2
+    if ls "$dir2"/**  2>/dev/null | grep -q "$fileHash"; then
+      rm -i "$file"
+    fi
+  done
+}

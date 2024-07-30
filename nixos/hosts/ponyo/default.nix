@@ -1,4 +1,4 @@
-{ config, homeInputs, ... }:
+{ config, homeInputs, pkgs, tomopkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -30,4 +30,15 @@
   services.fwupd = {
     enable = true;
   };
+
+  # Fingerprint scanner
+  services.fprintd = {
+    enable = true;
+    tod = {
+      enable = true;
+      driver = tomopkgs.${pkgs.system}.libfprint-2-tod1-broadcom;
+    };
+  };
+  services.udev.packages = [ config.services.fprintd.tod.driver ];
+  environment.systemPackages = [ config.services.fprintd.tod.driver ];
 }

@@ -8,6 +8,9 @@
 
   home-manager.users.me = { ... }: {
     imports = [ ../../../home/common ../../../home/linux ];
+    xresources.properties = {
+      "Xft.dpi" = 120;
+    };
   };
 
   home-manager.extraSpecialArgs = homeInputs;

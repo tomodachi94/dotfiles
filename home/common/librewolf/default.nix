@@ -18,6 +18,11 @@ in
       id = 0;
       name = "default";
       isDefault = true;
+      settings = {
+        # Disable autofill
+        "browser.formautofill.enabled" = false;
+        "browser.formfill.enable" = false;
+      };
       extensions = with firefox-addons.packages.${pkgs.system}; [
         bitwarden
         multi-account-containers

@@ -3,6 +3,10 @@ let
   firejailWrappers = tomolib.firejailWrappers { inherit pkgs; };
 in
 {
+  imports = [
+    ./search.nix
+  ];
+
   programs.librewolf = {
     enable = true;
     # package = firejailWrappers.librewolf;

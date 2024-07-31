@@ -4,6 +4,7 @@ let
 in
 {
   imports = [
+    ./bookmarklets
     ./search.nix
   ];
 

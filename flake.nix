@@ -12,7 +12,7 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/master";
+      url = "github:chayleaf/home-manager/librewolf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -68,9 +68,14 @@
       url = "github:tomodachi94/dash2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions/master?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, nixos-hardware, home-manager, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, bitwarden-dmenu, comin, pre-commit-hooks, dash2, ... }:
+  outputs = { nixpkgs, nixos-hardware, home-manager, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, bitwarden-dmenu, comin, pre-commit-hooks, dash2, firefox-addons, ... }:
     let
       tomolib = import ./lib { inherit nixpkgs home-manager stylix comin; };
       tomopkgs = tomolib.forAllSystems (pkgs:
@@ -81,7 +86,7 @@
 
       commonInputs = { inherit vars tomopkgs tomolib; rawNixpkgs = nixpkgs; };
 
-      homeCommonInputs = commonInputs // { inherit zsh-craftos-select stylix bitwarden-dmenu; };
+      homeCommonInputs = commonInputs // { inherit zsh-craftos-select stylix bitwarden-dmenu firefox-addons; };
       homeDarwinInputs = homeCommonInputs // { inherit mac-app-util; };
 
       systemCommonInputs = commonInputs // { };

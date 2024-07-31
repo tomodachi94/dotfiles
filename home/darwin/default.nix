@@ -5,6 +5,6 @@
     ./color-pickers.nix
     ./desktop-standalone-packages.nix
     ./git.nix
-    ./zsh.nix
+    ./zsh
   ];
 }

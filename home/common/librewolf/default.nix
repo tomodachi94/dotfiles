@@ -22,6 +22,8 @@ in
         # Disable autofill
         "browser.formautofill.enabled" = false;
         "browser.formfill.enable" = false;
+        # Keep browser open when the last tab is closed
+        "browser.tabs.closeWindowWithLastTab" = false;
       };
       extensions = with firefox-addons.packages.${pkgs.system}; [
         bitwarden

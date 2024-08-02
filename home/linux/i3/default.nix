@@ -1,9 +1,23 @@
 { config, pkgs, vars, ... }:
+let
+  colors = with config.lib.stylix.colors.withHashtag; {
+    text = base05;
+    separator = base03;
+    urgent = base08;
+    focused = base0D;
+    unfocused = base03;
+    background = base00;
+    border = background;
+  };
+in
 {
   stylix.targets.i3.enable = true;
   xdg.configFile."i3/config" = {
     text = ''
-      ## start manual config ##
+      ## start stylix integration ##
+
+      ## end stylix integration ##
+      ## start config imports ##
       set $wallpaper_path "${config.stylix.image}"
       set $font "${vars.font.monospace}"
       include ${./all.config}
@@ -11,7 +25,7 @@
       include ${./programs.config}
       include ${./keybinds.config}
       include ${./bar.config}
-      ## end manual config ##
+      ## end config imports ##
     '';
     onChange = ''
       	  if [ ${pkgs.lib.getExe pkgs.xorg.xprop} -root | ${pkgs.lib.getExe pkgs.gnugrep} i3 ]; then

@@ -30,6 +30,7 @@ in
         multi-account-containers
         auto-tab-discard
         ublacklist
+        violentmonkey
         indie-wiki-buddy
       ];
     };

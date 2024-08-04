@@ -24,6 +24,14 @@
 
   networking.hostName = "ponyo"; # Define your hostname.
 
+  # Full-disk encryption
+  boot.initrd.luks.devices = {
+    root = {
+      device = "/dev/sda2";
+      preLVM = true;
+    };
+  };
+
   services.fwupd = {
     enable = true;
   };

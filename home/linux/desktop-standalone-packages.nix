@@ -1,4 +1,4 @@
-{ pkgs, tomolib, ... }:
+{ pkgs, tomopkgs, tomolib, ... }:
 let
   firejailWrappers = tomolib.firejailWrappers { inherit pkgs; };
 in
@@ -7,5 +7,6 @@ in
     pkgs.lxqt.qps
     pkgs.vscodium-fhs # GUI IDE
     pkgs.zotero
+    tomopkgs.${pkgs.system}.crosshair-dot
   ];
 }

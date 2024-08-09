@@ -2,6 +2,7 @@
   imports = [
     ./bluetooth.nix
     ./firejail.nix
+    ./flatpak.nix
     ./gpg.nix
     ./graphics.nix
     ./ime.nix

@@ -22,7 +22,7 @@ format_alt = " $icon $available / $total "
 
 [[block]]
 block = "memory"
-format = " $icon $mem_used_percents.eng(w:1) "
+format = " $icon $mem_free / $mem_total "
 interval = 30
 warning_mem = 70
 critical_mem = 90

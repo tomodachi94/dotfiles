@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+
+function git-homedir-report () {
+  local repos=$(find "$HOME" -type d \( -name '.github' \) -prune -o -type d -name '.git' -print)
+
+  for repo in $repos; do
+    local GIT_DIR="$repo"
+    echo "Checking repository at: $GIT_DIR"
+
+    if git status --porcelain | grep '^ M'; then
+      echo "Unstaged changes found in: $GIT_DIR"
+    fi
+
+    if git log HEAD..origin --pretty=format:'%H' > /dev/null && ! git fetch origin; then
+      echo "Unpushed commits found in: $GIT_DIR"
+    fi
+
+    if git stash list | grep -q 'stash@{0}'; then
+      echo "Stashed changes found in: $GIT_DIR"
+    fi
+  done
+}

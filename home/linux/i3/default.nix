@@ -30,7 +30,6 @@
     playerctl
     lightlocker
     dbus
-    pulseaudioFull
     xclip
     maim
     feh

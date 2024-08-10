@@ -15,6 +15,7 @@ in
   crosshair-dot = cp ./linux/crosshair-dot.nix { };
   hp-linuxtools = cp ./linux/hp-linuxtools.nix { };
   hudkit = cp ./linux/hudkit.nix { };
+  volnoti = cp ./linux/volnoti.nix { };
 } // pkgs.lib.optionalAttrs pkgs.stdenv.isDarwin {
   developercolorpicker = cp ./darwin/developercolorpicker.nix { };
 }

@@ -28,6 +28,13 @@ warning_mem = 70
 critical_mem = 90
 
 [[block]]
+block = "privacy"
+[[block.driver]]
+name = "v4l"
+[[block.driver]]
+name = "pipewire"
+
+[[block]]
 block = "time"
 interval = 5
 format = " $icon $timestamp.datetime(f:'%a %Y-%m-%d %I:%M %p') "

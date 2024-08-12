@@ -24,6 +24,8 @@
 
   networking.hostName = "ponyo"; # Define your hostname.
 
+  services.usbmuxd.enable = true;
+
   # Full-disk encryption
   boot.initrd.luks.devices = {
     root = {
@@ -40,6 +42,7 @@
   };
   environment.systemPackages = with pkgs; [
     sbctl
+    libimobiledevice
   ];
 
   services.fwupd = {

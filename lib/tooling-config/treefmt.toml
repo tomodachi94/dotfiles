@@ -18,6 +18,7 @@ includes = ["*.nix"]
 [formatter.nixpkgs-fmt]
 command = "nixpkgs-fmt"
 includes = ["*.nix"]
+excludes = ["*/hardware-configuration.nix"]
 
 [formatter.taplo]
 command = "taplo"

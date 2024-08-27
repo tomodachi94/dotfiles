@@ -1,4 +1,4 @@
-{ pkgs, home-manager, checks, ... }:
+{ pkgs, home-manager, disko, checks, ... }:
 let
   treefmt-deps = with pkgs; [
     treefmt
@@ -23,6 +23,7 @@ in
       selene
       jq
       home-manager.packages.${system}.default
+      disko.packages.${system}.disko
     ] ++ treefmt-deps;
     inherit (checks.${pkgs.system}.pre-commit-check) shellHook;
   };

@@ -8,4 +8,8 @@ import 'lib/just/formatter-wrappers.just'
 import 'lib/just/aliases.just'
 
 build *args:
-  sudo nixos-rebuild switch --flake ".#$(hostname)" {{args}}
+  nixos-rebuild switch \
+    --flake ".#$(hostname)" \
+    --use-remote-sudo \
+    --option experminetal-features 'nix-command flakes' \
+    {{args}}

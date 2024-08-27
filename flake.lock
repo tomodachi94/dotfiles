@@ -230,6 +230,26 @@
         "type": "github"
       }
     },
+    "disko": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1724639687,
+        "narHash": "sha256-L2h46/z8WExNvtCEdZ8YuMu5TwfAGsKXXgM7pyIShvs=",
+        "owner": "nix-community",
+        "repo": "disko",
+        "rev": "b09eb605e376c9e95c87c0ef3fcb8008e11c8368",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "disko",
+        "type": "github"
+      }
+    },
     "firefox-addons": {
       "inputs": {
         "flake-utils": "flake-utils_4",
@@ -808,6 +828,7 @@
         "catppuccin-base16": "catppuccin-base16",
         "comin": "comin",
         "dash2": "dash2",
+        "disko": "disko",
         "firefox-addons": "firefox-addons",
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",

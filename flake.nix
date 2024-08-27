@@ -21,6 +21,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     mac-app-util = {
       url = "github:hraban/mac-app-util";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -80,9 +85,9 @@
     };
   };
 
-  outputs = { nixpkgs, nixos-hardware, home-manager, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, bitwarden-dmenu, comin, pre-commit-hooks, dash2, firefox-addons, lanzaboote, ... }:
+  outputs = { nixpkgs, nixos-hardware, home-manager, disko, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, bitwarden-dmenu, comin, pre-commit-hooks, dash2, firefox-addons, lanzaboote, ... }:
     let
-      tomolib = import ./lib { inherit nixpkgs home-manager stylix comin; };
+      tomolib = import ./lib { inherit nixpkgs home-manager stylix comin disko; };
       tomopkgs = tomolib.forAllSystems (pkgs:
         import ./pkgs { inherit pkgs; }
       );
@@ -95,7 +100,7 @@
       homeDarwinInputs = homeCommonInputs // { inherit mac-app-util; };
 
       systemCommonInputs = commonInputs // { };
-      systemLinuxInputs = systemCommonInputs // { nixos-hardware = nixos-hardware.nixosModules; homeInputs = homeCommonInputs; inherit catppuccin-base16 comin dash2 lanzaboote; };
+      systemLinuxInputs = systemCommonInputs // { nixos-hardware = nixos-hardware.nixosModules; homeInputs = homeCommonInputs; inherit catppuccin-base16 comin dash2 lanzaboote disko; };
 
     in
     rec {
@@ -136,7 +141,7 @@
       packages = tomopkgs;
       /* legacyPackages = tomolib.forAllSystems (system: (packages.${system} // { lib = tomolib; })); */
 
-      devShells = tomolib.forAllSystems (pkgs: import ./lib/shells.nix { inherit pkgs home-manager checks; });
+      devShells = tomolib.forAllSystems (pkgs: import ./lib/shells.nix { inherit pkgs home-manager disko checks; });
 
     };
 

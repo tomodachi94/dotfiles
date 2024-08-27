@@ -2,6 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./disko-config.nix
     ../../base
     ../../workstation
   ];
@@ -25,14 +26,6 @@
   networking.hostName = "ponyo"; # Define your hostname.
 
   services.usbmuxd.enable = true;
-
-  # Full-disk encryption
-  boot.initrd.luks.devices = {
-    root = {
-      device = "/dev/sda2";
-      preLVM = true;
-    };
-  };
 
   # UEFI Secure Boot
   boot.loader.systemd-boot.enable = lib.mkForce false;

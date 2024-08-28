@@ -36,3 +36,9 @@ generate-hardware-config host:
   mkdir nixos/hosts/{{host}}
   cp lib/templates/new-host.nix nixos/hosts/{{host}}/default.nix
   nixos-generate-config --show-hardware-config > nixos/hosts/{{host}}/hardware-configuration.nix
+
+disko-install disk:
+  sudo disko-install \
+    --flake '.#' \
+    --write-efi-boot-entries \
+    --disk main {{disk}}

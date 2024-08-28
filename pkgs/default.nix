@@ -7,6 +7,7 @@ in
   awesome-lint = cp ./all/awesome-lint { };
   get-ro-ids = cp ./all/get-ro-ids.nix { };
   mrcoles-bookmarklet = cp ./all/mrcoles-bookmarklet.nix { };
+  spodcast = cp ./all/spodcast.nix { };
   ultisnips-vscode = cp ./all/ultisnips-vscode.nix { };
   wpcleaner = cp ./all/wpcleaner { };
   zsh-window-title = cp ./all/zsh-window-title.nix { };

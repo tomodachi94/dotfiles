@@ -32,6 +32,7 @@ in
       just
       nixos-rebuild
       jq
+      selene
     ] ++ treefmt-deps;
   };
 }

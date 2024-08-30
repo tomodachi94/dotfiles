@@ -14,6 +14,7 @@ in
 } // pkgs.lib.optionalAttrs pkgs.stdenv.isLinux {
   crossover = cp ./linux/crossover.nix { };
   crosshair-dot = cp ./linux/crosshair-dot.nix { };
+  ftb-app = cp ./linux/ftb-app.nix { };
   hp-linuxtools = cp ./linux/hp-linuxtools.nix { };
   hudkit = cp ./linux/hudkit.nix { };
   volnoti = cp ./linux/volnoti.nix { };

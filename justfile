@@ -1,6 +1,6 @@
 #!/usr/bin/env just --justfile
 
-git_dir  := `git rev-parse --show-toplevel`
+git_dir := `git rev-parse --show-toplevel`
 
 import 'lib/just/dev.just'
 import 'lib/just/checks.just'
@@ -11,5 +11,5 @@ build *args:
   nixos-rebuild switch \
     --flake ".#$(hostname)" \
     --use-remote-sudo \
-    --option experminetal-features 'nix-command flakes' \
+    --option experimental-features 'nix-command flakes' \
     {{args}}

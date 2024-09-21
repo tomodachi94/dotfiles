@@ -7,6 +7,7 @@
     ./networking.nix
     ./nix.nix
     ./shell.nix
+    ./bitwarden-secrets-module.nix
   ];
 
   config.programs.dconf.enable = true;

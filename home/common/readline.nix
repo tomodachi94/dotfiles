@@ -4,7 +4,7 @@
     variables = {
       editing-mode = "vi";
       completion-ignore-case = true;
-      enable-bracketed-phrase = true;
+      enable-bracketed-paste = true;
     };
   };
 }

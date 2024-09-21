@@ -15,7 +15,6 @@
     ./i3status-rust
     ./kdeconnect.nix
     ./kitty
-    ./neofetch
     ./network-manager-applet.nix
     ./volnoti.nix
     ./xdg.nix

@@ -7,10 +7,5 @@
       "input" # Enable brightness control for the user, e.g. with brightnessctl
     ];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-      neovim
-      gnome-terminal
-      networkmanagerapplet
-    ];
   };
 }

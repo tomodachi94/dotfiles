@@ -9,7 +9,7 @@
     ./networking.nix
     ./printing.nix
     ./sound.nix
-    ./stylix
+    ./stylix.nix
     ./syncthing.nix
     ./users.nix
     ./window-manager.nix

@@ -17,7 +17,6 @@
     ./kitty
     ./neofetch
     ./network-manager-applet.nix
-    # ./vivaldi.nix
     ./volnoti.nix
     ./xdg.nix
     ./xorg

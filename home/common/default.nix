@@ -2,7 +2,6 @@
   imports = [
     ./atuin.nix
     ./bash.nix
-    ./bat.nix
     # ./craftos-pc
     ./desktop-standalone-packages.nix
     ./dircolors.nix

@@ -13,7 +13,6 @@
     ./git.nix
     ./gpg.nix
     ./h.nix
-    ./helix.nix
     ./home-manager.nix
     ./librewolf
     ./nixpkgs

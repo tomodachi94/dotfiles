@@ -7,16 +7,11 @@
     ../../workstation
   ];
 
-  home-manager.users.me = { ... }: {
-    imports = [ ../../../home/common ../../../home/linux ];
+  home-manager.users.me = _: {
     xresources.properties = {
       "Xft.dpi" = 120;
     };
   };
-
-  home-manager.extraSpecialArgs = homeInputs;
-
-  home-manager.useUserPackages = true;
 
   hardware.bluetooth.enable = true;
 

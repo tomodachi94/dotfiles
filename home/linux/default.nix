@@ -1,6 +1,5 @@
 {
   imports = [
-    ./albert
     ./blueman.nix
     ./copyq.nix
     ./desktop-standalone-packages.nix

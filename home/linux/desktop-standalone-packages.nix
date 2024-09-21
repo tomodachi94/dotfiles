@@ -5,7 +5,6 @@ in
 {
   home.packages = [
     pkgs.lxqt.qps
-    pkgs.vscodium-fhs # GUI IDE
     pkgs.zotero
     tomopkgs.${pkgs.system}.crosshair-dot
   ];

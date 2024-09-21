@@ -6,7 +6,7 @@
     ./locale.nix
     ./networking.nix
     ./nix.nix
-    ./shell.nix
+    ./zsh.nix
   ];
 
   config.programs.dconf.enable = true;

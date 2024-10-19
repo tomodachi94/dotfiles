@@ -9,7 +9,7 @@
     ./zsh.nix
   ];
 
-  systemd.enableStrictShellChecks = true;
+  config.enableStrictShellChecks = true;
 
   config.programs.dconf.enable = true;
 

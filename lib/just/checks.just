@@ -14,4 +14,4 @@ check-flake-outputs:
 check-formatting:
   treefmt --fail-on-change --no-cache --config-file ./lib/tooling-config/treefmt.toml --tree-root {{git_dir}}
 
-ci: check-formatting lint
+ci: check-flake-outputs check-formatting lint

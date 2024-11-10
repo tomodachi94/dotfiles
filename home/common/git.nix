@@ -91,4 +91,8 @@
   programs.git-credential-oauth = {
     enable = true;
   };
+
+  home.packages = with pkgs; [
+    git-absorb
+  ];
 }

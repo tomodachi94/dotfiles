@@ -12,7 +12,7 @@
     };
 
     home-manager = {
-      url = "github:chayleaf/home-manager/librewolf";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

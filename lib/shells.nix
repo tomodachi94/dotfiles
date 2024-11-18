@@ -23,8 +23,8 @@ in
       selene
       jq
       home-manager.packages.${system}.default
-      disko.packages.${system}.disko
-    ] ++ treefmt-deps;
+    ] ++ (lib.optional stdenv.hostPlatform.isLinux [ disko.packages.${system}.disko ])
+    ++ treefmt-deps;
     inherit (checks.${pkgs.system}.pre-commit-check) shellHook;
   };
   ci = pkgs.mkShellNoCC {

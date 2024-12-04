@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 {
   gtk = {
-    enable = config.local.eagerSetup.enableGraphicalApps;
+    enable = config.local.system.linux && config.local.eagerSetup.enableGraphicalApps;
     # cursorTheme.package = pkgs.vanilla-dmz;
     # cursorTheme.name = "Vanilla-DMZ";
     # cursorTheme.size = 23;

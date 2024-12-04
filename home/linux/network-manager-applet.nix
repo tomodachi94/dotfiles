@@ -1,6 +1,6 @@
 { config, ... }:
 {
   services.network-manager-applet = {
-    enable = config.local.eagerSetup.enableGraphicalApps;
+    enable = config.local.system.linux && config.local.eagerSetup.enableGraphicalApps;
   };
 }

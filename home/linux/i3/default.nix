@@ -24,7 +24,7 @@
   };
 
   # For cleanliness, this contains any packages that are exclusively used in this configuration.
-  home.packages = lib.optionals config.local.eagerSetup.enableGraphicalApps (with pkgs; [
+  home.packages = lib.optionals (config.local.system.linux && config.local.eagerSetup.enableGraphicalApps) (with pkgs; [
     xss-lock
     brightnessctl
     playerctl

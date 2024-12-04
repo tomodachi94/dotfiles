@@ -11,7 +11,7 @@
 
   config = {
     assertions = [{
-      assertion = config.home.colorPickers.enable && (config.home.colorPickers != []) && !pkgs.stdenv.hostPlatform.isDarwin;
+      assertion = config.home.colorPickers.enable && (config.home.colorPickers != [ ]) && !pkgs.stdenv.hostPlatform.isDarwin;
       message = "Must use Darwin to install color pickers.";
     }];
 

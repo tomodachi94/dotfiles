@@ -1,5 +1,5 @@
 { pkgs, lib, config, ... }:
-lib.mkIf config.local.eagerSetup.enableGraphicalApps {
+lib.mkIf (config.local.system.linux && config.local.eagerSetup.enableGraphicalApps) {
   i18n.inputMethod.enabled = "fcitx5";
   i18n.inputMethod.fcitx5.addons = with pkgs; [
     fcitx5-mozc

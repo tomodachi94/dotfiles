@@ -1,6 +1,7 @@
+{ config, ... }:
 {
   programs.ripgrep = {
-    enable = true;
+    enable = config.local.eagerSetup.enableExtendedCli;
     arguments = [
       "--smart-case"
     ];

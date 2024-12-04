@@ -11,6 +11,10 @@
     xresources.properties = {
       "Xft.dpi" = 120;
     };
+    local.eagerSetup.enableGraphicalApps = true;
+    local.eagerSetup.enableExtendedCli = true;
+    local.eagerSetup.enableGames = true;
+    local.eagerSetup.enableHeavyDevelop = true;
   };
 
   hardware.bluetooth.enable = true;

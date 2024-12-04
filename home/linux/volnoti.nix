@@ -1,7 +1,7 @@
-{ pkgs, tomopkgs, ... }:
+{ pkgs, tomopkgs, config, ... }:
 {
   services.volnoti = {
-    enable = true;
+    enable = config.local.eagerSetup.enableGraphicalApps;
     package = tomopkgs.${pkgs.system}.volnoti;
   };
 }

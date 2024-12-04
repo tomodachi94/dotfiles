@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, config, lib, ... }:
 {
-  home.packages = [
+  home.packages = lib.mkIf config.local.eagerSetup.enableExtendedCli [
     pkgs.coreutils
     pkgs.neovim
     pkgs.renameutils

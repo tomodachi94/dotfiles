@@ -1,6 +1,6 @@
-{ pkgs, bitwarden-dmenu, ... }:
+{ pkgs, lib, config, bitwarden-dmenu, ... }:
 {
-  home.packages = [
+  home.packages = lib.mkIf config.local.eagerSetup.enableGraphicalApps [
     pkgs.discord
     pkgs.obsidian
     pkgs.spotube

@@ -1,5 +1,6 @@
+{ config, ... }:
 {
   programs.dircolors = {
-    enable = true;
+    enable = config.local.eagerSetup.enableExtendedCli;
   };
 }

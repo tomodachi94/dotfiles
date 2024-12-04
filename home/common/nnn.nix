@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   programs.nnn = {
-    enable = true;
+    enable = config.local.eagerSetup.enableExtendedCli;
     plugins = {
       src = "${pkgs.nnn.src}/plugins";
       mappings = {

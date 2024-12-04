@@ -1,4 +1,4 @@
-{ pkgs, tomolib, firefox-addons, config, ... }:
+{ pkgs, lib, tomolib, firefox-addons, config, ... }:
 let
   firejailWrappers = tomolib.firejailWrappers { inherit pkgs; };
 in
@@ -9,7 +9,7 @@ in
   ];
 
   programs.librewolf = {
-    enable = true;
+    enable = config.local.eagerSetup.enableGraphicalApps;
     # package = firejailWrappers.librewolf;
     settings = {
       "webgl.disabled" = false;
@@ -36,7 +36,7 @@ in
     };
   };
 
-  home.sessionVariables = {
+  home.sessionVariables = lib.mkIf config.programs.librewolf.enable {
     BROWSER = "${config.programs.librewolf.finalPackage}/bin/librewolf";
   };
 }

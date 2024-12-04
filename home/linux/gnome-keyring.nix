@@ -1,5 +1,6 @@
+{ config, ... }:
 {
   services.gnome-keyring = {
-    enable = true;
+    enable = config.local.eagerSetup.enableGraphicalApps;
   };
 }

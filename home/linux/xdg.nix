@@ -1,5 +1,5 @@
 # NOTE: DO NOT INCLUDE XDG.CONFIGFILE SETTINGS HERE :)
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   xdg = {
     userDirs = {
@@ -8,6 +8,7 @@
     mimeApps = {
       enable = true;
       defaultApplications = {
+        # TODO: Split into modules and conditionally enable these rules if the application is enabled
         "x-scheme-handler/https" = "/etc/profiles/per-user/me/share/applications/librewolf.desktop";
         "x-scheme-handler/http" = "/etc/profiles/per-user/me/share/applications/librewolf.desktop";
         "application/rss+xml" = "${pkgs.liferea}/share/applications/net.sourceforge.liferea.desktop";

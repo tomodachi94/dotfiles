@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
 {
   programs.git = {
-    enable = true;
+    enable = config.local.eagerSetup.enableExtendedCli;
     includes = [
       {
         path = "~/.git-identities";
@@ -89,10 +89,10 @@
   };
 
   programs.git-credential-oauth = {
-    enable = true;
+    enable = config.local.eagerSetup.enableExtendedCli;
   };
 
-  home.packages = with pkgs; [
+  home.packages = lib.mkIf config.local.eagerSetup.enableExtendedCli (with pkgs; [
     git-absorb
-  ];
+  ]);
 }

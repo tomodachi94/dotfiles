@@ -1,5 +1,6 @@
+{ config, ... }:
 {
   programs.fd = {
-    enable = true;
+    enable = config.local.eagerSetup.enableExtendedCli;
   };
 }

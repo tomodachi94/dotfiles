@@ -1,6 +1,7 @@
+{ lib, config, ... }:
 {
   services.blueman-applet = {
-    enable = true;
+    enable = config.local.eagerSetup.enableGraphicalApps;
   };
 
   dconf.settings = {

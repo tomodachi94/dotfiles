@@ -1,6 +1,7 @@
+{ config, ... }:
 {
   programs.atuin = {
-    enable = true;
+    enable = config.local.eagerSetup.enableExtendedCli;
     enableZshIntegration = true;
     settings = {
       update_check = false; # We're using Nix, remember?

@@ -1,7 +1,7 @@
-{ config, pkgs, vars, ... }:
+{ config, pkgs, lib, vars, ... }:
 {
   stylix.targets.i3.enable = true;
-  xdg.configFile."i3/config" = {
+  xdg.configFile."i3/config" = lib.mkIf config.local.eagerSetup.enableGraphicalApps {
     text = ''
       ## start manual config ##
       set $wallpaper_path "${config.stylix.image}"
@@ -24,7 +24,7 @@
   };
 
   # For cleanliness, this contains any packages that are exclusively used in this configuration.
-  home.packages = with pkgs; [
+  home.packages = lib.optionals config.local.eagerSetup.enableGraphicalApps (with pkgs; [
     xss-lock
     brightnessctl
     playerctl
@@ -34,5 +34,5 @@
     maim
     feh
     dmenu
-  ];
+  ]);
 }

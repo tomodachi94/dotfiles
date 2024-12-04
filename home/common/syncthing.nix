@@ -1,5 +1,6 @@
+{ config, ... }:
 {
   services.syncthing = {
-    enable = true;
+    enable = config.local.eagerSetup.enableExtraServices;
   };
 }

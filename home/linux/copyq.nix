@@ -1,5 +1,6 @@
+{ config, ... }:
 {
   services.copyq = {
-    enable = true;
+    enable = config.local.eagerSetup.enableGraphicalApps;
   };
 }

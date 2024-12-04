@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   gtk = {
-    enable = true;
+    enable = config.local.eagerSetup.enableGraphicalApps;
     # cursorTheme.package = pkgs.vanilla-dmz;
     # cursorTheme.name = "Vanilla-DMZ";
     # cursorTheme.size = 23;
@@ -37,5 +37,5 @@
     '';
   };
 
-  stylix.targets.gtk.enable = true;
+  stylix.targets.gtk.enable = config.local.eagerSetup.enableGraphicalApps;
 }

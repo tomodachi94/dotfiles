@@ -1,6 +1,7 @@
+{ config, ... }:
 {
   programs.readline = {
-    enable = true;
+    enable = config.local.eagerSetup.enableExtendedCli;
     variables = {
       editing-mode = "vi";
       completion-ignore-case = true;

@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
-  fonts.fontconfig.enable = true;
+  fonts.fontconfig.enable = config.local.eagerSetup.enableGraphicalApps;
 
-  home.packages = with pkgs; [
+  home.packages = lib.mkIf config.local.eagerSetup.enableGraphicalApps (with pkgs; [
     nerdfonts
     noto-fonts-cjk-sans # Japanese
     atkinson-hyperlegible
-  ];
+  ]);
 }

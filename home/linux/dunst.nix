@@ -1,6 +1,7 @@
+{ config, ... }:
 {
   services.dunst = {
-    enable = true;
+    enable = config.local.eagerSetup.enableGraphicalApps;
   };
 
   stylix.targets.dunst.enable = true;

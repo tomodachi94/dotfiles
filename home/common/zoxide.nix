@@ -1,6 +1,7 @@
+{ config, ... }:
 {
   programs.zoxide = {
-    enable = true;
+    enable = config.local.eagerSetup.enableExtendedCli;
     enableZshIntegration = true;
   };
 }

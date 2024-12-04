@@ -1,6 +1,7 @@
+{ config, ... }:
 {
   programs.direnv = {
-    enable = true;
+    enable = config.local.eagerSetup.enableExtendedCli;
     nix-direnv.enable = true;
     enableZshIntegration = true;
     config = {

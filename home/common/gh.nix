@@ -1,6 +1,7 @@
+{ config, ... }:
 {
   programs.gh = {
-    enable = true;
+    enable = config.local.eagerSetup.enableExtendedCli;
     gitCredentialHelper.enable = false;
   };
 }

@@ -1,5 +1,6 @@
+{ config, ... }:
 {
   services.kdeconnect = {
-    enable = true;
+    enable = config.local.eagerSetup.enableGraphicalApps;
   };
 }

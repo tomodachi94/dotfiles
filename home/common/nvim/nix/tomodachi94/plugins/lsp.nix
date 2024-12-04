@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, config, lib, ... }:
 {
   /* Config necessary for LSP setup */
-  home.packages = with pkgs; [
+  home.packages = lib.optionals config.local.eagerSetup.enableHeavyDevelop (with pkgs; [
     lua-language-server
     rust-analyzer
     nil
@@ -12,5 +12,5 @@
     mypy
     hunspell
     lexical
-  ];
+  ]);
 }

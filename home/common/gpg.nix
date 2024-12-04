@@ -1,5 +1,6 @@
+{ config, ... }:
 {
   programs.gpg = {
-    enable = true;
+    enable = config.local.eagerSetup.enableExtendedCli;
   };
 }

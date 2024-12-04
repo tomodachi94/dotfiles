@@ -1,6 +1,17 @@
 { nixpkgs, home-manager, stylix, comin, disko }:
 rec {
-  mkHMImports = systemType: [ ../home/common (../. + "home/${systemType}") ];
+  mkHMImports = systemType: [
+    ../home/common
+    (../home + "/${systemType}")
+    stylix.homeManagerModules.stylix
+
+    ({ pkgs, ... }: {
+      stylix.image = pkgs.fetchurl {
+        url = "https://raw.githubusercontent.com/Gingeh/wallpapers/2530dba028589bda0ef6743d7960bd8a5b016679/os/nix-black-4k.png";
+        hash = "sha256-e1RBd5gTBonG39gYmxCvJuf+qZOiuxeZ9LTjhPQB9vk=";
+      };
+    })
+  ];
   mkNixpkgs = { systemType, systemArch }: nixpkgs.legacyPackages."${systemArch}-${systemType}";
 
   forAllSystems = function:

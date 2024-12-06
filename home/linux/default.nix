@@ -15,6 +15,7 @@
     ./i3status-rust
     ./kdeconnect.nix
     ./kitty
+    ./liferea
     ./network-manager-applet.nix
     ./volnoti.nix
     ./xdg.nix

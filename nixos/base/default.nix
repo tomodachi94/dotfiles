@@ -9,8 +9,6 @@
     ./zsh.nix
   ];
 
-  config.systemd.enableStrictShellChecks = true;
-
   config.programs.dconf.enable = true;
 
   # This value determines the NixOS release from which the default

@@ -17,7 +17,6 @@
     ./kitty
     ./liferea
     ./network-manager-applet.nix
-    ./volnoti.nix
     ./xdg.nix
     ./xorg
   ];

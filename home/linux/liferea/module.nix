@@ -17,9 +17,9 @@ in
     settings = lib.mkOption {
       type = lib.types.submodule {
         freeformType = lib.types.attrsOf lib.types.anything;
-        options = {};
+        options = { };
       };
-      default = {};
+      default = { };
       description = ''
         Liferea settings.
 
@@ -52,7 +52,7 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = [ cfg.package ];
 
-    xdg.mimeApps.defaultAssociations = {
+    xdg.mimeApps.defaultApplications = {
       # FIXME: Is the absolute path necessary when we append to home.packages?
       # Also: Is this too eager?
       "application/rss+xml" = "${cfg.package}/share/applications/net.sourceforge.liferea.desktop";

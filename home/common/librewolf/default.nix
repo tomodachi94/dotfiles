@@ -26,7 +26,6 @@ in
         "browser.tabs.closeWindowWithLastTab" = false;
       };
       extensions = with firefox-addons.packages.${pkgs.system}; [
-        bitwarden
         multi-account-containers
         auto-tab-discard
         ublacklist

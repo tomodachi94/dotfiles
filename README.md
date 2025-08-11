@@ -2,6 +2,8 @@
 
 These are my dotfiles. They are intended for my usage only, but feel free to take inspiration.
 
+**These dotfiles may not always reflect best practice.**
+
 Documentation for each individual piece of configuration is inside of its folder, either in the configuration itself or in a README.md in the directory root.
 
 ## Setting up

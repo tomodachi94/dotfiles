@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 2 # failsafe in case stuff starts to download; it should take much longer than 2 minutes to fully download everything
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install Nix
         uses: cachix/install-nix-action@v30
         with:

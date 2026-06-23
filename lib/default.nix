@@ -3,7 +3,7 @@ rec {
   mkHMImports = systemType: [
     ../home/common
     (../home + "/${systemType}")
-    stylix.homeManagerModules.stylix
+    stylix.homeModules.stylix
 
     ({ pkgs, ... }: {
       stylix.image = pkgs.fetchurl {

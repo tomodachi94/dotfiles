@@ -11,11 +11,11 @@ in
   ultisnips-vscode = cp ./all/ultisnips-vscode.nix { };
   wpcleaner = cp ./all/wpcleaner { };
   zsh-window-title = cp ./all/zsh-window-title.nix { };
-} // pkgs.lib.optionalAttrs pkgs.stdenv.isLinux {
+} // pkgs.lib.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
   crossover = cp ./linux/crossover.nix { };
   crosshair-dot = cp ./linux/crosshair-dot.nix { };
   hp-linuxtools = cp ./linux/hp-linuxtools.nix { };
   hudkit = cp ./linux/hudkit.nix { };
-} // pkgs.lib.optionalAttrs pkgs.stdenv.isDarwin {
+} // pkgs.lib.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
   developercolorpicker = cp ./darwin/developercolorpicker.nix { };
 }

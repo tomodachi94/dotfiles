@@ -3,7 +3,8 @@
     config = {
       allowUnfree = true;
       allowUnfreePredicate = _: true;
-      showDerivationWarnings = [ "maintainerless" ];
+      # FIXME: might be broken?
+      # showDerivationWarnings = [ "maintainerless" ];
     };
   };
 }

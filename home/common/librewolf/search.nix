@@ -2,7 +2,7 @@
 {
   programs.librewolf.profiles.default.search = {
     force = true;
-    default = "DuckDuckGo";
+    default = "ddg";
     engines = {
       "Nixpkgs" = {
         urls = [{
@@ -47,8 +47,8 @@
         icon = "''${pkgs.mint-y-icons}/share/icons/Mint-Y/scalable/apps/256@2x/web-github.png";
         definedAliases = [ "!github" "!gh" ];
       };
-      "Bing".metaData.hidden = true;
-      "Google".metaData.hidden = true;
+      "bing".metaData.hidden = true;
+      "google".metaData.hidden = true;
       "DuckDuckGo Lite".metaData.hidden = true;
       "MetaGer".metaData.hidden = true;
       "4get.ca (captcha)".metaData.hidden = true;

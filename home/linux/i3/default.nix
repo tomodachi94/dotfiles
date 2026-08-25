@@ -14,7 +14,7 @@
       ## end manual config ##
     '';
     onChange = ''
-      	  if [ ${pkgs.lib.getExe pkgs.xorg.xprop} -root | ${pkgs.lib.getExe pkgs.gnugrep} i3 ]; then
+      	  if [ ${pkgs.lib.getExe pkgs.xprop} -root | ${pkgs.lib.getExe pkgs.gnugrep} i3 ]; then
       	    noteEcho "Reloading i3 to apply changes"
       	    ${pkgs.i3}/bin/i3-msg reload
       	  else

@@ -48,7 +48,8 @@
         # Show full diff when running `git commit`
         verbose = true;
         # Sign commits automatically
-        gpgsign = true;
+        # FIXME: bring this back (or find something better?)
+        # gpgsign = true;
       };
       # Push to branch origin/whatever_my_current_branch_is if no upstream branch is set
       push = {

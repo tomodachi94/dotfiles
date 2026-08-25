@@ -16,6 +16,7 @@ in
   crosshair-dot = cp ./linux/crosshair-dot.nix { };
   hp-linuxtools = cp ./linux/hp-linuxtools.nix { };
   hudkit = cp ./linux/hudkit.nix { };
+  ircam-viewer = cp ./linux/ircam-viewer.nix { };
 } // pkgs.lib.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
   developercolorpicker = cp ./darwin/developercolorpicker.nix { };
 }

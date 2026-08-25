@@ -23,13 +23,13 @@ function M.config()
 		capabilities = capabilities,
 	}
 
-	require("lspconfig")["ruff_lsp"].setup {
+	require("lspconfig")["ruff"].setup {
 		capabilities = capabilities,
 	}
 
-	require("lspconfig")["lexical"].setup {
+	require("lspconfig")["expert"].setup {
 		capabilities = capabilities,
-		cmd = { "/etc/profiles/per-user/me/bin/lexical" },
+		cmd = { "/etc/profiles/per-user/me/bin/expert" },
 	}
 end
 

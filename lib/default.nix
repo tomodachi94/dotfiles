@@ -7,8 +7,8 @@ rec {
 
     ({ pkgs, ... }: {
       stylix.image = pkgs.fetchurl {
-        url = "https://raw.githubusercontent.com/Gingeh/wallpapers/2530dba028589bda0ef6743d7960bd8a5b016679/os/nix-black-4k.png";
-        hash = "sha256-e1RBd5gTBonG39gYmxCvJuf+qZOiuxeZ9LTjhPQB9vk=";
+        url = "https://files.orangc.net/media/walls-catppuccin-mocha/black-hole.png?k=KCrQ";
+        # hash = ;
       };
     })
   ];

@@ -6,6 +6,6 @@ in
   home.packages = lib.optionals (config.local.system.linux && config.local.eagerSetup.enableGraphicalApps) [
     pkgs.lxqt.qps
     pkgs.zotero
-    tomopkgs.${pkgs.system}.crosshair-dot
+    # tomopkgs.${pkgs.system}.crosshair-dot
   ];
 }

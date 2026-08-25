@@ -5,12 +5,12 @@
     lua-language-server
     rust-analyzer
     nil
-    ruff-lsp
+    ruff
     stylua
     selene
     proselint
     mypy
     hunspell
-    lexical
+    beamPackages.expert
   ]);
 }

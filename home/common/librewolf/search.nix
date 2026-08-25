@@ -12,7 +12,7 @@
             { name = "query"; value = "{searchTerms}"; }
           ];
         }];
-        icon = "''${pkgs.gnome-icon-theme}/share/icons/gnome/256x256/mimetypes/package.png";
+        # icon = "''${pkgs.gnome-icon-theme}/share/icons/gnome/256x256/mimetypes/package.png";
         definedAliases = [ "!pkgs" ];
       };
       "NixOS options" = {
@@ -23,7 +23,7 @@
             { name = "query"; value = "{searchTerms}"; }
           ];
         }];
-        icon = "''${pkgs.gnome-icon-theme}/share/icons/gnome/48x48/categories/gnome-settings.png";
+        # icon = "''${pkgs.gnome-icon-theme}/share/icons/gnome/48x48/categories/gnome-settings.png";
         definedAliases = [ "!nixos" ];
       };
       "Home Manager options" = {
@@ -34,12 +34,12 @@
             { name = "query"; value = "{searchTerms}"; }
           ];
         }];
-        icon = "''${pkgs.gnome-icon-theme}/share/icons/gnome/48x48/actions/stock_home.png";
+        # icon = "''${pkgs.gnome-icon-theme}/share/icons/gnome/48x48/actions/stock_home.png";
         definedAliases = [ "!hm" ];
       };
       "NixOS Wiki" = {
         urls = [{ template = "https://wiki.nixos.org/w/index.php?search={searchTerms}"; }];
-        icon = "''${pkgs.gnome-icon-theme}/share/icons/gnome/48x48/mimetypes/contents2.png";
+        # icon = "''${pkgs.gnome-icon-theme}/share/icons/gnome/48x48/mimetypes/contents2.png";
         definedAliases = [ "!nixoswiki" ];
       };
       "GitHub" = {

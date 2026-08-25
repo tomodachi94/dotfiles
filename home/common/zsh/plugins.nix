@@ -78,12 +78,12 @@
       # For you-should-use
       YSU_MESSAGE_POSITION = "after";
       # For auto-notify
-      AUTO_NOTIFY_IGNORE = zsh-auto-notify-ignore-default ++ [
-        "zsh"
-        "bash"
-        "nix-shell"
-        "nix develop"
-      ];
+      # AUTO_NOTIFY_IGNORE = zsh-auto-notify-ignore-default ++ [
+      #   "zsh"
+      #   "bash"
+      #   "nix-shell"
+      #   "nix develop"
+      # ];
     };
 
   home.packages = [

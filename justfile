@@ -9,7 +9,7 @@ import 'lib/just/aliases.just'
 
 build *args:
   nixos-rebuild switch \
-    --flake ".#$(hostname)" \
+    --flake ".#totoro" \
     --use-remote-sudo \
     --option experimental-features 'nix-command flakes' \
     {{args}}

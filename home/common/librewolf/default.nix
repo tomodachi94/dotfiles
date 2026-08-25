@@ -25,7 +25,7 @@ in
         # Keep browser open when the last tab is closed
         "browser.tabs.closeWindowWithLastTab" = false;
       };
-      extensions = with firefox-addons.packages.${pkgs.system}; [
+      extensions.packages = with firefox-addons.packages.${pkgs.system}; [
         multi-account-containers
         auto-tab-discard
         ublacklist

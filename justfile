@@ -10,6 +10,6 @@ import 'lib/just/aliases.just'
 build *args:
   nixos-rebuild switch \
     --flake ".#totoro" \
-    --use-remote-sudo \
+    --elevate=sudo \
     --option experimental-features 'nix-command flakes' \
     {{args}}

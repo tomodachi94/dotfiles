@@ -1,5 +1,6 @@
 { pkgs, catppuccin-base16, ... }:
 {
+  stylix.enable = true;
   stylix.image = pkgs.fetchurl {
     url = "https://files.orangc.net/media/walls-catppuccin-mocha/black-hole.png?k=KCrQ";
     hash = "sha256-rjJgxf45d6lIkw5tBFe9gnprVpKZ2YbYt3XrjAotuFk=";

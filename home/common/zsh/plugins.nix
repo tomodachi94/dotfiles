@@ -86,6 +86,10 @@
       # ];
     };
 
+  programs.zsh.profileExtra = ''
+    YSU_IGNORED_ALIASES=("sl")
+  '';
+
   home.packages = [
     # TODO: Patch the craftos-select plugin to properly set its dependencies
     pkgs.fzf

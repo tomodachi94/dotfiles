@@ -6,6 +6,7 @@
     ./locale.nix
     ./networking.nix
     ./nix.nix
+    ./tailscale.nix
     ./zsh.nix
   ];
 

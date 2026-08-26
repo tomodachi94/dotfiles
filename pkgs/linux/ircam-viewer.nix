@@ -1,13 +1,13 @@
-{
-  lib,
-  stdenv,
-  fetchFromGitHub,
-  nix-update-script,
-  pkg-config,
-  installShellFiles,
-  SDL2,
-  SDL2_ttf,
-  ffmpeg,
+{ lib
+, stdenv
+, fetchFromGitHub
+, nix-update-script
+, pkg-config
+, installShellFiles
+, SDL2
+, SDL2_ttf
+, ffmpeg
+,
 }:
 
 stdenv.mkDerivation (finalAttrs: {

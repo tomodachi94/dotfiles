@@ -1,9 +1,10 @@
 { lib
 , stdenv
 , fetchFromGitHub
+, fetchpatch
 , pkg-config
 , gtk3
-, webkitgtk
+, webkitgtk_4_1
 }:
 
 stdenv.mkDerivation rec {
@@ -17,13 +18,20 @@ stdenv.mkDerivation rec {
     hash = "sha256-Itm1CayIkMxwWymirzHOuU/h3+tJ0OFO/jmAH8OIB40=";
   };
 
+  patches = [
+    (fetchpatch {
+      url = "https://github.com/swstegall/hudkit/commit/8df873abf073ea66f6da4ad303b9970833f4a8a1.patch";
+      hash = "sha256-j7H3cfq5s823qf4ZFByRsKLCxnik1VAZBhp84KoOfO8=";
+    })
+  ];
+
   nativeBuildInputs = [
     pkg-config
   ];
 
   buildInputs = [
     gtk3
-    webkitgtk
+    webkitgtk_4_1
   ];
 
   installPhase = ''

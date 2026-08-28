@@ -28,6 +28,7 @@ in
       extensions.packages = with firefox-addons.packages.${pkgs.system}; [
         bitwarden
         multi-account-containers
+        sponsorblock
         auto-tab-discard
         ublacklist
         violentmonkey

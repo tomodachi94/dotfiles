@@ -9,7 +9,7 @@ in
     };
   };
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = [ tomopkgs.${pkgs.system}.hp-linuxtools ];
+    environment.systemPackages = [ tomopkgs.${pkgs.stdenvNoCC.hostPlatform.system}.hp-linuxtools ];
     boot.extraModulePackages = [ config.boot.kernelPackages.hpuefi-mod ];
     boot.kernelModules = [ "hpuefi-mod" ];
     systemd.services.dash = {

@@ -6,7 +6,7 @@ let
     src = file;
     dontUnpack = true;
     nativeBuildInputs = [
-      tomopkgs.${pkgs.system}.mrcoles-bookmarklet
+      tomopkgs.${pkgs.stdenvNoCC.hostPlatform.system}.mrcoles-bookmarklet
     ];
     buildPhase = ''
       bookmarklet "$src" "$out"

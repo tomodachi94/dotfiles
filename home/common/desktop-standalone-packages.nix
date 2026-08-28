@@ -4,6 +4,6 @@
     pkgs.discord
     pkgs.obsidian
     pkgs.spotube
-    bitwarden-dmenu.packages.${pkgs.system}.bwmenu
+    bitwarden-dmenu.packages.${pkgs.stdenvNoCC.hostPlatform.system}.bwmenu
   ];
 }

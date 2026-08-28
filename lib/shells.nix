@@ -25,7 +25,7 @@ in
       home-manager.packages.${system}.default
     ] ++ (lib.optional stdenv.hostPlatform.isLinux [ disko.packages.${system}.disko ])
     ++ treefmt-deps;
-    inherit (checks.${pkgs.system}.pre-commit-check) shellHook;
+    inherit (checks.${pkgs.stdenvNoCC.hostPlatform.system}.pre-commit-check) shellHook;
   };
   ci = pkgs.mkShellNoCC {
     packages = with pkgs; [

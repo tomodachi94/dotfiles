@@ -16,7 +16,7 @@
     }
     {
       name = "craftos-select";
-      src = "${zsh-craftos-select.packages.${pkgs.system}.default}";
+      src = "${zsh-craftos-select.packages.${pkgs.stdenvNoCC.hostPlatform.system}.default}";
     }
     {
       name = "vi-mode";
@@ -35,7 +35,7 @@
     }
     rec {
       name = "window-title";
-      src = tomopkgs.${pkgs.system}.zsh-window-title;
+      src = tomopkgs.${pkgs.stdenvNoCC.hostPlatform.system}.zsh-window-title;
       file = "share/zsh/plugins/zsh-${name}/zsh-${name}.plugin.zsh";
     }
     {

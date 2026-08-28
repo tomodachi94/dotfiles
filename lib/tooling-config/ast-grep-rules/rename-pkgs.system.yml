@@ -1,0 +1,5 @@
+id: rename-pkgs.system
+language: nix
+rule:
+  pattern: pkgs.system
+fix: pkgs.stdenvNoCC.hostPlatform.system

@@ -28,6 +28,8 @@ includes = ["*.toml"]
 [formatter.keep-sorted]
 command = "keep-sorted"
 includes = ["*"]
+# run this before language-specific formatters
+priority = -1
 
 [formatter.mdformat]
 command = "mdformat"

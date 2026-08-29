@@ -7,32 +7,9 @@
       inputs = { };
     };
 
-    nixos-hardware = {
-      url = "github:nixos/nixos-hardware";
-    };
-
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    tomodachi94 = {
-      url = "github:tomodachi94/nur-packages";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    mac-app-util = {
-      url = "github:hraban/mac-app-util";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    stylix = {
-      url = "github:nix-community/stylix";
+    # keep-sorted start block=yes newline_separated=yes
+    bitwarden-dmenu = {
+      url = "github:pltanton/bitwarden-dmenu";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -41,29 +18,8 @@
       flake = false;
     };
 
-    nix-craftos-pc = {
-      url = "github:tomodachi94/nix-craftos-pc";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
-
-    zsh-craftos-select = {
-      url = "git+https://gist.github.com/tomodachi94/aaae79f7cb4e7b2087727fbbfe05eb12";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    bitwarden-dmenu = {
-      url = "github:pltanton/bitwarden-dmenu";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     comin = {
       url = "github:nlewo/comin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    pre-commit-hooks = {
-      url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -72,8 +28,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions/master?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -81,6 +47,42 @@
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    mac-app-util = {
+      url = "github:hraban/mac-app-util";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-craftos-pc = {
+      url = "github:tomodachi94/nix-craftos-pc";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
+    nixos-hardware = {
+      url = "github:nixos/nixos-hardware";
+    };
+
+    pre-commit-hooks = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    tomodachi94 = {
+      url = "github:tomodachi94/nur-packages";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    zsh-craftos-select = {
+      url = "git+https://gist.github.com/tomodachi94/aaae79f7cb4e7b2087727fbbfe05eb12";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # keep-sorted end
   };
 
   outputs = { nixpkgs, nixos-hardware, home-manager, disko, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, bitwarden-dmenu, comin, pre-commit-hooks, dash2, firefox-addons, lanzaboote, ... }:

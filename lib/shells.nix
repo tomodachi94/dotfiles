@@ -7,6 +7,7 @@ let
     statix
     deadnix
     yamlfmt
+    keep-sorted
     nixpkgs-fmt
     python3Packages.mdformat
     python3Packages.mdformat-gfm

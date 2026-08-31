@@ -29,8 +29,8 @@ update-lazy:
     exit 1
   fi
 
-format:
-  treefmt --config-file ./lib/tooling-config/treefmt.toml --tree-root {{git_dir}}
+format *args:
+  treefmt --config-file ./lib/tooling-config/treefmt.toml --tree-root {{git_dir}} {{args}}
 
 generate-hardware-config host:
   mkdir nixos/hosts/{{host}}

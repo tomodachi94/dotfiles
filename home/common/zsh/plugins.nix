@@ -54,6 +54,17 @@
   ];
 
   programs.zsh.sessionVariables =
+    {
+      # For nnn-quitcd
+      NNN_TMPFILE = config.xdg.stateHome;
+      # For vi-mode
+      ZVM_LINE_INIT_MODE = "i"; # Default to insert mode
+      # For you-should-use
+      YSU_MESSAGE_POSITION = "after";
+      # For auto-notify
+    };
+
+  programs.zsh.profileExtra =
     let
       zsh-auto-notify-ignore-default = [
         "vim"
@@ -69,26 +80,18 @@
         "ssh"
         "nano"
       ];
+      AUTO_NOTIFY_IGNORE = ''("'' + pkgs.lib.concatStringsSep ''" "'' (zsh-auto-notify-ignore-default ++ [
+        "zsh"
+        "bash"
+        "nix-shell"
+        "nix develop"
+      ]) + ''")'';
     in
-    {
-      # For nnn-quitcd
-      NNN_TMPFILE = config.xdg.stateHome;
-      # For vi-mode
-      ZVM_LINE_INIT_MODE = "i"; # Default to insert mode
-      # For you-should-use
-      YSU_MESSAGE_POSITION = "after";
-      # For auto-notify
-      # AUTO_NOTIFY_IGNORE = zsh-auto-notify-ignore-default ++ [
-      #   "zsh"
-      #   "bash"
-      #   "nix-shell"
-      #   "nix develop"
-      # ];
-    };
 
-  programs.zsh.profileExtra = ''
-    YSU_IGNORED_ALIASES=("sl")
-  '';
+    ''
+      YSU_IGNORED_ALIASES=("sl")
+      AUTO_NOTIFY_IGNORE=${AUTO_NOTIFY_IGNORE}
+    '';
 
   home.packages = [
     # TODO: Patch the craftos-select plugin to properly set its dependencies

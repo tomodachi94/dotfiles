@@ -85,6 +85,7 @@
         "bash"
         "nix-shell"
         "nix develop"
+        "jj describe"
       ]) + ''")'';
     in
 

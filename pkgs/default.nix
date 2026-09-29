@@ -8,6 +8,7 @@ in
   get-ro-ids = cp ./all/get-ro-ids.nix { };
   mrcoles-bookmarklet = cp ./all/mrcoles-bookmarklet.nix { };
   spodcast = cp ./all/spodcast.nix { };
+  srg2source = cp ./all/srg2source.nix { };
   ultisnips-vscode = cp ./all/ultisnips-vscode.nix { };
   wpcleaner = cp ./all/wpcleaner { };
   zsh-window-title = cp ./all/zsh-window-title.nix { };

@@ -10,6 +10,18 @@ block = "battery"
 format = " $icon $percentage "
 
 [[block]]
+block = "sound"
+driver = "pipewire"
+headphones_indicator = true
+max_vol = 100
+# Make muted good, and non-muted is a warning
+[block.theme_overrides]
+warning_bg = "#282a36"
+warning_fg = "#f8f8f2"
+idle_bg = "#f1fa8c"
+idle_fg = "#282a36"
+
+[[block]]
 block = "disk_space"
 path = "/"
 info_type = "available"

@@ -7,6 +7,7 @@
     ./graphics.nix
     ./ime.nix
     ./networking.nix
+    ./podman.nix
     ./printing.nix
     ./sound.nix
     ./stylix.nix

@@ -14,5 +14,6 @@
     ./syncthing.nix
     ./users.nix
     ./window-manager.nix
+    ./xdg.nix
   ];
 }

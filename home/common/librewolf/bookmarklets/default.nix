@@ -24,7 +24,7 @@ in
     toolbar = true;
     bookmarks = [
       (mkMark {
-        name = "Check web archives";
+        name = "Check Wayback Machine";
         file = ./check_web_archives.js;
       })
     ];

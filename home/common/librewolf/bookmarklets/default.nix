@@ -1,4 +1,3 @@
-# FIXME: The bookmarks option doesn't appear to have an effect.
 { pkgs, tomopkgs, ... }:
 let
   mkBookmarkletFile = file: pkgs.stdenvNoCC.mkDerivation {
@@ -19,14 +18,17 @@ let
   };
 in
 {
-  programs.librewolf.profiles.default.bookmarks = [{
-    name = "bookmarklets";
-    toolbar = true;
-    bookmarks = [
-      (mkMark {
-        name = "Check Wayback Machine";
-        file = ./check_web_archives.js;
-      })
-    ];
-  }];
+  programs.librewolf.profiles.default.bookmarks = {
+    force = true;
+    settings = [{
+      name = "bookmarklets";
+      toolbar = true;
+      bookmarks = [
+        (mkMark {
+          name = "Check Wayback Machine";
+          file = ./check_web_archives.js;
+        })
+      ];
+    }];
+  };
 }

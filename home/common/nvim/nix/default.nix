@@ -1,3 +1,0 @@
-{
-  imports = [ ./tomodachi94 ];
-}

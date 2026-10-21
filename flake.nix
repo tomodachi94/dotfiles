@@ -53,6 +53,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    mnw = {
+      url = "github:Gerg-L/mnw";
+    };
+
     nix-craftos-pc = {
       url = "github:tomodachi94/nix-craftos-pc";
       inputs.nixpkgs.follows = "nixpkgs";

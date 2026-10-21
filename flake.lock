@@ -542,6 +542,21 @@
         "type": "github"
       }
     },
+    "mnw": {
+      "locked": {
+        "lastModified": 1790357809,
+        "narHash": "sha256-6IWPAMEotKY/nQvs1kU6qwMwCXTeW5HlOhw2RwFHFdI=",
+        "owner": "Gerg-L",
+        "repo": "mnw",
+        "rev": "a582dbedf7c8ec7effa6939ac5bdd23b27267d1b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Gerg-L",
+        "repo": "mnw",
+        "type": "github"
+      }
+    },
     "nix-craftos-pc": {
       "inputs": {
         "home-manager": [
@@ -840,6 +855,7 @@
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
         "mac-app-util": "mac-app-util",
+        "mnw": "mnw",
         "nix-craftos-pc": "nix-craftos-pc",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_6",

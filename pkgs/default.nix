@@ -11,6 +11,7 @@ in
   srg2source = cp ./all/srg2source.nix { };
   ultisnips-vscode = cp ./all/ultisnips-vscode.nix { };
   wpcleaner = cp ./all/wpcleaner { };
+  wrapper-nvim = cp ./all/wrapper-nvim { };
   zsh-window-title = cp ./all/zsh-window-title.nix { };
 } // pkgs.lib.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
   crossover = cp ./linux/crossover.nix { };

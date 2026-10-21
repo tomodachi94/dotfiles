@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, inputs }:
 let
-  cp = pkgs.callPackage;
+  cp = pkgs.lib.customisation.callPackageWith (pkgs // { inherit inputs; });
 in
 {
   "3ds" = cp ./all/3ds.nix { };

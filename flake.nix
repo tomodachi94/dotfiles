@@ -85,11 +85,11 @@
     # keep-sorted end
   };
 
-  outputs = { nixpkgs, nixos-hardware, home-manager, disko, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, bitwarden-dmenu, comin, pre-commit-hooks, dash2, firefox-addons, lanzaboote, ... }:
+  outputs = { nixpkgs, nixos-hardware, home-manager, disko, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, bitwarden-dmenu, comin, pre-commit-hooks, dash2, firefox-addons, lanzaboote, ... }@inputs:
     let
       tomolib = import ./lib { inherit nixpkgs home-manager stylix comin disko; };
       tomopkgs = tomolib.forAllSystems (pkgs:
-        import ./pkgs { inherit pkgs; }
+        import ./pkgs { inherit pkgs inputs; }
       );
 
       vars = import ./lib/vars.nix;

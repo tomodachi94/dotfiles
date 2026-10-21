@@ -4,6 +4,7 @@
   xdg = {
     userDirs = {
       enable = config.local.system.linux;
+      setSessionVariables = false;
     };
     mimeApps = {
       enable = config.local.system.linux;

@@ -28,13 +28,6 @@
       gtk-xft-hintstyle = "hintslight";
       gtk-xft-rgba = "rgb";
     };
-    gtk3.extraCss = ''
-      style "cs-scrollbar-style" {
-        GtkScrollbar::slider-width = 10
-      }
-
-      class "GtkScrollbar" style "cs-scrollbar-style"
-    '';
   };
 
   stylix.targets.gtk.enable = config.local.eagerSetup.enableGraphicalApps;

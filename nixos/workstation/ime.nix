@@ -2,7 +2,8 @@
 {
   # Setup Japanese keyboard
   i18n.inputMethod = {
-    enable = true;
+    # FIXME: bring this back
+    enable = false;
     type = "fcitx5";
     fcitx5.addons = with pkgs; [
       fcitx5-mozc

@@ -1,6 +1,10 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
 {
-  imports = [
+  imports = let hw = inputs.nixos-hardware.nixosModules; in [
+    hw.common-cpu-intel
+    hw.common-pc
+    hw.common-pc-laptop
+    hw.common-pc-laptop-ssd
     ./hardware-configuration.nix
     ./disko-config.nix
     ../../base

@@ -1,6 +1,6 @@
-{ pkgs, pre-commit-hooks, ... }:
+{ pkgs, inputs, ... }:
 {
-  pre-commit-check = pre-commit-hooks.lib.${pkgs.stdenvNoCC.hostPlatform.system}.run {
+  pre-commit-check = inputs.pre-commit-hooks.lib.${pkgs.stdenvNoCC.hostPlatform.system}.run {
     src = ./.;
     hooks = {
       ci-check-formatting = {

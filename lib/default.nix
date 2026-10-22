@@ -1,9 +1,9 @@
-{ nixpkgs, home-manager, stylix, comin, disko }:
+{ inputs }:
 rec {
   mkHMImports = systemType: [
     ../home/common
     (../home + "/${systemType}")
-    stylix.homeManagerModules.stylix
+    inputs.stylix.homeManagerModules.stylix
 
     ({ pkgs, ... }: {
       stylix.image = pkgs.fetchurl {
@@ -12,38 +12,35 @@ rec {
       };
     })
   ];
-  mkNixpkgs = { systemType, systemArch }: nixpkgs.legacyPackages."${systemArch}-${systemType}";
+  mkNixpkgs = { systemType, systemArch }: inputs.nixpkgs.legacyPackages."${systemArch}-${systemType}";
 
   forAllSystems = function:
-    nixpkgs.lib.genAttrs [
+    inputs.nixpkgs.lib.genAttrs [
       "x86_64-linux"
       "aarch64-linux"
       "x86_64-darwin"
       "aarch64-darwin"
     ]
-      (system: function nixpkgs.legacyPackages.${system});
+      (system: function inputs.nixpkgs.legacyPackages.${system});
 
-  mkHMConfig = { systemType, systemArch, args }: home-manager.lib.homeManagerConfiguration {
-    pkgs = mkNixpkgs { inherit systemType systemArch; };
-
-    # Specify your home configuration modules here, for example,
-    # the path to your home.nix.
-    modules = mkHMImports systemType;
-
+  mkHMConfig = { pkgs, args }: inputs.home-manager.lib.homeManagerConfiguration {
+    modules = mkHMImports pkgs.stdenv.hostPlatform.kernel.name;
     # Optionally use extraSpecialArgs
     # to pass through arguments to home.nix
     extraSpecialArgs = args;
   };
 
-  mkNixosConfig = { hostname, extraModules, args }: nixpkgs.lib.nixosSystem {
+  mkNixosConfig = { hostname, args }: inputs.nixpkgs.lib.nixosSystem {
     specialArgs = args;
     modules = [
       (../nixos/hosts + "/${hostname}")
-      home-manager.nixosModules.home-manager
-      stylix.nixosModules.stylix
-      comin.nixosModules.comin
-      disko.nixosModules.disko
-    ] ++ extraModules;
+      inputs.home-manager.nixosModules.home-manager
+      inputs.stylix.nixosModules.stylix
+      inputs.comin.nixosModules.comin
+      inputs.disko.nixosModules.disko
+      inputs.dash2.nixosModules.default
+      inputs.lanzaboote.nixosModules.lanzaboote
+    ];
   };
 
   # Source: https://www.reddit.com/r/NixOS/comments/1b56jdx/simple_nix_function_for_wrapping_executables_with/, by u/stelcodes

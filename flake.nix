@@ -91,7 +91,7 @@
 
   outputs = { nixpkgs, nixos-hardware, home-manager, disko, mac-app-util, stylix, catppuccin-base16, zsh-craftos-select, bitwarden-dmenu, comin, pre-commit-hooks, dash2, firefox-addons, lanzaboote, ... }@inputs:
     let
-      tomolib = import ./lib { inherit nixpkgs home-manager stylix comin disko; };
+      tomolib = import ./lib { inherit inputs; };
       tomopkgs = tomolib.forAllSystems (pkgs:
         import ./pkgs { inherit pkgs inputs; }
       );
@@ -99,58 +99,29 @@
       args = { inherit inputs tomolib tomopkgs; };
       args.args = args;
     in
-    rec {
-      homeConfigurations.darwin-aarch64 = tomolib.mkHMConfig { systemType = "darwin"; systemArch = "aarch64"; inherit args; };
-      homeConfigurations.darwin-x86_64 = tomolib.mkHMConfig { systemType = "darwin"; systemArch = "x86_64"; inherit args; };
-      homeConfigurations.linux-aarch64 = tomolib.mkHMConfig { systemType = "linux"; systemArch = "aarch64"; inherit args; };
-      homeConfigurations.linux-x86_64 = tomolib.mkHMConfig { systemType = "linux"; systemArch = "x86_64"; inherit args; };
+    {
+      homeConfigurations = tomolib.forAllSystems (pkgs: tomolib.mkHMConfig {
+        inherit pkgs args;
+      });
 
       nixosConfigurations.hp-laptop-df0023 = tomolib.mkNixosConfig {
         hostname = "hp-laptop-df0023";
         inherit args;
-        extraModules = let hw = nixos-hardware.nixosModules; in [
-          hw.common-cpu-intel
-          hw.common-gpu-intel-kaby-lake
-          hw.common-pc
-          hw.common-pc-laptop
-          # Note: This laptop had its HDD replaced with an SSD
-          hw.common-pc-laptop-ssd
-          dash2.nixosModules.default
-        ];
       };
-
       nixosConfigurations.ponyo = tomolib.mkNixosConfig {
         hostname = "ponyo";
         inherit args;
-        extraModules = let hw = nixos-hardware.nixosModules; in [
-          hw.common-cpu-intel
-          hw.common-pc
-          hw.common-pc-laptop
-          hw.common-pc-laptop-ssd
-          dash2.nixosModules.default
-          lanzaboote.nixosModules.lanzaboote
-        ];
       };
       nixosConfigurations.totoro = tomolib.mkNixosConfig {
         hostname = "totoro";
         inherit args;
-        extraModules = let hw = nixos-hardware.nixosModules; in [
-          hw.common-cpu-intel
-          hw.common-pc
-          hw.common-pc-laptop
-          hw.common-pc-laptop-ssd
-          dash2.nixosModules.default
-          lanzaboote.nixosModules.lanzaboote
-        ];
       };
 
-      checks = tomolib.forAllSystems (pkgs: import ./lib/checks.nix { inherit pkgs pre-commit-hooks; });
+      checks = tomolib.forAllSystems (pkgs: import ./lib/checks.nix { inherit pkgs inputs; });
 
       packages = tomopkgs;
-      /* legacyPackages = tomolib.forAllSystems (system: (packages.${system} // { lib = tomolib; })); */
 
-      devShells = tomolib.forAllSystems (pkgs: import ./lib/shells.nix { inherit pkgs home-manager disko checks; });
-
+      devShells = tomolib.forAllSystems (pkgs: import ./lib/shells.nix { inherit pkgs inputs; });
     };
 
 

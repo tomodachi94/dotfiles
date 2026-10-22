@@ -1,5 +1,12 @@
+{ inputs, ... }:
 {
-  imports = [
+  imports = let hw = nixos-hardware.nixosModules; in [
+    hw.common-cpu-intel
+    hw.common-gpu-intel-kaby-lake
+    hw.common-pc
+    hw.common-pc-laptop
+    # Note: This laptop had its HDD replaced with an SSD
+    hw.common-pc-laptop-ssd
     ./hardware-configuration.nix
     ./filesystems.nix
     ../../base

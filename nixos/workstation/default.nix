@@ -12,6 +12,7 @@
     ./sound.nix
     ./stylix.nix
     ./syncthing.nix
+    ./udisks2.nix
     ./users.nix
     ./window-manager.nix
     ./xdg.nix

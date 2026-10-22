@@ -1,4 +1,4 @@
-{ config, pkgs, tomopkgs, zsh-craftos-select, ... }:
+{ config, pkgs, tomopkgs, inputs, ... }:
 {
   programs.zsh.plugins = [
     {
@@ -16,7 +16,7 @@
     }
     {
       name = "craftos-select";
-      src = "${zsh-craftos-select.packages.${pkgs.stdenvNoCC.hostPlatform.system}.default}";
+      src = "${inputs.zsh-craftos-select.packages.${pkgs.stdenvNoCC.hostPlatform.system}.default}";
     }
     {
       name = "vi-mode";

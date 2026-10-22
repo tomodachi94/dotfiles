@@ -1,4 +1,4 @@
-{ vars, config, ... }:
+{ config, ... }:
 {
   programs.gnome-terminal = {
     enable = config.local.system.linux && config.local.eagerSetup.enableGraphicalApps;
@@ -6,7 +6,7 @@
       default = true;
       loginShell = true;
       customCommand = null;
-      font = "${vars.font.monospace} weight=453 12";
+      font = "${config.stylix.fonts.monospace.name} weight=453 12";
       visibleName = "tomodachi94";
       colors.palette = [
         "rgb(46,52,54)"

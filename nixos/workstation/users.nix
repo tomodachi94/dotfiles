@@ -1,4 +1,4 @@
-{ pkgs, homeInputs, ... }:
+{ pkgs, args, ... }:
 {
   users.users.me = {
     isNormalUser = true;
@@ -9,7 +9,7 @@
     shell = pkgs.zsh;
   };
 
-  home-manager.extraSpecialArgs = homeInputs;
+  home-manager.extraSpecialArgs = args;
   home-manager.useUserPackages = true;
 
   home-manager.users.me = { ... }: {

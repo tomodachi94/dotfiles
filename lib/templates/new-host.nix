@@ -1,4 +1,3 @@
-{ config, homeInputs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -12,7 +11,6 @@
     home-manager.users.me = { ... }: {
     imports = [ ../../../home/common ../../../home/linux ];
     };
-    home-manager.extraSpecialArgs = homeInputs;
     home-manager.useUserPackages = true;
   */
 

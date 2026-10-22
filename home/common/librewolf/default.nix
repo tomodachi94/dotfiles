@@ -1,4 +1,4 @@
-{ pkgs, lib, tomolib, firefox-addons, config, ... }:
+{ pkgs, lib, tomolib, inputs, config, ... }:
 let
   firejailWrappers = tomolib.firejailWrappers { inherit pkgs; };
 in
@@ -25,7 +25,7 @@ in
         # Keep browser open when the last tab is closed
         "browser.tabs.closeWindowWithLastTab" = false;
       };
-      extensions.packages = with firefox-addons.packages.${pkgs.stdenvNoCC.hostPlatform.system}; [
+      extensions.packages = with inputs.firefox-addons.packages.${pkgs.stdenvNoCC.hostPlatform.system}; [
         bitwarden
         multi-account-containers
         sponsorblock

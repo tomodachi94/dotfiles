@@ -96,26 +96,18 @@
         import ./pkgs { inherit pkgs inputs; }
       );
 
-      vars = import ./lib/vars.nix;
-
-      commonInputs = { inherit vars tomopkgs tomolib; rawNixpkgs = nixpkgs; };
-
-      homeCommonInputs = commonInputs // { inherit zsh-craftos-select stylix bitwarden-dmenu firefox-addons; };
-      homeDarwinInputs = homeCommonInputs // { inherit mac-app-util; };
-
-      systemCommonInputs = commonInputs // { };
-      systemLinuxInputs = systemCommonInputs // { nixos-hardware = nixos-hardware.nixosModules; homeInputs = homeCommonInputs; inherit catppuccin-base16 comin dash2 lanzaboote disko; };
-
+      args = { inherit inputs tomolib tomopkgs; };
+      args.args = args;
     in
     rec {
-      homeConfigurations.darwin-aarch64 = tomolib.mkHMConfig { systemType = "darwin"; systemArch = "aarch64"; args = homeDarwinInputs; };
-      homeConfigurations.darwin-x86_64 = tomolib.mkHMConfig { systemType = "darwin"; systemArch = "x86_64"; args = homeDarwinInputs; };
-      homeConfigurations.linux-aarch64 = tomolib.mkHMConfig { systemType = "linux"; systemArch = "aarch64"; args = homeDarwinInputs; };
-      homeConfigurations.linux-x86_64 = tomolib.mkHMConfig { systemType = "linux"; systemArch = "x86_64"; args = homeDarwinInputs; };
+      homeConfigurations.darwin-aarch64 = tomolib.mkHMConfig { systemType = "darwin"; systemArch = "aarch64"; inherit args; };
+      homeConfigurations.darwin-x86_64 = tomolib.mkHMConfig { systemType = "darwin"; systemArch = "x86_64"; inherit args; };
+      homeConfigurations.linux-aarch64 = tomolib.mkHMConfig { systemType = "linux"; systemArch = "aarch64"; inherit args; };
+      homeConfigurations.linux-x86_64 = tomolib.mkHMConfig { systemType = "linux"; systemArch = "x86_64"; inherit args; };
 
       nixosConfigurations.hp-laptop-df0023 = tomolib.mkNixosConfig {
         hostname = "hp-laptop-df0023";
-        args = systemLinuxInputs;
+        inherit args;
         extraModules = let hw = nixos-hardware.nixosModules; in [
           hw.common-cpu-intel
           hw.common-gpu-intel-kaby-lake
@@ -129,7 +121,7 @@
 
       nixosConfigurations.ponyo = tomolib.mkNixosConfig {
         hostname = "ponyo";
-        args = systemLinuxInputs;
+        inherit args;
         extraModules = let hw = nixos-hardware.nixosModules; in [
           hw.common-cpu-intel
           hw.common-pc
@@ -141,7 +133,7 @@
       };
       nixosConfigurations.totoro = tomolib.mkNixosConfig {
         hostname = "totoro";
-        args = systemLinuxInputs;
+        inherit args;
         extraModules = let hw = nixos-hardware.nixosModules; in [
           hw.common-cpu-intel
           hw.common-pc

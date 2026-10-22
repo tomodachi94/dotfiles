@@ -1,4 +1,4 @@
-{ pkgs, rawNixpkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   nix = {
     settings = {
@@ -22,6 +22,6 @@
       options = "--delete-old --delete-older-than 14d";
     };
     nixPath = [ "nixpkgs=${pkgs.path}" ];
-    registry.nixpkgs.flake = rawNixpkgs;
+    registry.nixpkgs.flake = inputs.nixpkgs;
   };
 }

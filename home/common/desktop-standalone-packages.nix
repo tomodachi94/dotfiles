@@ -1,9 +1,9 @@
-{ pkgs, lib, config, bitwarden-dmenu, ... }:
+{ pkgs, lib, config, inputs, ... }:
 {
   home.packages = lib.mkIf config.local.eagerSetup.enableGraphicalApps [
     pkgs.discord
     pkgs.obsidian
     pkgs.spotube
-    bitwarden-dmenu.packages.${pkgs.stdenvNoCC.hostPlatform.system}.bwmenu
+    inputs.bitwarden-dmenu.packages.${pkgs.stdenvNoCC.hostPlatform.system}.bwmenu
   ];
 }

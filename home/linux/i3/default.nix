@@ -1,11 +1,11 @@
-{ config, pkgs, lib, vars, ... }:
+{ config, pkgs, lib, ... }:
 {
   stylix.targets.i3.enable = true;
   xdg.configFile."i3/config" = lib.mkIf config.local.eagerSetup.enableGraphicalApps {
     text = ''
       ## start manual config ##
       set $wallpaper_path "${config.stylix.image}"
-      set $font "${vars.font.monospace}"
+      set $font "${config.stylix.fonts.monospace.name}"
       include ${./all.config}
       include ${./background.config}
       include ${./programs.config}

@@ -1,4 +1,4 @@
-{ pkgs, catppuccin-base16, ... }:
+{ pkgs, inputs, ... }:
 {
   stylix.enable = true;
   stylix.image = pkgs.fetchurl {
@@ -6,7 +6,7 @@
     hash = "sha256-rjJgxf45d6lIkw5tBFe9gnprVpKZ2YbYt3XrjAotuFk=";
   };
   stylix.autoEnable = false; # We have some manual theming around the repository, which conflicts with Stylix
-  stylix.base16Scheme = "${catppuccin-base16}/base16/mocha.yaml";
+  stylix.base16Scheme = "${inputs.catppuccin-base16}/base16/mocha.yaml";
 
 
   stylix.fonts = {

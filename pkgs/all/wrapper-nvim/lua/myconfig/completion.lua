@@ -1,4 +1,4 @@
-require("blink.cmp").setup({
+require("blink.cmp").setup {
 	keymap = {
 		preset = "super-tab",
 		["<CR>"] = { "accept", "fallback" },
@@ -19,4 +19,4 @@ require("blink.cmp").setup({
 	signature = {
 		enabled = true,
 	},
-})
+}

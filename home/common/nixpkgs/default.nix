@@ -12,8 +12,8 @@
     };
   };
   assertions =
-    [ { assertion = pkgs.zotero.version == "10.0.4";
-        message = "Remove the permittedInsecurePackages setting";
-      }
-    ];
+    [{
+      assertion = pkgs.zotero.version == "10.0.4";
+      message = "Remove the permittedInsecurePackages setting";
+    }];
 }

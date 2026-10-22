@@ -1,18 +1,18 @@
-{
-  inputs,
-  pkgs,
-  neovim-unwrapped,
-  vimPlugins,
-  nil,
-  lua-language-server,
-  jdt-language-server,
-  beancount-language-server,
-  vscode-json-languageserver,
-  yaml-language-server,
-  bash-language-server,
-  sqls,
-  deadnix,
-  statix,
+{ inputs
+, pkgs
+, neovim-unwrapped
+, vimPlugins
+, nil
+, lua-language-server
+, jdt-language-server
+, beancount-language-server
+, vscode-json-languageserver
+, yaml-language-server
+, bash-language-server
+, sqls
+, deadnix
+, statix
+,
 }:
 inputs.mnw.lib.wrap pkgs {
   neovim = neovim-unwrapped;

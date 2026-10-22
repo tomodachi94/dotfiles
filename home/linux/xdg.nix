@@ -1,5 +1,5 @@
 # NOTE: DO NOT INCLUDE XDG.CONFIGFILE SETTINGS HERE :)
-{ pkgs, lib, config, ... }:
+{ lib, config, ... }:
 {
   xdg = {
     userDirs = {

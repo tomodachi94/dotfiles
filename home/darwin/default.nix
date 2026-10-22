@@ -1,7 +1,7 @@
-{ mac-app-util, ... }:
+{ inputs, ... }:
 {
   imports = [
-    mac-app-util.homeManagerModules.default
+    inputs.mac-app-util.homeManagerModules.default
     ./color-pickers.nix
     ./desktop-standalone-packages.nix
     ./git.nix

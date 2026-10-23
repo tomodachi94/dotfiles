@@ -44,6 +44,10 @@
     enable = true;
   };
 
+  services.thermald = {
+    enable = true;
+  };
+
   services.smartd = {
     enable = true;
     notifications.x11.enable = true;

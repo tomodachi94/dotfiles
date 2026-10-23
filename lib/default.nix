@@ -3,7 +3,7 @@ rec {
   mkHMImports = systemType: [
     ../home/common
     (../home + "/${systemType}")
-    inputs.stylix.homeManagerModules.stylix
+    inputs.stylix.homeModules.stylix
 
     ({ pkgs, ... }: {
       stylix.image = pkgs.fetchurl {
@@ -24,7 +24,8 @@ rec {
       (system: function inputs.nixpkgs.legacyPackages.${system});
 
   mkHMConfig = { pkgs, args }: inputs.home-manager.lib.homeManagerConfiguration {
-    modules = mkHMImports pkgs.stdenv.hostPlatform.kernel.name;
+    inherit pkgs;
+    modules = mkHMImports pkgs.stdenv.hostPlatform.parsed.kernel.name;
     # Optionally use extraSpecialArgs
     # to pass through arguments to home.nix
     extraSpecialArgs = args;

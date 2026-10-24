@@ -1,6 +1,5 @@
 { pkgs, lib, config, ... }:
-# FIXME: bring this back
-lib.mkIf (false && config.local.system.linux && config.local.eagerSetup.enableGraphicalApps) {
+lib.mkIf (config.local.system.linux && config.local.eagerSetup.enableGraphicalApps) {
   i18n.inputMethod.fcitx5.addons = with pkgs; [
     fcitx5-mozc
     fcitx5-gtk

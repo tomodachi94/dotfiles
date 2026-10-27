@@ -13,20 +13,15 @@ sync-pkgs-subflake:
 update-all:
   #!/usr/bin/env sh
   set -euxo pipefail
-  nix flake update --commit-lock-file
-  if git show HEAD | grep 'flake.lock: Update'; then
-    just sync-pkgs-subflake
-    git add ./pkgs/flake.lock && git commit --amend --no-edit
-  fi
+  jj new
+  echo "flake.lock: update
 
-update-lazy:
-  #!/usr/bin/env sh
-  set -euxo pipefail
-  if [ -f $HOME/.config/nvim/lazy-lock.json ]; then
-    nvim --headless +"Lazy! update" +"qa"
+  $(nix flake update)" | jj describe --stdin
+  if jj log -r 'empty() & @' -T 'commit_id' | grep -q .; then
+    jj abandon
   else
-    echo "error: $HOME/.config/nvim/lazy-lock.json missing. Did you install with the instructions in /README.md?"
-    exit 1
+    just sync-pkgs-subflake
+    jj new
   fi
 
 format *args:

@@ -37,6 +37,16 @@
         # icon = "''${pkgs.gnome-icon-theme}/share/icons/gnome/48x48/actions/stock_home.png";
         definedAliases = [ "!hm" ];
       };
+      "NixOS Hydra jobs" = {
+        urls = [{
+          template = "https://hydra.nixos.org/search";
+          params = [
+            { name = "query"; value = "{searchTerms}"; }
+          ];
+        }];
+        # icon = "''${pkgs.gnome-icon-theme}/share/icons/gnome/48x48/actions/stock_home.png";
+        definedAliases = [ "!hm" ];
+      };
       "NixOS Wiki" = {
         urls = [{ template = "https://wiki.nixos.org/w/index.php?search={searchTerms}"; }];
         # icon = "''${pkgs.gnome-icon-theme}/share/icons/gnome/48x48/mimetypes/contents2.png";
